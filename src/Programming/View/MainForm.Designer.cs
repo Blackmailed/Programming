@@ -1,4 +1,5 @@
 ﻿
+
 namespace Programming
 {
     partial class MainForm
@@ -34,12 +35,12 @@ namespace Programming
             this.SeasonBox = new System.Windows.Forms.GroupBox();
             this.WeekdayBox = new System.Windows.Forms.GroupBox();
             this.EnumerationsBox = new System.Windows.Forms.GroupBox();
-            this.EnumsListBox = new System.Windows.Forms.ListBox();
-            this.ValuesListBox = new System.Windows.Forms.ListBox();
-            this.IntTextBox = new System.Windows.Forms.TextBox();
-            this.EnumerationLabel = new System.Windows.Forms.Label();
-            this.ValueLabel = new System.Windows.Forms.Label();
             this.ValueLable = new System.Windows.Forms.Label();
+            this.ValueLabel = new System.Windows.Forms.Label();
+            this.EnumerationLabel = new System.Windows.Forms.Label();
+            this.IntTextBox = new System.Windows.Forms.TextBox();
+            this.ValuesListBox = new System.Windows.Forms.ListBox();
+            this.EnumsListBox = new System.Windows.Forms.ListBox();
             this.ProgrammingTabControl.SuspendLayout();
             this.Enums.SuspendLayout();
             this.EnumerationsBox.SuspendLayout();
@@ -101,39 +102,14 @@ namespace Programming
             this.EnumerationsBox.TabStop = false;
             this.EnumerationsBox.Text = "Enumerations";
             // 
-            // EnumsListBox
+            // ValueLable
             // 
-            this.EnumsListBox.FormattingEnabled = true;
-            this.EnumsListBox.ItemHeight = 15;
-            this.EnumsListBox.Location = new System.Drawing.Point(15, 32);
-            this.EnumsListBox.Name = "EnumsListBox";
-            this.EnumsListBox.Size = new System.Drawing.Size(167, 214);
-            this.EnumsListBox.TabIndex = 0;
-            // 
-            // ValuesListBox
-            // 
-            this.ValuesListBox.FormattingEnabled = true;
-            this.ValuesListBox.ItemHeight = 15;
-            this.ValuesListBox.Location = new System.Drawing.Point(213, 32);
-            this.ValuesListBox.Name = "ValuesListBox";
-            this.ValuesListBox.Size = new System.Drawing.Size(167, 214);
-            this.ValuesListBox.TabIndex = 1;
-            // 
-            // IntTextBox
-            // 
-            this.IntTextBox.Location = new System.Drawing.Point(400, 32);
-            this.IntTextBox.Name = "IntTextBox";
-            this.IntTextBox.Size = new System.Drawing.Size(119, 23);
-            this.IntTextBox.TabIndex = 2;
-            // 
-            // EnumerationLabel
-            // 
-            this.EnumerationLabel.AutoSize = true;
-            this.EnumerationLabel.Location = new System.Drawing.Point(15, 14);
-            this.EnumerationLabel.Name = "EnumerationLabel";
-            this.EnumerationLabel.Size = new System.Drawing.Size(121, 15);
-            this.EnumerationLabel.TabIndex = 3;
-            this.EnumerationLabel.Text = "Choose enumeration:";
+            this.ValueLable.AutoSize = true;
+            this.ValueLable.Location = new System.Drawing.Point(400, 14);
+            this.ValueLable.Name = "ValueLable";
+            this.ValueLable.Size = new System.Drawing.Size(55, 15);
+            this.ValueLable.TabIndex = 5;
+            this.ValueLable.Text = "Int value:";
             // 
             // ValueLabel
             // 
@@ -144,14 +120,41 @@ namespace Programming
             this.ValueLabel.TabIndex = 4;
             this.ValueLabel.Text = "Choose value:";
             // 
-            // ValueLable
+            // EnumerationLabel
             // 
-            this.ValueLable.AutoSize = true;
-            this.ValueLable.Location = new System.Drawing.Point(400, 14);
-            this.ValueLable.Name = "ValueLable";
-            this.ValueLable.Size = new System.Drawing.Size(55, 15);
-            this.ValueLable.TabIndex = 5;
-            this.ValueLable.Text = "Int value:";
+            this.EnumerationLabel.AutoSize = true;
+            this.EnumerationLabel.Location = new System.Drawing.Point(15, 14);
+            this.EnumerationLabel.Name = "EnumerationLabel";
+            this.EnumerationLabel.Size = new System.Drawing.Size(121, 15);
+            this.EnumerationLabel.TabIndex = 3;
+            this.EnumerationLabel.Text = "Choose enumeration:";
+            // 
+            // IntTextBox
+            // 
+            this.IntTextBox.Location = new System.Drawing.Point(400, 32);
+            this.IntTextBox.Name = "IntTextBox";
+            this.IntTextBox.Size = new System.Drawing.Size(119, 23);
+            this.IntTextBox.TabIndex = 2;
+            // 
+            // ValuesListBox
+            // 
+            this.ValuesListBox.FormattingEnabled = true;
+            this.ValuesListBox.ItemHeight = 15;
+            this.ValuesListBox.Location = new System.Drawing.Point(213, 32);
+            this.ValuesListBox.Name = "ValuesListBox";
+            this.ValuesListBox.Size = new System.Drawing.Size(167, 214);
+            this.ValuesListBox.TabIndex = 1;
+            this.ValuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged_1);
+            // 
+            // EnumsListBox
+            // 
+            this.EnumsListBox.FormattingEnabled = true;
+            this.EnumsListBox.ItemHeight = 15;
+            this.EnumsListBox.Location = new System.Drawing.Point(15, 32);
+            this.EnumsListBox.Name = "EnumsListBox";
+            this.EnumsListBox.Size = new System.Drawing.Size(167, 214);
+            this.EnumsListBox.TabIndex = 0;
+            this.EnumsListBox.SelectedIndexChanged += new System.EventHandler(this.EnumsListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
