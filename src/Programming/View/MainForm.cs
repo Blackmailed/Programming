@@ -81,7 +81,7 @@ namespace Programming
         }
         private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var item = ValuesListBox.SelectedItem;           
+            var item = ValuesListBox.SelectedItem;
             IntTextBox.Text = ((int) item).ToString();
         }
 
@@ -105,16 +105,18 @@ namespace Programming
             switch (target)
             {
                 case Seasons.Winter:
-                    BackColor = ColorTranslator.FromHtml("#e29c45");
+                    BackColor = ColorTranslator.FromHtml("#4169E1");
+                    MessageBox.Show("«Бррр! Холодно!", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Spring:
                     BackColor = ColorTranslator.FromHtml("#559c45");
                     break;
                 case Seasons.Summer:
+                    BackColor = ColorTranslator.FromHtml("#FFD700");
                     MessageBox.Show("Ура! Солнце!", "AlErT", MessageBoxButtons.OKCancel);
                     break;
-                case Seasons.Autumn:
-                    MessageBox.Show("«Бррр! Холодно!", "AlErT", MessageBoxButtons.OKCancel);
+                case Seasons.Autumn:                    
+                    BackColor = ColorTranslator.FromHtml("#e29c45");
                     break;
             }
         }
@@ -129,10 +131,6 @@ namespace Programming
     }
 }
 
-
-
-//var item = ValuesListBox.SelectedItem;
-//IntTextBox.Text = ((int)item).ToString();
 
 
 
