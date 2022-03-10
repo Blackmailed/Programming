@@ -106,14 +106,14 @@ namespace Programming
             {
                 case Seasons.Winter:
                     BackColor = ColorTranslator.FromHtml("#4169E1");
-                    MessageBox.Show("«Бррр! Холодно!", "AlErT", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("«Бррр! Холодно!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Spring:
                     BackColor = ColorTranslator.FromHtml("#559c45");
                     break;
                 case Seasons.Summer:
                     BackColor = ColorTranslator.FromHtml("#FFD700");
-                    MessageBox.Show("Ура! Солнце!", "AlErT", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("«Ура! Солнце!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Autumn:                    
                     BackColor = ColorTranslator.FromHtml("#e29c45");
