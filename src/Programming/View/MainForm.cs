@@ -19,48 +19,115 @@ namespace Programming
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Array EnunValue;
             ValuesListBox.Items.Clear();
             
-            switch (EnumsListBox.SelectedItem)
+            switch (EnumsListBox.SelectedItem.ToString())
             {
-                case Enums.Colors:
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Colors)));
-
+                case "Colors":
+                    EnunValue = Enum.GetValues(typeof(Colors));
+                    foreach (Colors valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
+
                 case "Study":
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Study)));
-
+                    EnunValue = Enum.GetValues(typeof(Study));
+                    foreach (Study valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
+
                 case "Genre":
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Genre)));
-
+                    EnunValue = Enum.GetValues(typeof(Genre));
+                    foreach (Genre valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
+
                 case "Seasons":
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Seasons)));
-
+                    EnunValue = Enum.GetValues(typeof(Seasons));
+                    foreach (Seasons valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
+
                 case "Manufacturers":
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Manufacturers)));
-
-
+                    EnunValue = Enum.GetValues(typeof(Manufacturers));
+                    foreach (Manufacturers valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
-                case "Weekday":
-                    ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Weekday)));
 
+                case "Weekday":
+                    EnunValue = Enum.GetValues(typeof(Weekday));
+                    foreach (Weekday valve in EnunValue)
+                    {
+                        ValuesListBox.Items.Add(valve);
+                    }
                     break;
 
             }
         }
-
-        private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var item = ValuesListBox.SelectedItem;
-            IntTextBox.Text = Convert.ToString((int)item);
-        }
-
         private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            var item = ValuesListBox.SelectedItem;           
+            IntTextBox.Text = ((int) item).ToString();
         }
+
+        //private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        //{
+
+        //    var item = ValuesListBox.SelectedItem;
+        //    var temp = (int)item;
+        //    IntTextBox.Text = Convert.ToString(temp);
+        //}
     }
 }
+
+
+
+//var item = ValuesListBox.SelectedItem;
+//IntTextBox.Text = ((int)item).ToString();
+
+
+
+
+
+
+
+//switch (EnumsListBox.SelectedItem)
+//{
+//    case View.Enums.Colors:
+//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Colors)));
+
+//        break;
+//    case View.Enums.Study:
+//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Study)));
+
+//        break;
+//    case View.Enums.Genre:
+//        foreach (var Values in )
+//            ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Genre)));
+
+//        break;
+//    case View.Enums.Seasons:
+//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Seasons)));
+
+//        break;
+//    case View.Enums.Manufacturers:
+//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Manufacturers)));
+
+
+//        break;
+//    case View.Enums.Weekday:
+//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Weekday)));
+
+//        break;
+
+//}
