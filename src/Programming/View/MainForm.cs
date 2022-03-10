@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model;
 using Programming.View;
@@ -10,6 +11,10 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
+            foreach (var target in Enum.GetValues(typeof(Seasons)))
+            {
+                SeasonComboBox.Items.Add(target);
+            }
             foreach (Enum valueEnums in Enum.GetValues(typeof(Enums)))
             {
                 EnumsListBox.Items.Add(valueEnums);
@@ -78,6 +83,40 @@ namespace Programming
         {
             var item = ValuesListBox.SelectedItem;           
             IntTextBox.Text = ((int) item).ToString();
+        }
+
+        private void ParseButton_Click(object sender, EventArgs e)
+        {
+            Weekday day;
+            if (Enum.TryParse(BoxWeekday.Text, out day))
+            {
+                OutputLabel.Text = $"Это день недели ({day.ToString()} = {(int)day}).";
+            }
+            else
+            {
+                OutputLabel.Text = "Нет такого дня недели";
+            }
+        }
+
+        private void SeasonGoButton_Click(object sender, EventArgs e)
+        {
+            
+            var target = (Seasons)SeasonComboBox.SelectedItem;
+            switch (target)
+            {
+                case Seasons.Winter:
+                    BackColor = ColorTranslator.FromHtml("#e29c45");
+                    break;
+                case Seasons.Spring:
+                    BackColor = ColorTranslator.FromHtml("#559c45");
+                    break;
+                case Seasons.Summer:
+                    MessageBox.Show("Ура! Солнце!", "AlErT", MessageBoxButtons.OKCancel);
+                    break;
+                case Seasons.Autumn:
+                    MessageBox.Show("«Бррр! Холодно!", "AlErT", MessageBoxButtons.OKCancel);
+                    break;
+            }
         }
 
         //private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)

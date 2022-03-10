@@ -2,7 +2,7 @@
 {
     public enum Manufacturers
     {
-        Microsoft,
+        Microsoft = 1,
         BlackBerry,
         Huawei,
         Google, 

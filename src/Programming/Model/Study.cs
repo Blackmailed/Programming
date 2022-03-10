@@ -2,7 +2,7 @@
 {
     public enum Study
     {
-        FullTime,
+        FullTime = 1,
         Extramural,
         Evening,
         Distance

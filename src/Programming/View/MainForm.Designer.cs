@@ -33,7 +33,14 @@ namespace Programming
             this.ProgrammingTabControl = new System.Windows.Forms.TabControl();
             this.Enums = new System.Windows.Forms.TabPage();
             this.SeasonBox = new System.Windows.Forms.GroupBox();
+            this.SeasonComboBox = new System.Windows.Forms.ComboBox();
+            this.SeasonGoButton = new System.Windows.Forms.Button();
+            this.SeasonLabel = new System.Windows.Forms.Label();
             this.WeekdayBox = new System.Windows.Forms.GroupBox();
+            this.OutputLabel = new System.Windows.Forms.Label();
+            this.ParseButton = new System.Windows.Forms.Button();
+            this.BoxWeekday = new System.Windows.Forms.TextBox();
+            this.ParsingLabel = new System.Windows.Forms.Label();
             this.EnumerationsBox = new System.Windows.Forms.GroupBox();
             this.ValueLable = new System.Windows.Forms.Label();
             this.ValueLabel = new System.Windows.Forms.Label();
@@ -41,13 +48,6 @@ namespace Programming
             this.IntTextBox = new System.Windows.Forms.TextBox();
             this.ValuesListBox = new System.Windows.Forms.ListBox();
             this.EnumsListBox = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.ProgrammingTabControl.SuspendLayout();
             this.Enums.SuspendLayout();
             this.SeasonBox.SuspendLayout();
@@ -80,9 +80,9 @@ namespace Programming
             // 
             // SeasonBox
             // 
-            this.SeasonBox.Controls.Add(this.button2);
-            this.SeasonBox.Controls.Add(this.label2);
-            this.SeasonBox.Controls.Add(this.textBox2);
+            this.SeasonBox.Controls.Add(this.SeasonComboBox);
+            this.SeasonBox.Controls.Add(this.SeasonGoButton);
+            this.SeasonBox.Controls.Add(this.SeasonLabel);
             this.SeasonBox.Location = new System.Drawing.Point(406, 274);
             this.SeasonBox.Name = "SeasonBox";
             this.SeasonBox.Size = new System.Drawing.Size(380, 140);
@@ -90,18 +90,80 @@ namespace Programming
             this.SeasonBox.TabStop = false;
             this.SeasonBox.Text = "Season Handle";
             // 
+            // SeasonComboBox
+            // 
+            this.SeasonComboBox.FormattingEnabled = true;
+            this.SeasonComboBox.Location = new System.Drawing.Point(10, 48);
+            this.SeasonComboBox.Name = "SeasonComboBox";
+            this.SeasonComboBox.Size = new System.Drawing.Size(167, 23);
+            this.SeasonComboBox.TabIndex = 4;
+            // 
+            // SeasonGoButton
+            // 
+            this.SeasonGoButton.Location = new System.Drawing.Point(183, 48);
+            this.SeasonGoButton.Name = "SeasonGoButton";
+            this.SeasonGoButton.Size = new System.Drawing.Size(75, 23);
+            this.SeasonGoButton.TabIndex = 3;
+            this.SeasonGoButton.Text = "GO!";
+            this.SeasonGoButton.UseVisualStyleBackColor = true;
+            this.SeasonGoButton.Click += new System.EventHandler(this.SeasonGoButton_Click);
+            // 
+            // SeasonLabel
+            // 
+            this.SeasonLabel.AutoSize = true;
+            this.SeasonLabel.Location = new System.Drawing.Point(10, 31);
+            this.SeasonLabel.Name = "SeasonLabel";
+            this.SeasonLabel.Size = new System.Drawing.Size(89, 15);
+            this.SeasonLabel.TabIndex = 2;
+            this.SeasonLabel.Text = "Choose season:";
+            // 
             // WeekdayBox
             // 
-            this.WeekdayBox.Controls.Add(this.label3);
-            this.WeekdayBox.Controls.Add(this.button1);
-            this.WeekdayBox.Controls.Add(this.textBox1);
-            this.WeekdayBox.Controls.Add(this.label1);
+            this.WeekdayBox.Controls.Add(this.OutputLabel);
+            this.WeekdayBox.Controls.Add(this.ParseButton);
+            this.WeekdayBox.Controls.Add(this.BoxWeekday);
+            this.WeekdayBox.Controls.Add(this.ParsingLabel);
             this.WeekdayBox.Location = new System.Drawing.Point(6, 274);
             this.WeekdayBox.Name = "WeekdayBox";
             this.WeekdayBox.Size = new System.Drawing.Size(380, 140);
             this.WeekdayBox.TabIndex = 0;
             this.WeekdayBox.TabStop = false;
             this.WeekdayBox.Text = "Weekday Parsing";
+            // 
+            // OutputLabel
+            // 
+            this.OutputLabel.AutoSize = true;
+            this.OutputLabel.Location = new System.Drawing.Point(15, 87);
+            this.OutputLabel.Name = "OutputLabel";
+            this.OutputLabel.Size = new System.Drawing.Size(34, 15);
+            this.OutputLabel.TabIndex = 3;
+            this.OutputLabel.Text = "         ";
+            // 
+            // ParseButton
+            // 
+            this.ParseButton.Location = new System.Drawing.Point(188, 49);
+            this.ParseButton.Name = "ParseButton";
+            this.ParseButton.Size = new System.Drawing.Size(75, 23);
+            this.ParseButton.TabIndex = 2;
+            this.ParseButton.Text = "Parse";
+            this.ParseButton.UseVisualStyleBackColor = true;
+            this.ParseButton.Click += new System.EventHandler(this.ParseButton_Click);
+            // 
+            // BoxWeekday
+            // 
+            this.BoxWeekday.Location = new System.Drawing.Point(15, 49);
+            this.BoxWeekday.Name = "BoxWeekday";
+            this.BoxWeekday.Size = new System.Drawing.Size(167, 23);
+            this.BoxWeekday.TabIndex = 0;
+            // 
+            // ParsingLabel
+            // 
+            this.ParsingLabel.AutoSize = true;
+            this.ParsingLabel.Location = new System.Drawing.Point(15, 31);
+            this.ParsingLabel.Name = "ParsingLabel";
+            this.ParsingLabel.Size = new System.Drawing.Size(125, 15);
+            this.ParsingLabel.TabIndex = 1;
+            this.ParsingLabel.Text = "Type value for parsing:";
             // 
             // EnumerationsBox
             // 
@@ -172,65 +234,6 @@ namespace Programming
             this.EnumsListBox.TabIndex = 0;
             this.EnumsListBox.SelectedIndexChanged += new System.EventHandler(this.EnumsListBox_SelectedIndexChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(10, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 23);
-            this.textBox2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(188, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(183, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -265,13 +268,13 @@ namespace Programming
         private System.Windows.Forms.Label ValueLable;
         private System.Windows.Forms.Label ValueLabel;
         private System.Windows.Forms.Label EnumerationLabel;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SeasonGoButton;
+        private System.Windows.Forms.Label SeasonLabel;
+        private System.Windows.Forms.Label OutputLabel;
+        private System.Windows.Forms.Button ParseButton;
+        private System.Windows.Forms.TextBox BoxWeekday;
+        private System.Windows.Forms.Label ParsingLabel;
+        private System.Windows.Forms.ComboBox SeasonComboBox;
     }
 }
 
