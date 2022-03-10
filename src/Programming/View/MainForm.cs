@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using Programming.View;
-
 namespace Programming
 {
     public partial class MainForm : Form
@@ -21,12 +20,10 @@ namespace Programming
             }
             EnumsListBox.SelectedIndex = 0;
         }
-
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Array enumValue;
-            ValuesListBox.Items.Clear();
-            
+            ValuesListBox.Items.Clear();            
             switch (EnumsListBox.SelectedItem.ToString())
             {
                 case "Colors":
@@ -36,7 +33,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
                 case "Study":
                     enumValue = Enum.GetValues(typeof(Study));
                     foreach (Study valve in enumValue)
@@ -44,7 +40,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
                 case "Genre":
                     enumValue = Enum.GetValues(typeof(Genre));
                     foreach (Genre valve in enumValue)
@@ -52,7 +47,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
                 case "Seasons":
                     enumValue = Enum.GetValues(typeof(Seasons));
                     foreach (Seasons valve in enumValue)
@@ -60,7 +54,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
                 case "Manufacturers":
                     enumValue = Enum.GetValues(typeof(Manufacturers));
                     foreach (Manufacturers valve in enumValue)
@@ -68,7 +61,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
                 case "Weekday":
                     enumValue = Enum.GetValues(typeof(Weekday));
                     foreach (Weekday valve in enumValue)
@@ -76,7 +68,6 @@ namespace Programming
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
-
             }
         }
         private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -84,7 +75,6 @@ namespace Programming
             var item = ValuesListBox.SelectedItem;
             IntTextBox.Text = ((int) item).ToString();
         }
-
         private void ParseButton_Click(object sender, EventArgs e)
         {
             Weekday day;
@@ -97,10 +87,8 @@ namespace Programming
                 OutputLabel.Text = "Нет такого дня недели";
             }
         }
-
         private void SeasonGoButton_Click(object sender, EventArgs e)
-        {
-            
+        {            
             var target = (Seasons)SeasonComboBox.SelectedItem;
             switch (target)
             {
@@ -120,6 +108,10 @@ namespace Programming
                     break;
             }
         }
+
+
+
+
 
         //private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         //{
