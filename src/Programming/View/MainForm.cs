@@ -24,54 +24,54 @@ namespace Programming
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Array EnunValue;
+            Array enumValue;
             ValuesListBox.Items.Clear();
             
             switch (EnumsListBox.SelectedItem.ToString())
             {
                 case "Colors":
-                    EnunValue = Enum.GetValues(typeof(Colors));
-                    foreach (Colors valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Colors));
+                    foreach (Colors valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
 
                 case "Study":
-                    EnunValue = Enum.GetValues(typeof(Study));
-                    foreach (Study valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Study));
+                    foreach (Study valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
 
                 case "Genre":
-                    EnunValue = Enum.GetValues(typeof(Genre));
-                    foreach (Genre valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Genre));
+                    foreach (Genre valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
 
                 case "Seasons":
-                    EnunValue = Enum.GetValues(typeof(Seasons));
-                    foreach (Seasons valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Seasons));
+                    foreach (Seasons valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
 
                 case "Manufacturers":
-                    EnunValue = Enum.GetValues(typeof(Manufacturers));
-                    foreach (Manufacturers valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Manufacturers));
+                    foreach (Manufacturers valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
 
                 case "Weekday":
-                    EnunValue = Enum.GetValues(typeof(Weekday));
-                    foreach (Weekday valve in EnunValue)
+                    enumValue = Enum.GetValues(typeof(Weekday));
+                    foreach (Weekday valve in enumValue)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
