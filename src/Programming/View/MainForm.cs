@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using Programming.View;
-namespace Programming
+namespace Programming.View
 {
     public partial class MainForm : Form
     {
@@ -24,7 +24,7 @@ namespace Programming
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Array valueEnums;
-            ValuesListBox.Items.Clear();            
+            ValuesListBox.Items.Clear();
             switch (EnumsListBox.SelectedItem.ToString())
             {
                 case "Colors":
