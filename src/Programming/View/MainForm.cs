@@ -10,9 +10,9 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
-            foreach (var target in Enum.GetValues(typeof(Seasons)))
+            foreach (var Season in Enum.GetValues(typeof(Seasons)))
             {
-                SeasonComboBox.Items.Add(target);
+                SeasonComboBox.Items.Add(Season);
             }
             foreach (Enum valueEnums in Enum.GetValues(typeof(Enums)))
             {
@@ -20,6 +20,7 @@ namespace Programming
             }
             EnumsListBox.SelectedIndex = 0;
         }
+
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Array valueEnums;
@@ -70,15 +71,17 @@ namespace Programming
                     break;
             }
         }
+
         private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             var item = ValuesListBox.SelectedItem;
             IntTextBox.Text = ((int) item).ToString();
         }
+
         private void ParseButton_Click(object sender, EventArgs e)
         {
             Weekday day;
-            if (Enum.TryParse(BoxWeekday.Text, out day))
+            if (Enum.TryParse(WeekdayBox.Text, out day))
             {
                 OutputLabel.Text = $"Это день недели ({day.ToString()} = {(int)day}).";
             }
@@ -87,10 +90,11 @@ namespace Programming
                 OutputLabel.Text = "Нет такого дня недели";
             }
         }
+
         private void SeasonGoButton_Click(object sender, EventArgs e)
         {            
-            var target = (Seasons)SeasonComboBox.SelectedItem;
-            switch (target)
+            var season = (Seasons)SeasonComboBox.SelectedItem;
+            switch (season)
             {
                 case Seasons.Winter:
                     BackColor = ColorTranslator.FromHtml("#4169E1");
