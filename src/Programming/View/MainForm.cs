@@ -22,48 +22,48 @@ namespace Programming
         }
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Array enumValue;
+            Array valueEnums;
             ValuesListBox.Items.Clear();            
             switch (EnumsListBox.SelectedItem.ToString())
             {
                 case "Colors":
-                    enumValue = Enum.GetValues(typeof(Colors));
-                    foreach (Colors valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Colors));
+                    foreach (Colors valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
                 case "Study":
-                    enumValue = Enum.GetValues(typeof(Study));
-                    foreach (Study valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Study));
+                    foreach (Study valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
                 case "Genre":
-                    enumValue = Enum.GetValues(typeof(Genre));
-                    foreach (Genre valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Genre));
+                    foreach (Genre valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
                 case "Seasons":
-                    enumValue = Enum.GetValues(typeof(Seasons));
-                    foreach (Seasons valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Seasons));
+                    foreach (Seasons valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
                 case "Manufacturers":
-                    enumValue = Enum.GetValues(typeof(Manufacturers));
-                    foreach (Manufacturers valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Manufacturers));
+                    foreach (Manufacturers valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
                     break;
                 case "Weekday":
-                    enumValue = Enum.GetValues(typeof(Weekday));
-                    foreach (Weekday valve in enumValue)
+                    valueEnums = Enum.GetValues(typeof(Weekday));
+                    foreach (Weekday valve in valueEnums)
                     {
                         ValuesListBox.Items.Add(valve);
                     }
@@ -108,55 +108,5 @@ namespace Programming
                     break;
             }
         }
-
-
-
-
-
-        //private void ValuesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        //{
-
-        //    var item = ValuesListBox.SelectedItem;
-        //    var temp = (int)item;
-        //    IntTextBox.Text = Convert.ToString(temp);
-        //}
     }
 }
-
-
-
-
-
-
-
-
-//switch (EnumsListBox.SelectedItem)
-//{
-//    case View.Enums.Colors:
-//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Colors)));
-
-//        break;
-//    case View.Enums.Study:
-//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Study)));
-
-//        break;
-//    case View.Enums.Genre:
-//        foreach (var Values in )
-//            ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Genre)));
-
-//        break;
-//    case View.Enums.Seasons:
-//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Seasons)));
-
-//        break;
-//    case View.Enums.Manufacturers:
-//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Manufacturers)));
-
-
-//        break;
-//    case View.Enums.Weekday:
-//        ValuesListBox.Items.AddRange(items: Enum.GetNames(typeof(Weekday)));
-
-//        break;
-
-//}

@@ -1,6 +1,4 @@
-﻿
-
-namespace Programming
+﻿namespace Programming
 {
     partial class MainForm
     {
