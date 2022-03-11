@@ -23,52 +23,27 @@ namespace Programming.View
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Array valueEnums;
-            ValuesListBox.Items.Clear();
-            switch (EnumsListBox.SelectedItem.ToString())
+            switch ((Enums)EnumsListBox.SelectedItem)
             {
-                case "Colors":
-                    valueEnums = Enum.GetValues(typeof(Colors));
-                    foreach (Colors valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Colors:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Colors));
                     break;
-                case "Study":
-                    valueEnums = Enum.GetValues(typeof(Study));
-                    foreach (Study valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Genre:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Genre));
                     break;
-                case "Genre":
-                    valueEnums = Enum.GetValues(typeof(Genre));
-                    foreach (Genre valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Manufacturers:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Manufacturers));
                     break;
-                case "Seasons":
-                    valueEnums = Enum.GetValues(typeof(Seasons));
-                    foreach (Seasons valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Seasons:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Seasons));
                     break;
-                case "Manufacturers":
-                    valueEnums = Enum.GetValues(typeof(Manufacturers));
-                    foreach (Manufacturers valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Study:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Study));
                     break;
-                case "Weekday":
-                    valueEnums = Enum.GetValues(typeof(Weekday));
-                    foreach (Weekday valve in valueEnums)
-                    {
-                        ValuesListBox.Items.Add(valve);
-                    }
+                case Enums.Weekday:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
                     break;
+
             }
         }
 
