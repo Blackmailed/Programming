@@ -43,7 +43,6 @@ namespace Programming.View
                 case Enums.Weekday:
                     ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
                     break;
-
             }
         }
 
