@@ -10,9 +10,9 @@ namespace Programming.View
         public MainForm()
         {
             InitializeComponent();
-            foreach (var Season in Enum.GetValues(typeof(Seasons)))
+            foreach (var season in Enum.GetValues(typeof(Seasons)))
             {
-                SeasonComboBox.Items.Add(Season);
+                SeasonComboBox.Items.Add(season);
             }
             foreach (Enum valueEnums in Enum.GetValues(typeof(Enums)))
             {
@@ -55,7 +55,7 @@ namespace Programming.View
         private void ParseButton_Click(object sender, EventArgs e)
         {
             Weekday weekday;
-            if (Enum.TryParse(WeekdayBox.Text, out weekday))
+            if (Enum.TryParse(WeekdayTextBox.Text, out weekday))
             {
                 OutputLabel.Text = $"Это день недели ({weekday.ToString()} = {(int)weekday}).";
             }

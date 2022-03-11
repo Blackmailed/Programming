@@ -37,7 +37,7 @@
             this.WeekdayGroupBox = new System.Windows.Forms.GroupBox();
             this.OutputLabel = new System.Windows.Forms.Label();
             this.ParseButton = new System.Windows.Forms.Button();
-            this.WeekdayBox = new System.Windows.Forms.TextBox();
+            this.WeekdayTextBox = new System.Windows.Forms.TextBox();
             this.ParsingLabel = new System.Windows.Forms.Label();
             this.EnumerationsGroupBox = new System.Windows.Forms.GroupBox();
             this.IntValueLabel = new System.Windows.Forms.Label();
@@ -91,14 +91,14 @@
             // SeasonComboBox
             // 
             this.SeasonComboBox.FormattingEnabled = true;
-            this.SeasonComboBox.Location = new System.Drawing.Point(10, 48);
+            this.SeasonComboBox.Location = new System.Drawing.Point(18, 49);
             this.SeasonComboBox.Name = "SeasonComboBox";
             this.SeasonComboBox.Size = new System.Drawing.Size(167, 23);
             this.SeasonComboBox.TabIndex = 4;
             // 
             // SeasonGoButton
             // 
-            this.SeasonGoButton.Location = new System.Drawing.Point(183, 48);
+            this.SeasonGoButton.Location = new System.Drawing.Point(191, 49);
             this.SeasonGoButton.Name = "SeasonGoButton";
             this.SeasonGoButton.Size = new System.Drawing.Size(75, 23);
             this.SeasonGoButton.TabIndex = 3;
@@ -109,7 +109,7 @@
             // SeasonLabel
             // 
             this.SeasonLabel.AutoSize = true;
-            this.SeasonLabel.Location = new System.Drawing.Point(10, 31);
+            this.SeasonLabel.Location = new System.Drawing.Point(18, 32);
             this.SeasonLabel.Name = "SeasonLabel";
             this.SeasonLabel.Size = new System.Drawing.Size(89, 15);
             this.SeasonLabel.TabIndex = 2;
@@ -119,7 +119,7 @@
             // 
             this.WeekdayGroupBox.Controls.Add(this.OutputLabel);
             this.WeekdayGroupBox.Controls.Add(this.ParseButton);
-            this.WeekdayGroupBox.Controls.Add(this.WeekdayBox);
+            this.WeekdayGroupBox.Controls.Add(this.WeekdayTextBox);
             this.WeekdayGroupBox.Controls.Add(this.ParsingLabel);
             this.WeekdayGroupBox.Location = new System.Drawing.Point(6, 274);
             this.WeekdayGroupBox.Name = "WeekdayGroupBox";
@@ -147,12 +147,12 @@
             this.ParseButton.UseVisualStyleBackColor = true;
             this.ParseButton.Click += new System.EventHandler(this.ParseButton_Click);
             // 
-            // WeekdayBox
+            // WeekdayTextBox
             // 
-            this.WeekdayBox.Location = new System.Drawing.Point(15, 49);
-            this.WeekdayBox.Name = "WeekdayBox";
-            this.WeekdayBox.Size = new System.Drawing.Size(167, 23);
-            this.WeekdayBox.TabIndex = 0;
+            this.WeekdayTextBox.Location = new System.Drawing.Point(15, 49);
+            this.WeekdayTextBox.Name = "WeekdayTextBox";
+            this.WeekdayTextBox.Size = new System.Drawing.Size(167, 23);
+            this.WeekdayTextBox.TabIndex = 0;
             // 
             // ParsingLabel
             // 
@@ -181,7 +181,7 @@
             // IntValueLabel
             // 
             this.IntValueLabel.AutoSize = true;
-            this.IntValueLabel.Location = new System.Drawing.Point(410, 26);
+            this.IntValueLabel.Location = new System.Drawing.Point(409, 26);
             this.IntValueLabel.Name = "IntValueLabel";
             this.IntValueLabel.Size = new System.Drawing.Size(55, 15);
             this.IntValueLabel.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             // IntTextBox
             // 
-            this.IntTextBox.Location = new System.Drawing.Point(410, 44);
+            this.IntTextBox.Location = new System.Drawing.Point(409, 44);
             this.IntTextBox.Name = "IntTextBox";
             this.IntTextBox.Size = new System.Drawing.Size(167, 23);
             this.IntTextBox.TabIndex = 2;
@@ -270,7 +270,7 @@
         private System.Windows.Forms.Label SeasonLabel;
         private System.Windows.Forms.Label OutputLabel;
         private System.Windows.Forms.Button ParseButton;
-        private System.Windows.Forms.TextBox WeekdayBox;
+        private System.Windows.Forms.TextBox WeekdayTextBox;
         private System.Windows.Forms.Label ParsingLabel;
         private System.Windows.Forms.ComboBox SeasonComboBox;
     }
