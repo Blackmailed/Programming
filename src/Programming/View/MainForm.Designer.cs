@@ -220,7 +220,7 @@
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.Size = new System.Drawing.Size(167, 199);
             this.ValuesListBox.TabIndex = 1;
-            this.ValuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged_1);
+            this.ValuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged);
             // 
             // EnumsListBox
             // 
