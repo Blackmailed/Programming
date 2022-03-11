@@ -250,7 +250,6 @@
             this.EnumerationsBox.ResumeLayout(false);
             this.EnumerationsBox.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
