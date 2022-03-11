@@ -54,10 +54,10 @@ namespace Programming.View
 
         private void ParseButton_Click(object sender, EventArgs e)
         {
-            Weekday day;
-            if (Enum.TryParse(WeekdayBox.Text, out day))
+            Weekday weekday;
+            if (Enum.TryParse(WeekdayBox.Text, out weekday))
             {
-                OutputLabel.Text = $"Это день недели ({day.ToString()} = {(int)day}).";
+                OutputLabel.Text = $"Это день недели ({weekday.ToString()} = {(int)weekday}).";
             }
             else
             {
