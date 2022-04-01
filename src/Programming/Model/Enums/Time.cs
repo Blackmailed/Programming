@@ -45,7 +45,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value < 0 || value > 60)
+                if (value < 0 || value > 59)
                 {
                     throw new System.ArgumentException("the value of the hours field must be in the range from 0 to 23");
                 }
@@ -60,7 +60,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value < 0 || value > 60)
+                if (value < 0 || value > 59)
                 {
                     throw new System.ArgumentException("the value of the hours field must be in the range from 0 to 23");
                 }

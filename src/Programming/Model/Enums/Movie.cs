@@ -1,18 +1,18 @@
 ﻿using System;
 namespace Programming.Model.Enums
 {
-    class Film
+    class Movie
     {
         private int _yearRelease;
         private double _rating;
         private int _durationMinutes;
 
-        public Film()
+        public Movie()
         {
                 
         }
 
-        public Film(int yearRelease,int durationMinutes,int rating,string name,string genre)
+        public Movie(int yearRelease,int durationMinutes,int rating,string name,string genre)
         {
             YearRelease = yearRelease;
             DurationMinutes = durationMinutes;
