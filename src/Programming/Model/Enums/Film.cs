@@ -35,8 +35,7 @@ namespace Programming.Model.Enums
             {
                 if (value <= 0)
                 {
-                    throw new System.ArgumentException(
-                        "duration field must be highest than 0");
+                    throw new System.ArgumentException("duration field must be highest than 0");
                 }
                 _durationMinutes = value;
             }
@@ -68,8 +67,7 @@ namespace Programming.Model.Enums
             {
                 if (0 > value || value > 10)
                 {
-                    throw new System.ArgumentException(
-                        "rating must be in range from 0 to 10");
+                    throw new System.ArgumentException("rating must be in range from 0 to 10");
                 }
                 _rating = value;
             }

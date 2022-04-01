@@ -2,11 +2,15 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
-using Programming.View;
+using Rectangle = Programming.Model.Enums.Rectangle;
 namespace Programming.View
+
 {
     public partial class MainForm : Form
     {
+        private Rectangle[] _rectangles;
+        private Rectangle _currentRectangle;
+        private Random _rand;
         public MainForm()
         {
             InitializeComponent();
@@ -19,6 +23,19 @@ namespace Programming.View
                 EnumsListBox.Items.Add(valueEnums);
             }
             EnumsListBox.SelectedIndex = 0;
+            _rand = new Random();
+            _rectangles = new Rectangle[5];
+            var colors = Enum.GetValues(typeof(Colors));
+            for (int i = 0; i < 5; i++)
+            {
+                _currentRectangle = new Rectangle();
+                _currentRectangle.Width = _rand.Next(50);
+                _currentRectangle.Length = _rand.Next(50);
+                _currentRectangle.Color = colors.GetValue(_rand.Next(0, colors.Length)).ToString();
+                _rectangles[i] = _currentRectangle;
+                RectanglesListBox.Items.Add($"Rectangle {i + 1}");
+            }
+            RectanglesListBox.SelectedIndex = 0;
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +102,11 @@ namespace Programming.View
                     BackColor = ColorTranslator.FromHtml("#e29c45");
                     break;
             }
+        }
+
+        private void LengthTextBox_TextChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }
