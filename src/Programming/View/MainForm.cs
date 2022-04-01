@@ -10,7 +10,7 @@ namespace Programming.View
     {
         private Rectangle[] _rectangles;
         private Rectangle _currentRectangle;
-        private Random _rand;
+        private Random _rand = new Random();
         public MainForm()
         {
             InitializeComponent();
@@ -23,7 +23,6 @@ namespace Programming.View
                 EnumsListBox.Items.Add(valueEnums);
             }
             EnumsListBox.SelectedIndex = 0;
-            _rand = new Random();
             _rectangles = new Rectangle[5];
             var colors = Enum.GetValues(typeof(Colors));
             for (int i = 0; i < 5; i++)
@@ -106,7 +105,8 @@ namespace Programming.View
 
         private void LengthTextBox_TextChanged(object sender, EventArgs e)
         {
-        
+            
+
         }
     }
 }
