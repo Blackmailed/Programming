@@ -301,6 +301,7 @@
             this.FindRatingButton.TabIndex = 11;
             this.FindRatingButton.Text = "Find";
             this.FindRatingButton.UseVisualStyleBackColor = true;
+            this.FindRatingButton.Click += new System.EventHandler(this.FindRatingButton_Click);
             // 
             // DurationTextBox
             // 
@@ -308,6 +309,7 @@
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(100, 23);
             this.DurationTextBox.TabIndex = 10;
+            this.DurationTextBox.TextChanged += new System.EventHandler(this.DurationTextBox_TextChanged);
             // 
             // DurationLable
             // 

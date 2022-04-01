@@ -34,6 +34,21 @@ namespace Programming.View
             return maxWidthIndex;
         }
 
+        private int FindMaxRating(Movie[] movie)
+        {
+            int maxRatingIndex = 0;
+            double maxValue = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                if (movie[i].Rating > maxValue)
+                {
+                    maxValue = movie[i].Rating;
+                    maxRatingIndex = i;
+                }
+            }
+            return maxRatingIndex;
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -241,6 +256,26 @@ namespace Programming.View
                 return;
             }
             RatingTextBox.BackColor = _correctColor;
+        }
+
+        private void DurationTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int durationMovie = int.Parse(DurationTextBox.Text);
+                _currentMovie.DurationMinutes = durationMovie;
+            }
+            catch
+            {
+                DurationTextBox.BackColor = _errorColor;
+                return;
+            }
+            DurationTextBox.BackColor = _correctColor;
+        }
+
+        private void FindRatingButton_Click(object sender, EventArgs e)
+        {
+            MovieListBox.SelectedIndex = FindMaxRating(_movie);
         }
     }
 }
