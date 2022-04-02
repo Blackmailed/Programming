@@ -8,25 +8,27 @@ namespace Programming.Model.Enums
 {
     class Song
     {
-        private int _durationSong;
+        private int _duration;
 
         public Song()
         {
         }
 
-        public Song(string author, string name, int durationSong)
+        public Song(string author, string name, int duration)
         {
             Author = author;
             Name = name;
-            DurationSong = durationSong;
+            Duration = duration;
         }
         public string Author { get; set; }
+        
         public string Name { get; set; }
-        public int DurationSong 
+
+        public int Duration
         {
             get
             {
-                return _durationSong;
+                return _duration;
             }
             set
             {
@@ -34,7 +36,7 @@ namespace Programming.Model.Enums
                 {
                     throw new System.ArgumentException("the value of the Duration Seconds field must be greater than zero");
                 }
-                _durationSong = value;
+                _duration = value;
             }
         }
 

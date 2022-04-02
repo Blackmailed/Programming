@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
-using Color = Programming.Model.Enums.Colors;
 using Rectangle = Programming.Model.Enums.Rectangle;
 using Movie = Programming.Model.Enums.Movie;
 namespace Programming.View
@@ -61,7 +60,11 @@ namespace Programming.View
                 EnumsListBox.Items.Add(valueEnums);
             }
             EnumsListBox.SelectedIndex = 0;
-
+            InitRectangles();
+            InitMovie();
+        }
+        private void InitRectangles()
+        {
             _rectangles = new Rectangle[5];
             var colors = Enum.GetValues(typeof(Colors));
             for (int i = 0; i < 5; i++)
@@ -74,16 +77,20 @@ namespace Programming.View
                 RectanglesListBox.Items.Add($"Rectangle {i + 1}");
             }
             RectanglesListBox.SelectedIndex = 0;
+        }
 
+        private void InitMovie()
+        {
             _movie = new Movie[5];
-            string[] films = new string[5] { "The Boondock Saints", "Snatch", "Zodiac", "Catch Me If You Can", "Legend" };
+            string[] films = new string[5] {
+                "The Boondock Saints", "Snatch", "Zodiac", "Catch Me If You Can", "Legend" };
             var genre = Enum.GetValues(typeof(Genre));
             for (int i = 0; i < 5; i++)
             {
                 _currentMovie = new Movie();
-                _currentMovie.YearRelease = _rand.Next(1950, DateTime.Now.Year);
+                _currentMovie.ReleaseYear = _rand.Next(1950, DateTime.Now.Year);
                 _currentMovie.Genre = genre.GetValue(_rand.Next(0, genre.Length)).ToString();
-                _currentMovie.Rating = _rand.Next(1,11);
+                _currentMovie.Rating = _rand.Next(1, 11);
                 _currentMovie.DurationMinutes = _rand.Next(1, 180);
                 _currentMovie.Name = films[i];
                 _movie[i] = _currentMovie;
@@ -91,6 +98,7 @@ namespace Programming.View
             }
             MovieListBox.SelectedIndex = 0;
         }
+
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -212,7 +220,7 @@ namespace Programming.View
         {
             _currentMovie = _movie[MovieListBox.SelectedIndex];
             GenreTextBox.Text = _currentMovie.Genre.ToString();
-            YearTextBox.Text = _currentMovie.YearRelease.ToString();
+            YearTextBox.Text = _currentMovie.ReleaseYear.ToString();
             RatingTextBox.Text = _currentMovie.Rating.ToString();
             DurationTextBox.Text = _currentMovie.DurationMinutes.ToString();
             NameTextBox.Text = _currentMovie.Name.ToString();
@@ -228,7 +236,7 @@ namespace Programming.View
             try
             {
                 int yearMovie = int.Parse(YearTextBox.Text);
-                _currentMovie.YearRelease = yearMovie;
+                _currentMovie.ReleaseYear = yearMovie;
             }
             catch
             {

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model.Enums
 {
     class Time
     {
         private int _hours;
+
         private int _minutes;
+
         private int _seconds;
 
         public Time()
@@ -47,7 +43,7 @@ namespace Programming.Model.Enums
             {
                 if (value < 0 || value > 59)
                 {
-                    throw new System.ArgumentException("the value of the hours field must be in the range from 0 to 23");
+                    throw new System.ArgumentException("the value of the minutes field must be in the range from 0 to 59");
                 }
                 _minutes = value;
             }
@@ -62,7 +58,7 @@ namespace Programming.Model.Enums
             {
                 if (value < 0 || value > 59)
                 {
-                    throw new System.ArgumentException("the value of the hours field must be in the range from 0 to 23");
+                    throw new System.ArgumentException("the value of the seconds field must be in the range from 0 to 59");
                 }
                 _seconds = value;
             }

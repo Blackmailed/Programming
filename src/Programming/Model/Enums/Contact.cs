@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model.Enums
 {
     class Contact
     {
@@ -36,7 +30,7 @@ namespace Programming.Model.Enums
                 }
                 if (value.Length != 11)
                 {
-                    throw new System.ArgumentException("the value of the number field must consist of 11 digits");
+                    throw new System.ArgumentException("value of the number field must consist of 11 digits");
                 }
                 _number = value;
             }

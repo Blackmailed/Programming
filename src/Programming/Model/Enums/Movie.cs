@@ -1,20 +1,21 @@
 ﻿using System;
 namespace Programming.Model.Enums
 {
-    class Movie
+    public class Movie
     {
-        private int _yearRelease;
+        private int _releaseYear;
+
         private double _rating;
+
         private int _durationMinutes;
 
         public Movie()
-        {
-                
+        {        
         }
 
-        public Movie(int yearRelease,int durationMinutes,int rating,string name,string genre)
+        public Movie(int releaseYear, int durationMinutes, int rating,string name,string genre)
         {
-            YearRelease = yearRelease;
+            ReleaseYear = releaseYear;
             DurationMinutes = durationMinutes;
             Rating = rating;
             Name = name;
@@ -41,11 +42,11 @@ namespace Programming.Model.Enums
             }
         }
 
-        public int YearRelease
+        public int ReleaseYear
         {
             get
             {
-                return _yearRelease;
+                return _releaseYear;
             }
             set
             {
@@ -53,7 +54,7 @@ namespace Programming.Model.Enums
                 {
                     throw new System.ArgumentException($"release year must be in range from 1900 to {DateTime.Now.Year}");
                 }
-                _yearRelease = value;
+                _releaseYear = value;
             }
         }
 

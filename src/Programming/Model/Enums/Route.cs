@@ -10,7 +10,6 @@ namespace Programming.Model.Enums
     {
         private int _flightTimeOfMinutes;
 
-
         public Route()
         {
         }
@@ -41,6 +40,5 @@ namespace Programming.Model.Enums
                 _flightTimeOfMinutes = value;
             }
         }
-
     }
 }
