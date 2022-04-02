@@ -5,7 +5,6 @@ using Programming.Model.Enums;
 using Rectangle = Programming.Model.Enums.Rectangle;
 using Movie = Programming.Model.Enums.Movie;
 namespace Programming.View
-
 {
     public partial class MainForm : Form
     {
@@ -15,8 +14,59 @@ namespace Programming.View
         private Rectangle _currentRectangle;
         private Movie[] _movie;
         private Movie _currentMovie;
-        private Random _rand = new Random();
+        private Random _random = new Random();
 
+        public MainForm()
+        {
+            InitializeComponent();
+            foreach (var season in Enum.GetValues(typeof(Seasons)))
+            {
+                SeasonComboBox.Items.Add(season);
+            }
+            foreach (Enum valueEnums in Enum.GetValues(typeof(Enums)))
+            {
+                EnumsListBox.Items.Add(valueEnums);
+            }
+            EnumsListBox.SelectedIndex = 0;
+            InitRectangles();
+            InitMovie();
+        }
+
+        private void InitRectangles()
+        {
+            _rectangles = new Rectangle[5];
+            var colors = Enum.GetValues(typeof(Colors));
+            for (int i = 0; i < 5; i++)
+            {
+                _currentRectangle = new Rectangle();
+                _currentRectangle.Width = _random.Next(50);
+                _currentRectangle.Length = _random.Next(50);
+                _currentRectangle.Color = colors.GetValue(_random.Next(0, colors.Length)).ToString();
+                _rectangles[i] = _currentRectangle;
+                RectanglesListBox.Items.Add($"Rectangle {i + 1}");
+            }
+            RectanglesListBox.SelectedIndex = 0;
+        }
+
+        private void InitMovie()
+        {
+            _movie = new Movie[5];
+            string[] films = new string[5] {
+                "The Boondock Saints", "Snatch", "Zodiac", "Catch Me If You Can", "Legend" };
+            var genre = Enum.GetValues(typeof(Genre));
+            for (int i = 0; i < 5; i++)
+            {
+                _currentMovie = new Movie();
+                _currentMovie.ReleaseYear = _random.Next(1950, DateTime.Now.Year);
+                _currentMovie.Genre = genre.GetValue(_random.Next(0, genre.Length)).ToString();
+                _currentMovie.Rating = _random.Next(1, 11);
+                _currentMovie.DurationMinutes = _random.Next(1, 180);
+                _currentMovie.Name = films[i];
+                _movie[i] = _currentMovie;
+                MovieListBox.Items.Add($"Movie {i + 1}");
+            }
+            MovieListBox.SelectedIndex = 0;
+        }
 
         private int FindMaxWidth(Rectangle[] rectangles)
         {
@@ -47,58 +97,6 @@ namespace Programming.View
             }
             return maxRatingIndex;
         }
-
-        public MainForm()
-        {
-            InitializeComponent();
-            foreach (var season in Enum.GetValues(typeof(Seasons)))
-            {
-                SeasonComboBox.Items.Add(season);
-            }
-            foreach (Enum valueEnums in Enum.GetValues(typeof(Enums)))
-            {
-                EnumsListBox.Items.Add(valueEnums);
-            }
-            EnumsListBox.SelectedIndex = 0;
-            InitRectangles();
-            InitMovie();
-        }
-        private void InitRectangles()
-        {
-            _rectangles = new Rectangle[5];
-            var colors = Enum.GetValues(typeof(Colors));
-            for (int i = 0; i < 5; i++)
-            {
-                _currentRectangle = new Rectangle();
-                _currentRectangle.Width = _rand.Next(50);
-                _currentRectangle.Length = _rand.Next(50);
-                _currentRectangle.Color = colors.GetValue(_rand.Next(0, colors.Length)).ToString();
-                _rectangles[i] = _currentRectangle;
-                RectanglesListBox.Items.Add($"Rectangle {i + 1}");
-            }
-            RectanglesListBox.SelectedIndex = 0;
-        }
-
-        private void InitMovie()
-        {
-            _movie = new Movie[5];
-            string[] films = new string[5] {
-                "The Boondock Saints", "Snatch", "Zodiac", "Catch Me If You Can", "Legend" };
-            var genre = Enum.GetValues(typeof(Genre));
-            for (int i = 0; i < 5; i++)
-            {
-                _currentMovie = new Movie();
-                _currentMovie.ReleaseYear = _rand.Next(1950, DateTime.Now.Year);
-                _currentMovie.Genre = genre.GetValue(_rand.Next(0, genre.Length)).ToString();
-                _currentMovie.Rating = _rand.Next(1, 11);
-                _currentMovie.DurationMinutes = _rand.Next(1, 180);
-                _currentMovie.Name = films[i];
-                _movie[i] = _currentMovie;
-                MovieListBox.Items.Add($"Movie {i + 1}");
-            }
-            MovieListBox.SelectedIndex = 0;
-        }
-
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
