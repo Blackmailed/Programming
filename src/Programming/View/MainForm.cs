@@ -9,11 +9,17 @@ namespace Programming.View
     public partial class MainForm : Form
     {
         private readonly System.Drawing.Color _errorColor = System.Drawing.Color.LightPink;
+
         private readonly System.Drawing.Color _correctColor = System.Drawing.Color.White;
+
         private Rectangle[] _rectangles;
+
         private Rectangle _currentRectangle;
-        private Movie[] _movie;
+
+        private Movie[] _movies;
+
         private Movie _currentMovie;
+
         private Random _random = new Random();
 
         public MainForm()
@@ -50,7 +56,7 @@ namespace Programming.View
 
         private void InitMovie()
         {
-            _movie = new Movie[5];
+            _movies = new Movie[5];
             string[] films = new string[5] {
                 "The Boondock Saints", "Snatch", "Zodiac", "Catch Me If You Can", "Legend" };
             var genre = Enum.GetValues(typeof(Genre));
@@ -62,7 +68,7 @@ namespace Programming.View
                 _currentMovie.Rating = _random.Next(1, 11);
                 _currentMovie.DurationMinutes = _random.Next(1, 180);
                 _currentMovie.Name = films[i];
-                _movie[i] = _currentMovie;
+                _movies[i] = _currentMovie;
                 MovieListBox.Items.Add($"Movie {i + 1}");
             }
             MovieListBox.SelectedIndex = 0;
@@ -176,8 +182,8 @@ namespace Programming.View
         {
             try
             {
-                double lengthRectangle = double.Parse(LengthTextBox.Text);
-                _currentRectangle.Length = lengthRectangle;
+                double rectangleLength = double.Parse(LengthTextBox.Text);
+                _currentRectangle.Length = rectangleLength;
             }
             catch
             {
@@ -191,8 +197,8 @@ namespace Programming.View
         {
             try
             {
-                double widthRectangle = double.Parse(WidthTextBox.Text);
-                _currentRectangle.Width = widthRectangle;
+                double rectangleWidth = double.Parse(WidthTextBox.Text);
+                _currentRectangle.Width = rectangleWidth;
             }
             catch
             {
@@ -204,8 +210,8 @@ namespace Programming.View
 
         private void ColorTextBox_TextChanged(object sender, EventArgs e)
         {
-                string colorRectangleValue = ColorTextBox.Text;
-                _currentRectangle.Color = colorRectangleValue;
+                string rectangleColor = ColorTextBox.Text;
+                _currentRectangle.Color = rectangleColor;
         }
 
         private void FindButton_Click(object sender, EventArgs e)
@@ -216,7 +222,7 @@ namespace Programming.View
 
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentMovie = _movie[MovieListBox.SelectedIndex];
+            _currentMovie = _movies[MovieListBox.SelectedIndex];
             GenreTextBox.Text = _currentMovie.Genre.ToString();
             YearTextBox.Text = _currentMovie.ReleaseYear.ToString();
             RatingTextBox.Text = _currentMovie.Rating.ToString();
@@ -268,8 +274,8 @@ namespace Programming.View
         {
             try
             {
-                int durationMovie = int.Parse(DurationTextBox.Text);
-                _currentMovie.DurationMinutes = durationMovie;
+                int movieDuration = int.Parse(DurationTextBox.Text);
+                _currentMovie.DurationMinutes = movieDuration;
             }
             catch
             {
@@ -281,7 +287,7 @@ namespace Programming.View
 
         private void FindRatingButton_Click(object sender, EventArgs e)
         {
-            MovieListBox.SelectedIndex = FindMaxRating(_movie);
+            MovieListBox.SelectedIndex = FindMaxRating(_movies);
         }
 
         private void MainForm_Load(object sender, EventArgs e)

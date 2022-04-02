@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Enums
 {
-    class Subject
+    public class Subject
     {
         private int _mark;
-        
+
         public Subject()
         {
         }
@@ -22,7 +22,9 @@ namespace Programming.Model.Enums
         }
 
         public string Name { get; set; }
+
         public string TeacherName { get; set; }
+
         public int Mark
         {
             get
@@ -33,7 +35,7 @@ namespace Programming.Model.Enums
             {
                 if (value > 5 || value < 2)
                 {
-                    throw new System.ArgumentException("the value of the grade field should be between 2 and 5");
+                    throw new System.ArgumentException("the value of the mark field should be between 2 and 5");
                 }
                 _mark = value;
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming.Model.Enums
 {
-    class Song
+    public class Song
     {
         private int _duration;
 

@@ -1,6 +1,6 @@
 ﻿namespace Programming.Model.Enums
 {
-    class Time
+    public class Time
     {
         private int _hours;
 

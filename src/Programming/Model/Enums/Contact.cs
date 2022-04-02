@@ -1,6 +1,6 @@
 ﻿namespace Programming.Model.Enums
 {
-    class Contact
+    public class Contact
     {
         private string _number;
 
