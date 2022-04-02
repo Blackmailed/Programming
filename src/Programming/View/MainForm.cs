@@ -285,5 +285,10 @@ namespace Programming.View
         {
             MovieListBox.SelectedIndex = FindMaxRating(_movie);
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
