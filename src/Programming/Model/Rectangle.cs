@@ -6,8 +6,14 @@
 
         private double _width;
 
+        private static int _allRectanglesCount;
+
+        private readonly int _id;
+
         public Rectangle()
         {
+            _allRectanglesCount++;
+            _id = _allRectanglesCount;
         }
 
         public Rectangle(double length, double width, string color, Point2D center)
@@ -16,11 +22,29 @@
             Width = width;
             Color = color;
             Center = center;
+            _allRectanglesCount++;
+            _id = _allRectanglesCount;
         }
 
         public Point2D Center { get; set; }
 
         public string Color { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
+
+        public static int AllRectanglesCount
+        {
+            get 
+            {
+                return _allRectanglesCount;
+            }
+        }
 
         public double Length
         {
