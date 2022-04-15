@@ -1,8 +1,14 @@
-﻿namespace Programming.Model.Enums
+﻿using DocuSign.eSign.Model;
+
+namespace Programming.Model.Enums
 {
     public class Contact
     {
         private string _number;
+
+        private string _firstname;
+
+        private string _surname;
 
         public Contact()
         {
@@ -10,12 +16,35 @@
 
         public Contact(string firstname, string surname, string address, string number)
         {
-            Firstname = firstname;
             Surname = surname;
+            Firstname = firstname;
             Number = number;
         }
-        public string Firstname { get; set; }
-        public string Surname{ get; set; }
+
+        public string Surname
+        {
+            get
+            {
+                return _surname;
+            }
+            set
+            {
+                _surname = AssertStringContainsOnlyLetters("Surname", value);
+            }
+        }
+
+        public string Firstname
+        {
+            get
+            {
+                return _firstname;
+            }
+            set
+            {
+                _firstname = AssertStringContainsOnlyLetters("Firstname", value);
+            }
+        }
+
         public string Number
         {
             get
@@ -34,6 +63,18 @@
                 }
                 _number = value;
             }
+        }
+
+        private string AssertStringContainsOnlyLetters(string stringProperty,string value)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (!char.IsLetter(value[i]))
+                {
+                    throw new System.ArgumentException($"{stringProperty} must consist of English characters");
+                }
+            }
+            return value;
         }
     }
 }
