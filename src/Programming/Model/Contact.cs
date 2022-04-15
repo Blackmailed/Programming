@@ -1,6 +1,4 @@
-﻿using DocuSign.eSign.Model;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model
 {
     public class Contact
     {
@@ -71,7 +69,8 @@ namespace Programming.Model.Enums
             {
                 if (!char.IsLetter(value[i]))
                 {
-                    throw new System.ArgumentException($"{stringProperty} must consist of English characters");
+                    throw new System.ArgumentException(
+                        $"{stringProperty} must consist of English characters");
                 }
             }
             return value;

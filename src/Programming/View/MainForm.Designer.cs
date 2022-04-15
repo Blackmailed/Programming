@@ -503,7 +503,6 @@
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Programming Demo";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ProgrammingTabControl.ResumeLayout(false);
             this.EnumsTabControl.ResumeLayout(false);
             this.SeasonGroupBox.ResumeLayout(false);

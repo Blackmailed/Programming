@@ -1,5 +1,6 @@
 ﻿using System;
-namespace Programming.Model.Enums
+
+namespace Programming.Model
 {
     public class Movie
     {
@@ -34,10 +35,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new System.ArgumentException("duration field must be highest than 0");
-                }
+                Validator.AssertOnPositiveValue("duration", value);
                 _durationMinutes = value;
             }
         }
@@ -50,10 +48,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (1900 > value || value > DateTime.Now.Year)
-                {
-                    throw new System.ArgumentException($"release year must be in range from 1900 to {DateTime.Now.Year}");
-                }
+                Validator.AssertValueInRange("release year", value, 1950, DateTime.Now.Year);
                 _releaseYear = value;
             }
         }
@@ -66,10 +61,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (0 > value || value > 10)
-                {
-                    throw new System.ArgumentException("rating must be in range from 0 to 10");
-                }
+                Validator.AssertValueInRange("rating must be in range", value, 0, 10);
                 _rating = value;
             }
         }

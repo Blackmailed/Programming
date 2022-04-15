@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model
 {
     public class Subject
     {
@@ -33,10 +27,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value > 5 || value < 2)
-                {
-                    throw new System.ArgumentException("the value of the mark field should be between 2 and 5");
-                }
+                Validator.AssertValueInRange("the value of the mark", value, 2, 5);
                 _mark = value;
             }
         }

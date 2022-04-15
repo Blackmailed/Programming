@@ -1,9 +1,10 @@
 ﻿using System;
+using Programming.Model;
 using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
-using Rectangle = Programming.Model.Enums.Rectangle;
-using Movie = Programming.Model.Enums.Movie;
+using Rectangle = Programming.Model.Rectangle;
+using Movie = Programming.Model.Movie;
 namespace Programming.View
 {
     public partial class MainForm : Form
@@ -288,11 +289,6 @@ namespace Programming.View
         private void FindRatingButton_Click(object sender, EventArgs e)
         {
             MovieListBox.SelectedIndex = FindMaxRating(_movies);
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

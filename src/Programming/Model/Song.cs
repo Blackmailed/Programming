@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model
 {
     public class Song
     {
@@ -32,10 +26,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new System.ArgumentException("the value of the Duration Seconds field must be greater than zero");
-                }
+                Validator.AssertOnPositiveValue("Song duration", value);
                 _duration = value;
             }
         }

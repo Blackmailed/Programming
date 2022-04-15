@@ -1,4 +1,4 @@
-﻿namespace Programming.Model.Enums
+﻿namespace Programming.Model
 {
     public class Rectangle
     {
@@ -10,12 +10,15 @@
         {
         }
 
-        public Rectangle(double length, double width, string color)
+        public Rectangle(double length, double width, string color, Point2D center)
         {
             Length = length;
             Width = width;
             Color = color;
+            Center = center;
         }
+
+        public Point2D Center { get; set; }
 
         public string Color { get; set; }
 
@@ -27,10 +30,7 @@
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new System.ArgumentException("the value of the height field must be positive");
-                }
+                Validator.AssertOnPositiveValue("the value of the height", value);
                 _length = value;
             }
         }
@@ -43,10 +43,7 @@
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new System.ArgumentException("the value of the width field must be positive");
-                }
+                Validator.AssertOnPositiveValue("the value of the width", value);
                 _width = value;
             }
         }

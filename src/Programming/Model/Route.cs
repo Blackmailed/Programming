@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programming.Model.Enums
+﻿namespace Programming.Model
 {
     public class Route
     {
@@ -33,10 +27,7 @@ namespace Programming.Model.Enums
             }
             set
             {
-                if (value <= 0)
-                {
-                    throw new System.ArgumentException("flight time of minutes must be highest than 0");
-                }
+                Validator.AssertOnPositiveValue("flight time of minutes", value);
                 _flightTimeOfMinutes = value;
             }
         }
