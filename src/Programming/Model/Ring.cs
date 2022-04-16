@@ -26,8 +26,8 @@ namespace Programming.Model
             }
             private set
             {
-                Validator.AssertOnPositiveValue("OuterRadius", value);
-                Validator.AssertValueInRange("OuterRadius", value, _innerRadius, double.MaxValue);
+                Validator.AssertOnPositiveValue(nameof(OuterRadius), value);
+                Validator.AssertValueInRange(nameof(OuterRadius), value, _innerRadius, double.MaxValue);
                 _outerRadius = value;
             }
         }
@@ -40,11 +40,14 @@ namespace Programming.Model
             }
             private set
             {
-                Validator.AssertOnPositiveValue("InnerRadius", value);
-                Validator.AssertValueInRange("InnerRadius", value, 0, _outerRadius);
+                Validator.AssertOnPositiveValue(nameof(InnerRadius), value);
+                Validator.AssertValueInRange(nameof(InnerRadius), value, 0, _outerRadius);
                 _innerRadius = value;
             }
         }
-        public double Area => Math.PI * (_outerRadius * _outerRadius - _innerRadius * _innerRadius);
+        public double Area(double outerRadius, double innerRadius)
+        {
+            return Math.PI * (_outerRadius* _outerRadius - _innerRadius* _innerRadius);
+        }
     }
 }

@@ -27,7 +27,7 @@
             }
             set
             {
-                Validator.AssertValueInRange("the value of the mark", value, 2, 5);
+                Validator.AssertValueInRange(nameof(Mark), value, 2, 5);
                 _mark = value;
             }
         }

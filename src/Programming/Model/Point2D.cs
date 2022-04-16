@@ -20,7 +20,7 @@
             }
             private set
             {
-                Validator.AssertOnPositiveValue("X", value);
+                Validator.AssertOnPositiveValue(nameof(X), value);
                 _x = value;
             }
         }
@@ -33,7 +33,7 @@
             }
             private set
             {
-                Validator.AssertOnPositiveValue("Y", value);
+                Validator.AssertOnPositiveValue(nameof(Y), value);
                 _y = value;
             }
         }

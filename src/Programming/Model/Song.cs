@@ -26,7 +26,7 @@
             }
             set
             {
-                Validator.AssertOnPositiveValue("Song duration", value);
+                Validator.AssertOnPositiveValue(nameof(Duration), value);
                 _duration = value;
             }
         }

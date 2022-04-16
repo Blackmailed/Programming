@@ -35,7 +35,7 @@ namespace Programming.Model
             }
             set
             {
-                Validator.AssertOnPositiveValue("duration", value);
+                Validator.AssertOnPositiveValue(nameof(DurationMinutes), value);
                 _durationMinutes = value;
             }
         }
@@ -48,7 +48,7 @@ namespace Programming.Model
             }
             set
             {
-                Validator.AssertValueInRange("release year", value, 1950, DateTime.Now.Year);
+                Validator.AssertValueInRange(nameof(ReleaseYear), value, 1950, DateTime.Now.Year);
                 _releaseYear = value;
             }
         }
@@ -61,7 +61,7 @@ namespace Programming.Model
             }
             set
             {
-                Validator.AssertValueInRange("rating must be in range", value, 0, 10);
+                Validator.AssertValueInRange(nameof(Rating), value, 0, 10);
                 _rating = value;
             }
         }

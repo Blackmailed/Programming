@@ -434,7 +434,7 @@
             this.IdTextBox.Location = new System.Drawing.Point(225, 251);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.ReadOnly = true;
-            this.IdTextBox.Size = new System.Drawing.Size(100, 23);
+            this.IdTextBox.Size = new System.Drawing.Size(104, 23);
             this.IdTextBox.TabIndex = 13;
             // 
             // IdLabel
@@ -452,7 +452,7 @@
             this.YtextBox.Location = new System.Drawing.Point(225, 207);
             this.YtextBox.Name = "YtextBox";
             this.YtextBox.ReadOnly = true;
-            this.YtextBox.Size = new System.Drawing.Size(100, 23);
+            this.YtextBox.Size = new System.Drawing.Size(104, 23);
             this.YtextBox.TabIndex = 11;
             // 
             // Ylabel
@@ -470,7 +470,7 @@
             this.XtextBox.Location = new System.Drawing.Point(225, 163);
             this.XtextBox.Name = "XtextBox";
             this.XtextBox.ReadOnly = true;
-            this.XtextBox.Size = new System.Drawing.Size(100, 23);
+            this.XtextBox.Size = new System.Drawing.Size(104, 23);
             this.XtextBox.TabIndex = 9;
             // 
             // Xlabel

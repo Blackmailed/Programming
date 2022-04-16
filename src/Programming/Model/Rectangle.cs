@@ -2,11 +2,11 @@
 {
     public class Rectangle
     {
+        private static int _allRectanglesCount;
+
         private double _length;
 
         private double _width;
-
-        private static int _allRectanglesCount;
 
         private readonly int _id;
 
@@ -54,7 +54,7 @@
             }
             set
             {
-                Validator.AssertOnPositiveValue("the value of the height", value);
+                Validator.AssertOnPositiveValue(nameof(Length), value);
                 _length = value;
             }
         }
@@ -67,7 +67,7 @@
             }
             set
             {
-                Validator.AssertOnPositiveValue("the value of the width", value);
+                Validator.AssertOnPositiveValue(nameof(Width), value);
                 _width = value;
             }
         }

@@ -27,7 +27,7 @@
             }
             set
             {
-                Validator.AssertOnPositiveValue("flight time of minutes", value);
+                Validator.AssertOnPositiveValue(nameof(FlightTimeOfMinutes), value);
                 _flightTimeOfMinutes = value;
             }
         }
