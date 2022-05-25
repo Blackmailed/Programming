@@ -4,11 +4,20 @@
     {
         private static int _allRectanglesCount;
 
-        private double _length;
+        private int  _length;
 
-        private double _width;
+        private int _width;
 
-        private readonly int _id;
+        private int _id;
+
+        public Rectangle(Rectangle rectangle)
+        {
+            Id = rectangle.Id;
+            Length = rectangle.Length;
+            Width = rectangle.Width;
+            Color = rectangle.Color;
+            Center = new Point2D(rectangle.Center.X, rectangle.Center.Y);
+        }
 
         public Rectangle()
         {
@@ -16,7 +25,7 @@
             _id = _allRectanglesCount;
         }
 
-        public Rectangle(double length, double width, string color, Point2D center)
+        public Rectangle(int length, int width, string color, Point2D center)
         {
             Length = length;
             Width = width;
@@ -32,10 +41,8 @@
 
         public int Id
         {
-            get
-            {
-                return _id;
-            }
+            get { return _id; }
+            set { _id = value; }
         }
 
         public static int AllRectanglesCount
@@ -46,7 +53,7 @@
             }
         }
 
-        public double Length
+        public int Length
         {
             get
             {
@@ -59,7 +66,7 @@
             }
         }
 
-        public double Width
+        public int Width
         {
             get
             {

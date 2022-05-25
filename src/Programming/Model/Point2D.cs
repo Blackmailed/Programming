@@ -18,7 +18,7 @@
             {
                 return _x;
             }
-            private set
+            set
             {
                 Validator.AssertOnPositiveValue(nameof(X), value);
                 _x = value;
@@ -31,7 +31,7 @@
             {
                 return _y;
             }
-            private set
+            set
             {
                 Validator.AssertOnPositiveValue(nameof(Y), value);
                 _y = value;
