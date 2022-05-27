@@ -254,8 +254,6 @@ namespace Programming.View
             _currentRectangle.Color = rectangleColor;
         }
 
-
-
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentMovie = _movies[MovieListBox.SelectedIndex];
@@ -408,33 +406,6 @@ namespace Programming.View
         {
             if (rectangle != null)
             {
-                //var newRectangle = new Rectangle(rectangle);
-                //var oldRectangle = _rectangles[RectanglesListBox2.SelectedIndex];
-
-                //var halfDifferenceWidth = Math.Abs(oldRectangle.Width - newRectangle.Width) / 2;
-                //var halfDifferenceLength = Math.Abs(oldRectangle.Length - newRectangle.Length) / 2;
-
-                //if (newRectangle.Center.X == oldRectangle.Center.X && newRectangle.Center.Y == oldRectangle.Center.Y)
-                //{
-                //    newRectangle.Center.X = oldRectangle.Width >= newRectangle.Width
-                //        ? oldRectangle.Center.X + halfDifferenceWidth
-                //        : oldRectangle.Center.X - halfDifferenceWidth;
-
-                //    newRectangle.Center.Y = oldRectangle.Length >= newRectangle.Length
-                //        ? oldRectangle.Center.Y + halfDifferenceLength
-                //        : oldRectangle.Center.Y - halfDifferenceLength;
-                //}
-
-                //var index = _rectangles.FindIndex(r => r.Id == newRectangle.Id);
-                //_rectangles[index] = newRectangle;
-
-                //var control = CanvasPanel.Controls[index];
-                //control.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-                //control.Width = rectangle.Width;
-                //control.Height = rectangle.Length;
-
-                //LengthTextBox.BackColor = _correctColor;
-                //WidthTextBox.BackColor = _correctColor;
                 CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
                 CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
                 CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Width = rectangle.Width;
@@ -442,14 +413,6 @@ namespace Programming.View
                 FindCollisions();
             }
         }
-
-        //private void UpdatePanel(Rectangle rectangle, int index)
-        //{
-        //    var control = CanvasPanel.Controls[index];
-        //    control.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-        //    control.Width = Convert.ToInt32(rectangle.Width);
-        //    control.Height = Convert.ToInt32(rectangle.Length);
-        //}
 
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)
         {

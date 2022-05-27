@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Programming.Model
 {
     public class Ring
