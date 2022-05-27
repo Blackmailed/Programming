@@ -130,12 +130,13 @@
             // 
             // SeasonGroupBox
             // 
+            this.SeasonGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SeasonGroupBox.Controls.Add(this.SeasonComboBox);
             this.SeasonGroupBox.Controls.Add(this.SeasonGoButton);
             this.SeasonGroupBox.Controls.Add(this.SeasonLabel);
-            this.SeasonGroupBox.Location = new System.Drawing.Point(406, 274);
+            this.SeasonGroupBox.Location = new System.Drawing.Point(401, 274);
             this.SeasonGroupBox.Name = "SeasonGroupBox";
-            this.SeasonGroupBox.Size = new System.Drawing.Size(380, 140);
+            this.SeasonGroupBox.Size = new System.Drawing.Size(385, 140);
             this.SeasonGroupBox.TabIndex = 1;
             this.SeasonGroupBox.TabStop = false;
             this.SeasonGroupBox.Text = "Season Handle";
@@ -169,6 +170,7 @@
             // 
             // WeekdayGroupBox
             // 
+            this.WeekdayGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.WeekdayGroupBox.Controls.Add(this.OutputLabel);
             this.WeekdayGroupBox.Controls.Add(this.ParseButton);
             this.WeekdayGroupBox.Controls.Add(this.WeekdayTextBox);
@@ -217,15 +219,17 @@
             // 
             // EnumerationsGroupBox
             // 
+            this.EnumerationsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EnumerationsGroupBox.Controls.Add(this.IntValueLabel);
             this.EnumerationsGroupBox.Controls.Add(this.ChooseValueLabel);
             this.EnumerationsGroupBox.Controls.Add(this.EnumerationLabel);
             this.EnumerationsGroupBox.Controls.Add(this.IntTextBox);
             this.EnumerationsGroupBox.Controls.Add(this.ValuesListBox);
             this.EnumerationsGroupBox.Controls.Add(this.EnumsListBox);
-            this.EnumerationsGroupBox.Location = new System.Drawing.Point(6, 6);
+            this.EnumerationsGroupBox.Location = new System.Drawing.Point(6, 3);
             this.EnumerationsGroupBox.Name = "EnumerationsGroupBox";
-            this.EnumerationsGroupBox.Size = new System.Drawing.Size(780, 262);
+            this.EnumerationsGroupBox.Size = new System.Drawing.Size(780, 265);
             this.EnumerationsGroupBox.TabIndex = 2;
             this.EnumerationsGroupBox.TabStop = false;
             this.EnumerationsGroupBox.Text = "Enumerations";
@@ -298,8 +302,7 @@
             // 
             // MovieGroupBox
             // 
-            this.MovieGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MovieGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MovieGroupBox.Controls.Add(this.FindRatingButton);
             this.MovieGroupBox.Controls.Add(this.DurationTextBox);
@@ -315,13 +318,14 @@
             this.MovieGroupBox.Controls.Add(this.MovieListBox);
             this.MovieGroupBox.Location = new System.Drawing.Point(411, 6);
             this.MovieGroupBox.Name = "MovieGroupBox";
-            this.MovieGroupBox.Size = new System.Drawing.Size(375, 408);
+            this.MovieGroupBox.Size = new System.Drawing.Size(375, 409);
             this.MovieGroupBox.TabIndex = 1;
             this.MovieGroupBox.TabStop = false;
             this.MovieGroupBox.Text = "Movie";
             // 
             // FindRatingButton
             // 
+            this.FindRatingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FindRatingButton.Location = new System.Drawing.Point(226, 374);
             this.FindRatingButton.Name = "FindRatingButton";
             this.FindRatingButton.Size = new System.Drawing.Size(101, 23);
@@ -332,6 +336,7 @@
             // 
             // DurationTextBox
             // 
+            this.DurationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DurationTextBox.Location = new System.Drawing.Point(226, 213);
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(100, 23);
@@ -400,6 +405,7 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(226, 37);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(101, 23);
@@ -408,6 +414,7 @@
             // 
             // NameLabel
             // 
+            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NameLabel.AutoSize = true;
             this.NameLabel.Location = new System.Drawing.Point(226, 19);
             this.NameLabel.Name = "NameLabel";
@@ -417,6 +424,8 @@
             // 
             // MovieListBox
             // 
+            this.MovieListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MovieListBox.FormattingEnabled = true;
             this.MovieListBox.ItemHeight = 15;
             this.MovieListBox.Location = new System.Drawing.Point(6, 18);
@@ -427,9 +436,8 @@
             // 
             // RectanglesGroupBox
             // 
-            this.RectanglesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RectanglesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.RectanglesGroupBox.Controls.Add(this.IdTextBox);
             this.RectanglesGroupBox.Controls.Add(this.IdLabel);
             this.RectanglesGroupBox.Controls.Add(this.YtextBox);
@@ -448,7 +456,7 @@
             this.RectanglesGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
             this.RectanglesGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(386, 408);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(386, 409);
             this.RectanglesGroupBox.TabIndex = 0;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
@@ -509,6 +517,7 @@
             // 
             // FindWidthButton
             // 
+            this.FindWidthButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FindWidthButton.Location = new System.Drawing.Point(225, 374);
             this.FindWidthButton.Name = "FindWidthButton";
             this.FindWidthButton.Size = new System.Drawing.Size(104, 23);
@@ -576,6 +585,8 @@
             // 
             // RectanglesListBox
             // 
+            this.RectanglesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.RectanglesListBox.FormattingEnabled = true;
             this.RectanglesListBox.ItemHeight = 15;
             this.RectanglesListBox.Location = new System.Drawing.Point(6, 18);
@@ -619,7 +630,7 @@
             this.CanvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CanvasPanel.Location = new System.Drawing.Point(278, 24);
             this.CanvasPanel.Name = "CanvasPanel";
-            this.CanvasPanel.Size = new System.Drawing.Size(508, 371);
+            this.CanvasPanel.Size = new System.Drawing.Size(508, 372);
             this.CanvasPanel.TabIndex = 15;
             // 
             // LenghtLabel2
@@ -774,7 +785,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RectanglesListBox2.FormattingEnabled = true;
             this.RectanglesListBox2.ItemHeight = 15;
-            this.RectanglesListBox2.Location = new System.Drawing.Point(13, 24);
+            this.RectanglesListBox2.Location = new System.Drawing.Point(12, 24);
             this.RectanglesListBox2.Name = "RectanglesListBox2";
             this.RectanglesListBox2.ScrollAlwaysVisible = true;
             this.RectanglesListBox2.Size = new System.Drawing.Size(259, 139);
