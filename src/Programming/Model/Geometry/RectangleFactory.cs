@@ -35,7 +35,7 @@ namespace Programming.Model
             rectangle.Width = _random.Next(MinRectangleWidth, MaxRectangleWidth);
             rectangle.Length = _random.Next(MinRectangleLength, MaxRectangleLength);
             rectangle.Center = new Point2D(_random.Next(Margin, widthCanvas - rectangle.Width - Margin),
-                                           _random.Next(Margin, lengthCanvas - rectangle.Width - Margin));
+                                           _random.Next(Margin, lengthCanvas - rectangle.Length - Margin));
             rectangle.Color = colors.GetValue(_random.Next(0, colors.Length)).ToString();
             return rectangle;
         }
