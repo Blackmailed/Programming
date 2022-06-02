@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using Movie = Programming.Model.Movie;
+using Programming.Model;
 
 namespace Programming.View.Controls
 {
@@ -12,10 +13,6 @@ namespace Programming.View.Controls
         private Movie _currentMovie;
 
         private Random _random = new Random();
-
-        private readonly System.Drawing.Color _errorColor = System.Drawing.Color.LightPink;
-
-        private readonly System.Drawing.Color _correctColor = System.Drawing.Color.White;
 
         public MovieControl()
         {
@@ -67,10 +64,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                YearTextBox.BackColor = _errorColor;
+                YearTextBox.BackColor = AppColors._errorColor;
                 return;
             }
-            YearTextBox.BackColor = _correctColor;
+            YearTextBox.BackColor = AppColors._correctColor;
         }
 
         private void GenreTextBox_TextChanged(object sender, EventArgs e)
@@ -87,10 +84,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                RatingTextBox.BackColor = _errorColor;
+                RatingTextBox.BackColor = AppColors._errorColor;
                 return;
             }
-            RatingTextBox.BackColor = _correctColor;
+            RatingTextBox.BackColor = AppColors._correctColor;
         }
 
         private void DurationTextBox_TextChanged(object sender, EventArgs e)
@@ -102,10 +99,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                DurationTextBox.BackColor = _errorColor;
+                DurationTextBox.BackColor = AppColors._errorColor;
                 return;
             }
-            DurationTextBox.BackColor = _correctColor;
+            DurationTextBox.BackColor = AppColors._correctColor;
         }
 
         private int FindMaxRating(Movie[] movie)

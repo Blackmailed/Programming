@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Programming.Model.Enums;
+using Programming.Model;
 
 namespace Programming.View.Controls
 {
@@ -22,18 +23,18 @@ namespace Programming.View.Controls
             switch (season)
             {
                 case Seasons.Winter:
-                    BackColor = ColorTranslator.FromHtml("#4169E1");
+                    this.BackColor = AppColors.Winter;
                     MessageBox.Show("«Бррр! Холодно!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Spring:
-                    BackColor = ColorTranslator.FromHtml("#559c45");
+                    this.BackColor = AppColors.Spring;
                     break;
                 case Seasons.Summer:
-                    BackColor = ColorTranslator.FromHtml("#FFD700");
+                    this.BackColor = AppColors.Summer;
                     MessageBox.Show("«Ура! Солнце!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Autumn:
-                    BackColor = ColorTranslator.FromHtml("#e29c45");
+                    this.BackColor = AppColors.Autumn;
                     break;
             }
         }

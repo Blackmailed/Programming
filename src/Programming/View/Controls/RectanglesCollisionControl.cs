@@ -9,14 +9,6 @@ namespace Programming.View.Controls
 {
     public partial class RectanglesCollisionControl : UserControl
     {
-        private readonly System.Drawing.Color _errorColor = System.Drawing.Color.LightPink;
-
-        private readonly System.Drawing.Color _correctColor = System.Drawing.Color.White;
-
-        private readonly System.Drawing.Color Intersects = System.Drawing.Color.FromArgb(127, 255, 127, 127);
-
-        private readonly System.Drawing.Color unIntersects = System.Drawing.Color.FromArgb(127, 127, 255, 127);
-
         private List<Rectangle> _rectangles;
 
         private Rectangle _currentRectangle;
@@ -63,17 +55,17 @@ namespace Programming.View.Controls
             YtextBox2.Clear();
             WidthTextBox2.Clear();
             LengthTextBox2.Clear();
-            XtextBox2.BackColor = _correctColor;
-            YtextBox2.BackColor = _correctColor;
-            WidthTextBox2.BackColor = _correctColor;
-            LengthTextBox2.BackColor = _correctColor;
+            XtextBox2.BackColor = AppColors._correctColor;
+            YtextBox2.BackColor = AppColors._correctColor;
+            WidthTextBox2.BackColor = AppColors._correctColor;
+            LengthTextBox2.BackColor = AppColors._correctColor;
         }
 
         private void FindCollisions()
         {
             for (int k = 0; k < _rectangles.Count; k++)
             {
-                CanvasPanel.Controls[k].BackColor = unIntersects;
+                CanvasPanel.Controls[k].BackColor = AppColors.unIntersects;
             }
 
             for (int i = 0; i < _rectangles.Count - 1; i++)
@@ -82,8 +74,8 @@ namespace Programming.View.Controls
                 {
                     if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
                     {
-                        CanvasPanel.Controls[i].BackColor = Intersects;
-                        CanvasPanel.Controls[j].BackColor = Intersects;
+                        CanvasPanel.Controls[i].BackColor = AppColors.Intersects;
+                        CanvasPanel.Controls[j].BackColor = AppColors.Intersects;
                     }
                 }
             }
@@ -111,7 +103,7 @@ namespace Programming.View.Controls
             rectanglePanel.Width = Convert.ToInt32(rectangle.Width);
             rectanglePanel.Height = Convert.ToInt32(rectangle.Length);
             rectanglePanel.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-            rectanglePanel.BackColor = unIntersects;
+            rectanglePanel.BackColor = AppColors.unIntersects;
             _rectanglePanels.Add(rectanglePanel);
             CanvasPanel.Controls.Add(rectanglePanel);
             FindCollisions();
@@ -153,10 +145,10 @@ namespace Programming.View.Controls
 
             catch
             {
-                XtextBox2.BackColor = _errorColor;
+                XtextBox2.BackColor = AppColors._errorColor;
                 return;
             }
-            XtextBox2.BackColor = _correctColor;
+            XtextBox2.BackColor = AppColors._correctColor;
         }
 
         private void YtextBox2_TextChanged(object sender, EventArgs e)
@@ -174,10 +166,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                YtextBox2.BackColor = _errorColor;
+                YtextBox2.BackColor = AppColors._errorColor;
                 return;
             }
-            YtextBox2.BackColor = _correctColor;
+            YtextBox2.BackColor = AppColors._correctColor;
         }
 
         private void WidthTextBox2_TextChanged(object sender, EventArgs e)
@@ -192,10 +184,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                WidthTextBox2.BackColor = _errorColor;
+                WidthTextBox2.BackColor = AppColors._errorColor;
                 return;
             }
-            WidthTextBox2.BackColor = _correctColor;
+            WidthTextBox2.BackColor = AppColors._correctColor;
         }
 
         private void LengthTextBox2_TextChanged(object sender, EventArgs e)
@@ -211,10 +203,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                LengthTextBox2.BackColor = _errorColor;
+                LengthTextBox2.BackColor = AppColors._errorColor;
                 return;
             }
-            LengthTextBox2.BackColor = _correctColor;
+            LengthTextBox2.BackColor = AppColors._correctColor;
         }
 
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)

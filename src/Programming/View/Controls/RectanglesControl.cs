@@ -6,14 +6,6 @@ namespace Programming.View.Controls
 {
     public partial class RectanglesControl : UserControl
     {
-        private readonly System.Drawing.Color _errorColor = System.Drawing.Color.LightPink;
-
-        private readonly System.Drawing.Color _correctColor = System.Drawing.Color.White;
-
-        private readonly System.Drawing.Color Intersects = System.Drawing.Color.FromArgb(127, 255, 127, 127);
-
-        private readonly System.Drawing.Color unIntersects = System.Drawing.Color.FromArgb(127, 127, 255, 127);
-
         private Rectangle[] _rectangles;
 
         private Rectangle _currentRectangle;
@@ -61,10 +53,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                LengthTextBox.BackColor = _errorColor;
+                LengthTextBox.BackColor = AppColors._errorColor;
                 return;
             }
-            LengthTextBox.BackColor = _correctColor;
+            LengthTextBox.BackColor = AppColors._correctColor;
         }
 
         private void WidthTextBox_TextChanged(object sender, System.EventArgs e)
@@ -76,10 +68,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                WidthTextBox.BackColor = _errorColor;
+                WidthTextBox.BackColor = AppColors._errorColor;
                 return;
             }
-            WidthTextBox.BackColor = _correctColor;
+            WidthTextBox.BackColor = AppColors._correctColor;
         }
 
         private void ColorTextBox_TextChanged(object sender, System.EventArgs e)
