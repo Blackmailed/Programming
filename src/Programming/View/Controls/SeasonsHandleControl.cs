@@ -6,8 +6,14 @@ using Programming.Model;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Реализация изменения цвета фона главного окна.
+    /// </summary>
     public partial class SeasonsHandleControl : UserControl
     {
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="SeasonsHandleControl"/>.
+        /// </summary>
         public SeasonsHandleControl()
         {
             InitializeComponent();

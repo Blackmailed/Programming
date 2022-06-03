@@ -4,12 +4,24 @@ using System.Collections.Generic;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Реализация представления прямоугольников, генерируемых программой.
+    /// </summary>
     public partial class RectanglesControl : UserControl
     {
+        /// <summary>
+        /// Коллекция прямоугольников.
+        /// </summary>
         private Rectangle[] _rectangles;
 
+        /// <summary>
+        /// Текущий прямоугольник.
+        /// </summary>
         private Rectangle _currentRectangle;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="RectanglesControl"/>.
+        /// </summary>
         public RectanglesControl()
         {
             InitializeComponent();
@@ -17,6 +29,10 @@ namespace Programming.View.Controls
             RectanglesListBox.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Создаёт коллекцию прямоугольников.
+        /// </summary>
+        /// <returns>Возвращает коллекцию прямоугольников.</returns>
         private Rectangle[] CreateRectangles()
         {
             Rectangle[] rectangles = new Rectangle[5];
@@ -80,6 +96,11 @@ namespace Programming.View.Controls
             _currentRectangle.Color = rectangleColor;
         }
 
+        /// <summary>
+        /// Находит прямоугольник с наибольшей шириной.
+        /// </summary>
+        /// <param name="rectangles">Прямоугольник.</param>
+        /// <returns>Индекс элемента коллекции с наибольшей шириной.</returns>
         private int FindMaxWidth(Rectangle[] rectangles)
         {
             int maxWidthIndex = 0;

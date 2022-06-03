@@ -1,35 +1,59 @@
 ﻿namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит данные о песне.
+    /// </summary>
     public class Song
     {
-        private int _duration;
+        /// <summary>
+        /// Продолжительность песни в секундах.
+        /// </summary>
+        private int _durationSeconds;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Song"/>.
+        /// </summary>
         public Song()
         {
         }
 
-        public Song(string author, string name, int duration)
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Song"/>.
+        /// </summary>
+        /// <param name="author">Имя (псевдоним) музыканта.</param>
+        /// <param name="name">Название песни.</param>
+        /// <param name="durationSeconds">Продолжительность песни в секундах. Должно быть положительным числом.</param>
+        public Song(string author, string name, int durationSeconds)
         {
             Author = author;
             Name = name;
-            Duration = duration;
+            DurationSeconds = durationSeconds;
         }
+
+        /// <summary>
+        /// Возвращает и задаёт имя автора песни.
+        /// </summary>
         public string Author { get; set; }
-        
+
+        /// <summary>
+        /// Возвращает и задаёт название песни.
+        /// </summary>
         public string Name { get; set; }
 
-        public int Duration
+        /// <summary>
+        /// Возвращает и задаёт продолжительность песни в секундах. Должно быть положительным числом.
+        /// </summary>
+        public int DurationSeconds
         {
             get
             {
-                return _duration;
+                return _durationSeconds;
             }
             set
             {
-                Validator.AssertOnPositiveValue(nameof(Duration), value);
-                _duration = value;
+                Validator.AssertOnPositiveValue(nameof(DurationSeconds), value);
+                _durationSeconds = value;
             }
         }
-
     }
 }

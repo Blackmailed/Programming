@@ -3,20 +3,46 @@ using Color = Programming.Model.Enums.Colors;
 
 namespace Programming.Model
 {
+    /// <summary>
+    /// Хранит методы для создания прямоугольников.
+    /// </summary>
     public class RectangleFactory
     {
+        /// <summary>
+        /// Отступ внутри элемента размещения прямоугольников.
+        /// </summary>
         private const int Margin = 15;
 
+        /// <summary>
+        /// Максимальное значение ширины прямоугольника.
+        /// </summary>
         private const int MaxRectangleWidth = 150;
 
+        /// <summary>
+        /// Максимальное значение длины прямоугольника.
+        /// </summary>
         private const int MaxRectangleLength = 150;
 
+        /// <summary>
+        /// Минимальное значение ширины прямоугольника.
+        /// </summary>
         private const int MinRectangleWidth = 5;
 
+        /// <summary>
+        /// Минимальное значение длины прямоугольника.
+        /// </summary>
         private const int MinRectangleLength = 5;
 
+        /// <summary>
+        /// объявление экземпляра класса генерации рандомных чисел.
+        /// Для генерации случайных чисел
+        /// </summary>
         private static Random _random = new Random();
 
+        /// <summary>
+        /// Создаёт прямоугольник со случайными значениями высоты, ширины и координат.
+        /// </summary>
+        /// <returns>Возвращает объект Rectangle.</returns>
         public static Rectangle Randomize()
         {
             var colors = Enum.GetValues(typeof(Color));
@@ -28,6 +54,12 @@ namespace Programming.Model
             return rectangle;
         }
 
+        /// <summary>
+        /// Создаёт прямоугольник со случайными значениями высоты, ширины и координат.
+        /// </summary>
+        /// <param name="widthCanvas">Ширина элемента размещения.</param>
+        /// <param name="lengthCanvas">Высота элемента размещения.</param>
+        /// <returns>Возвращает объект Rectangle.</returns>
         public static Rectangle Randomize(int widthCanvas, int lengthCanvas)
         {
             var colors = Enum.GetValues(typeof(Color));

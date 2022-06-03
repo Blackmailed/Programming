@@ -1,24 +1,51 @@
 ﻿namespace Programming.Model
+
 {
+    /// <summary>
+    /// Хранит данные о контакте.
+    /// </summary>
     public class Contact
     {
+        /// <summary>
+        /// Номер.
+        /// </summary>
         private string _number;
 
+        // <summary>
+        /// Имя.
+        /// </summary>
         private string _firstname;
 
+        // <summary>
+        /// Фамилия.
+        /// </summary>
         private string _surname;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Contact"/>.
+        /// </summary>
         public Contact()
         {
+
         }
 
-        public Contact(string firstname, string surname, string address, string number)
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Contact"/>.
+        /// </summary>
+        /// <param name="firstname">Имя. Должно состоять только из букв английского алфавита.</param>
+        /// <param name="surname">Фамилия. Должна состоять только из букв английского алфавита.</param>
+        /// <param name="number">Номер. Должен состоять только из цифр и иметь одиннадцать символов.</param>
+        public Contact(string firstname, string surname, string number)
         {
             Surname = surname;
             Firstname = firstname;
             Number = number;
         }
 
+        /// <summary>
+        /// Возвращает и задаёт фамилию контакта.
+        /// Должна состоять только из букв английского алфавита.
+        /// </summary>
         public string Surname
         {
             get
@@ -27,10 +54,14 @@
             }
             set
             {
-                _surname = AssertStringContainsOnlyLetters("Surname", value);
+                _surname = Validator.AssertStringContainsOnlyLetters("Surname", value);
             }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт имя контакта.
+        /// Должно состоять только из букв английского алфавита.
+        /// </summary>
         public string Firstname
         {
             get
@@ -39,10 +70,15 @@
             }
             set
             {
-                _firstname = AssertStringContainsOnlyLetters("Firstname", value);
+                _firstname = Validator.AssertStringContainsOnlyLetters("Firstname", value);
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает номер контакта.
+        /// Проверяет состоит ли номер только из цифр.
+        /// Проверяет состоит ли номер из одиннадцати символов.
+        /// </summary>
         public string Number
         {
             get
@@ -61,19 +97,6 @@
                 }
                 _number = value;
             }
-        }
-
-        private string AssertStringContainsOnlyLetters(string stringProperty,string value)
-        {
-            for (int i = 0; i < value.Length; i++)
-            {
-                if (!char.IsLetter(value[i]))
-                {
-                    throw new System.ArgumentException(
-                        $"{stringProperty} must consist of English characters");
-                }
-            }
-            return value;
         }
     }
 }

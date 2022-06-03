@@ -7,14 +7,29 @@ using Programming.Model;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Реализация представления прямоугольников.
+    /// </summary>
     public partial class RectanglesCollisionControl : UserControl
     {
+        /// <summary>
+        /// Коллекция прямоугольников.
+        /// </summary>
         private List<Rectangle> _rectangles;
 
+        /// <summary>
+        /// Текущий прямоугольник.
+        /// </summary>
         private Rectangle _currentRectangle;
 
+        /// <summary>
+        /// Коллекция отображаемых прямоугольников.
+        /// </summary>
         private List<Panel> _rectanglePanels;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="RectanglesCollisionControl"/>.
+        /// </summary>
         public RectanglesCollisionControl()
         {
             InitializeComponent();
@@ -38,6 +53,11 @@ namespace Programming.View.Controls
             }
         }
 
+        /// <summary>
+        /// Из данных прямоугольника задаются параметры.
+        /// </summary>
+        /// <param name="rectangle">Прямоугольник.</param>
+        /// <returns>Возвращает форматированный текст.</returns>
         private string RectangleInfo(Rectangle rectangle)
         {
             return $"{rectangle.Id}: " +
@@ -47,6 +67,9 @@ namespace Programming.View.Controls
                 $"L={rectangle.Length})";
         }
 
+        /// <summary>
+        /// Очищает информацию из списка и текстовых полей.
+        /// </summary>
         private void ClearRectangleInfo()
         {
             RectanglesListBox2.Items.Clear();
@@ -61,6 +84,9 @@ namespace Programming.View.Controls
             LengthTextBox2.BackColor = AppColors._correctColor;
         }
 
+        /// <summary>
+        /// Находит пересекающиеся прямоугольники и перекрашивает их.
+        /// </summary>
         private void FindCollisions()
         {
             for (int k = 0; k < _rectangles.Count; k++)
@@ -81,6 +107,10 @@ namespace Programming.View.Controls
             }
         }
 
+        /// <summary>
+        /// Обновляет информацию на панели.
+        /// </summary>
+        /// <param name="rectangle">Прямоугольник.</param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
             if (rectangle != null)

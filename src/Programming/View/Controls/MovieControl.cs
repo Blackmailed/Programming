@@ -6,20 +6,39 @@ using Programming.Model;
 
 namespace Programming.View.Controls
 {
+    /// <summary>
+    /// Предоставляет реализацию по представлению фильмов.
+    /// </summary>
     public partial class MovieControl : UserControl
     {
+        /// <summary>
+        /// Массив фильмов.
+        /// </summary>
         private Movie[] _movies;
 
+        /// <summary>
+        /// Текущий фильм.
+        /// </summary>
         private Movie _currentMovie;
 
+        /// <summary>
+        /// объявление экземпляра класса генерации рандомных чисел.
+        /// Для генерации случайных чисел
+        /// </summary>
         private Random _random = new Random();
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="MoviesControl"/>.
+        /// </summary>
         public MovieControl()
         {
             InitializeComponent();
             InitMovie();
         }
 
+        /// <summary>
+        /// Инициализирует массив фильмов.
+        /// </summary>
         private void InitMovie()
         {
             _movies = new Movie[5];
@@ -105,6 +124,11 @@ namespace Programming.View.Controls
             DurationTextBox.BackColor = AppColors._correctColor;
         }
 
+        /// <summary>
+        /// Находит фильм с наивысшим рейтингом.
+        /// </summary>
+        /// <param name="movies">Коллекция фильмов.</param>
+        /// <returns>Возвращает индекс элемента коллекции, чей рейтинг больше остальных.</returns>
         private int FindMaxRating(Movie[] movie)
         {
             int maxRatingIndex = 0;
