@@ -159,5 +159,35 @@ namespace SongManager.View
             DurationSecondsTextBox.Text = _currentSong.DurationSeconds.ToString();
             GenreTextBox.Text = _currentSong.Genre.ToString();
         }
+
+        private void AddSongButton_MouseEnter(object sender, EventArgs e)
+        {
+            AddSongButton.Image = Properties.Resources.rectangle_add_24x24;
+        }
+
+        private void AddSongButton_MouseLeave(object sender, EventArgs e)
+        {
+            AddSongButton.Image = Properties.Resources.rectangle_add_24x24_uncolor;
+        }
+
+        private void EditSongButton_MouseEnter(object sender, EventArgs e)
+        {
+            EditSongButton.Image = Properties.Resources.rectangle_edit_24x24;
+        }
+
+        private void EditSongButton_MouseLeave(object sender, EventArgs e)
+        {
+            EditSongButton.Image = Properties.Resources.rectangle_edit_24x24_uncolor;
+        }
+
+        private void DeleteSongButton_MouseEnter(object sender, EventArgs e)
+        {
+            DeleteSongButton.Image = Properties.Resources.rectangle_remove_24x24;
+        }
+
+        private void DeleteSongButton_MouseLeave(object sender, EventArgs e)
+        {
+            DeleteSongButton.Image = Properties.Resources.rectangle_remove_24x24_uncolor;
+        }
     }
 }

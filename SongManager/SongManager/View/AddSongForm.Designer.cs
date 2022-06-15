@@ -148,7 +148,7 @@ namespace SongManager.View
             this.MaximumSize = new System.Drawing.Size(436, 226);
             this.MinimumSize = new System.Drawing.Size(436, 226);
             this.Name = "AddSongForm";
-            this.Text = "AddSongForm";
+            this.Text = "Add Song";
             this.ResumeLayout(false);
             this.PerformLayout();
 

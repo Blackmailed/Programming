@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SongManager", "SongManager.
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Song Manager", "..\Song Manager\Song Manager.vdproj", "{B9797D7F-F894-4C20-91F8-2EE6D8F82C92}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SongManagerInstaller", "..\..\SongManagerInstaller\SongManagerInstaller.vdproj", "{CA0F8CEB-8067-4083-A566-37E210494B28}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Song Manager Installer", "..\Song Manager Installer\Song Manager Installer.vdproj", "{C53164D4-9E32-4403-A0FC-8F07B231C12A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +21,8 @@ Global
 		{605611D4-F987-4103-B035-E588669B4B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9797D7F-F894-4C20-91F8-2EE6D8F82C92}.Debug|Any CPU.ActiveCfg = Debug
 		{B9797D7F-F894-4C20-91F8-2EE6D8F82C92}.Release|Any CPU.ActiveCfg = Release
-		{CA0F8CEB-8067-4083-A566-37E210494B28}.Debug|Any CPU.ActiveCfg = Debug
-		{CA0F8CEB-8067-4083-A566-37E210494B28}.Release|Any CPU.ActiveCfg = Release
+		{C53164D4-9E32-4403-A0FC-8F07B231C12A}.Debug|Any CPU.ActiveCfg = Debug
+		{C53164D4-9E32-4403-A0FC-8F07B231C12A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

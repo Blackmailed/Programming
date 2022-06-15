@@ -129,7 +129,7 @@
             this.SongNameTextBox.TabIndex = 19;
             this.SongNameTextBox.TextChanged += new System.EventHandler(this.SongNameTextBox_TextChanged);
             // 
-            // SongForm
+            // EditSongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,8 +146,8 @@
             this.Controls.Add(this.SongNameTextBox);
             this.MaximumSize = new System.Drawing.Size(436, 226);
             this.MinimumSize = new System.Drawing.Size(436, 226);
-            this.Name = "SongForm";
-            this.Text = "Song";
+            this.Name = "EditSongForm";
+            this.Text = "Edit Song";
             this.ResumeLayout(false);
             this.PerformLayout();
 

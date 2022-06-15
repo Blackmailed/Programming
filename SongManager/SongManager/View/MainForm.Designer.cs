@@ -60,36 +60,45 @@ namespace SongManager.View
             // AddSongButton
             // 
             this.AddSongButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddSongButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddSongButton.Image = global::SongManager.Properties.Resources.rectangle_add_24x24_uncolor;
             this.AddSongButton.Location = new System.Drawing.Point(12, 367);
             this.AddSongButton.Name = "AddSongButton";
             this.AddSongButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.AddSongButton.Size = new System.Drawing.Size(75, 23);
             this.AddSongButton.TabIndex = 1;
-            this.AddSongButton.Text = "Add";
             this.AddSongButton.UseVisualStyleBackColor = true;
             this.AddSongButton.Click += new System.EventHandler(this.AddSongButton_Click);
+            this.AddSongButton.MouseEnter += new System.EventHandler(this.AddSongButton_MouseEnter);
+            this.AddSongButton.MouseLeave += new System.EventHandler(this.AddSongButton_MouseLeave);
             // 
             // EditSongButton
             // 
             this.EditSongButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditSongButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditSongButton.Image = global::SongManager.Properties.Resources.rectangle_edit_24x24_uncolor;
             this.EditSongButton.Location = new System.Drawing.Point(93, 367);
             this.EditSongButton.Name = "EditSongButton";
             this.EditSongButton.Size = new System.Drawing.Size(75, 23);
             this.EditSongButton.TabIndex = 2;
-            this.EditSongButton.Text = "Edit";
             this.EditSongButton.UseVisualStyleBackColor = true;
             this.EditSongButton.Click += new System.EventHandler(this.EditSongButton_Click);
+            this.EditSongButton.MouseEnter += new System.EventHandler(this.EditSongButton_MouseEnter);
+            this.EditSongButton.MouseLeave += new System.EventHandler(this.EditSongButton_MouseLeave);
             // 
             // DeleteSongButton
             // 
             this.DeleteSongButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DeleteSongButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteSongButton.Image = global::SongManager.Properties.Resources.rectangle_remove_24x24_uncolor;
             this.DeleteSongButton.Location = new System.Drawing.Point(174, 367);
             this.DeleteSongButton.Name = "DeleteSongButton";
             this.DeleteSongButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteSongButton.TabIndex = 3;
-            this.DeleteSongButton.Text = "Delete";
             this.DeleteSongButton.UseVisualStyleBackColor = true;
             this.DeleteSongButton.Click += new System.EventHandler(this.DeleteSongButton_Click);
+            this.DeleteSongButton.MouseEnter += new System.EventHandler(this.DeleteSongButton_MouseEnter);
+            this.DeleteSongButton.MouseLeave += new System.EventHandler(this.DeleteSongButton_MouseLeave);
             // 
             // SelectedSongGroupBox
             // 
@@ -191,7 +200,7 @@ namespace SongManager.View
             this.Controls.Add(this.SongListBox);
             this.MinimumSize = new System.Drawing.Size(816, 439);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Song Manager";
             this.SelectedSongGroupBox.ResumeLayout(false);
             this.SelectedSongGroupBox.PerformLayout();
             this.ResumeLayout(false);
