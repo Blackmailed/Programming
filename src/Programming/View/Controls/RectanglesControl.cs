@@ -69,10 +69,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                LengthTextBox.BackColor = AppColors._errorColor;
+                LengthTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            LengthTextBox.BackColor = AppColors._correctColor;
+            LengthTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void WidthTextBox_TextChanged(object sender, System.EventArgs e)
@@ -84,10 +84,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                WidthTextBox.BackColor = AppColors._errorColor;
+                WidthTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            WidthTextBox.BackColor = AppColors._correctColor;
+            WidthTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void ColorTextBox_TextChanged(object sender, System.EventArgs e)

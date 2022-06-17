@@ -47,8 +47,6 @@ namespace Programming.View.Controls
             // 
             // MovieGroupBox
             // 
-            this.MovieGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.MovieGroupBox.Controls.Add(this.FindRatingButton);
             this.MovieGroupBox.Controls.Add(this.DurationTextBox);
             this.MovieGroupBox.Controls.Add(this.DurationLable);
@@ -61,17 +59,18 @@ namespace Programming.View.Controls
             this.MovieGroupBox.Controls.Add(this.NameTextBox);
             this.MovieGroupBox.Controls.Add(this.NameLabel);
             this.MovieGroupBox.Controls.Add(this.MovieListBox);
-            this.MovieGroupBox.Location = new System.Drawing.Point(411, 6);
+            this.MovieGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MovieGroupBox.Location = new System.Drawing.Point(0, 0);
             this.MovieGroupBox.Name = "MovieGroupBox";
-            this.MovieGroupBox.Size = new System.Drawing.Size(375, 409);
+            this.MovieGroupBox.Size = new System.Drawing.Size(816, 489);
             this.MovieGroupBox.TabIndex = 2;
             this.MovieGroupBox.TabStop = false;
             this.MovieGroupBox.Text = "Movie";
             // 
             // FindRatingButton
             // 
-            this.FindRatingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindRatingButton.Location = new System.Drawing.Point(226, 374);
+            this.FindRatingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FindRatingButton.Location = new System.Drawing.Point(224, 448);
             this.FindRatingButton.Name = "FindRatingButton";
             this.FindRatingButton.Size = new System.Drawing.Size(101, 23);
             this.FindRatingButton.TabIndex = 11;
@@ -81,7 +80,6 @@ namespace Programming.View.Controls
             // 
             // DurationTextBox
             // 
-            this.DurationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DurationTextBox.Location = new System.Drawing.Point(226, 213);
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(100, 23);
@@ -118,7 +116,7 @@ namespace Programming.View.Controls
             // 
             this.GenreTextBox.Location = new System.Drawing.Point(226, 125);
             this.GenreTextBox.Name = "GenreTextBox";
-            this.GenreTextBox.Size = new System.Drawing.Size(101, 23);
+            this.GenreTextBox.Size = new System.Drawing.Size(100, 23);
             this.GenreTextBox.TabIndex = 6;
             this.GenreTextBox.TextChanged += new System.EventHandler(this.GenreTextBox_TextChanged);
             // 
@@ -135,7 +133,7 @@ namespace Programming.View.Controls
             // 
             this.YearTextBox.Location = new System.Drawing.Point(226, 81);
             this.YearTextBox.Name = "YearTextBox";
-            this.YearTextBox.Size = new System.Drawing.Size(101, 23);
+            this.YearTextBox.Size = new System.Drawing.Size(100, 23);
             this.YearTextBox.TabIndex = 4;
             this.YearTextBox.TextChanged += new System.EventHandler(this.YearTextBox_TextChanged);
             // 
@@ -150,7 +148,6 @@ namespace Programming.View.Controls
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(226, 37);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(101, 23);
@@ -159,7 +156,6 @@ namespace Programming.View.Controls
             // 
             // NameLabel
             // 
-            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NameLabel.AutoSize = true;
             this.NameLabel.Location = new System.Drawing.Point(226, 19);
             this.NameLabel.Name = "NameLabel";
@@ -170,12 +166,12 @@ namespace Programming.View.Controls
             // MovieListBox
             // 
             this.MovieListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.MovieListBox.FormattingEnabled = true;
             this.MovieListBox.ItemHeight = 15;
-            this.MovieListBox.Location = new System.Drawing.Point(6, 18);
+            this.MovieListBox.Location = new System.Drawing.Point(7, 17);
             this.MovieListBox.Name = "MovieListBox";
-            this.MovieListBox.Size = new System.Drawing.Size(211, 379);
+            this.MovieListBox.Size = new System.Drawing.Size(211, 454);
             this.MovieListBox.TabIndex = 0;
             this.MovieListBox.SelectedIndexChanged += new System.EventHandler(this.MovieListBox_SelectedIndexChanged);
             // 

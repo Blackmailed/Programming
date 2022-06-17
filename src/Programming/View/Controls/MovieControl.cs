@@ -83,10 +83,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                YearTextBox.BackColor = AppColors._errorColor;
+                YearTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            YearTextBox.BackColor = AppColors._correctColor;
+            YearTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void GenreTextBox_TextChanged(object sender, EventArgs e)
@@ -103,10 +103,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                RatingTextBox.BackColor = AppColors._errorColor;
+                RatingTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            RatingTextBox.BackColor = AppColors._correctColor;
+            RatingTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void DurationTextBox_TextChanged(object sender, EventArgs e)
@@ -118,10 +118,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                DurationTextBox.BackColor = AppColors._errorColor;
+                DurationTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            DurationTextBox.BackColor = AppColors._correctColor;
+            DurationTextBox.BackColor = AppColors.CorrectColor;
         }
 
         /// <summary>

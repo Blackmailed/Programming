@@ -1,7 +1,7 @@
 ﻿
 namespace Programming.View.Controls
 {
-    partial class WeekdayParsinControl
+    partial class WeekdayParsingControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,14 +39,14 @@ namespace Programming.View.Controls
             // 
             // WeekdayGroupBox
             // 
-            this.WeekdayGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.WeekdayGroupBox.Controls.Add(this.OutputLabel);
             this.WeekdayGroupBox.Controls.Add(this.ParseButton);
             this.WeekdayGroupBox.Controls.Add(this.WeekdayTextBox);
             this.WeekdayGroupBox.Controls.Add(this.ParsingLabel);
-            this.WeekdayGroupBox.Location = new System.Drawing.Point(6, 274);
+            this.WeekdayGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WeekdayGroupBox.Location = new System.Drawing.Point(0, 0);
             this.WeekdayGroupBox.Name = "WeekdayGroupBox";
-            this.WeekdayGroupBox.Size = new System.Drawing.Size(380, 140);
+            this.WeekdayGroupBox.Size = new System.Drawing.Size(816, 489);
             this.WeekdayGroupBox.TabIndex = 1;
             this.WeekdayGroupBox.TabStop = false;
             this.WeekdayGroupBox.Text = "Weekday Parsing";
@@ -86,12 +86,12 @@ namespace Programming.View.Controls
             this.ParsingLabel.TabIndex = 1;
             this.ParsingLabel.Text = "Type value for parsing:";
             // 
-            // WeekdayParsinControl
+            // WeekdayParsingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.WeekdayGroupBox);
-            this.Name = "WeekdayParsinControl";
+            this.Name = "WeekdayParsingControl";
             this.Size = new System.Drawing.Size(816, 489);
             this.WeekdayGroupBox.ResumeLayout(false);
             this.WeekdayGroupBox.PerformLayout();

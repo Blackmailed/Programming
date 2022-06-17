@@ -63,11 +63,12 @@ namespace Programming.View.Controls
             this.RectanglesGroupBox.Controls.Add(this.WidthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.LengthTextBox);
             this.RectanglesGroupBox.Controls.Add(this.RectanglesListBox);
-            this.RectanglesGroupBox.Location = new System.Drawing.Point(6, 6);
+            this.RectanglesGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RectanglesGroupBox.Location = new System.Drawing.Point(0, 0);
             this.RectanglesGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.RectanglesGroupBox.Name = "RectanglesGroupBox";
             this.RectanglesGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.RectanglesGroupBox.Size = new System.Drawing.Size(386, 409);
+            this.RectanglesGroupBox.Size = new System.Drawing.Size(816, 489);
             this.RectanglesGroupBox.TabIndex = 1;
             this.RectanglesGroupBox.TabStop = false;
             this.RectanglesGroupBox.Text = "Rectangles";
@@ -75,7 +76,7 @@ namespace Programming.View.Controls
             // IdTextBox
             // 
             this.IdTextBox.Enabled = false;
-            this.IdTextBox.Location = new System.Drawing.Point(225, 251);
+            this.IdTextBox.Location = new System.Drawing.Point(227, 251);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.ReadOnly = true;
             this.IdTextBox.Size = new System.Drawing.Size(104, 23);
@@ -84,7 +85,7 @@ namespace Programming.View.Controls
             // IdLabel
             // 
             this.IdLabel.AutoSize = true;
-            this.IdLabel.Location = new System.Drawing.Point(224, 232);
+            this.IdLabel.Location = new System.Drawing.Point(226, 232);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(20, 15);
             this.IdLabel.TabIndex = 12;
@@ -93,7 +94,7 @@ namespace Programming.View.Controls
             // YtextBox
             // 
             this.YtextBox.Enabled = false;
-            this.YtextBox.Location = new System.Drawing.Point(225, 207);
+            this.YtextBox.Location = new System.Drawing.Point(227, 207);
             this.YtextBox.Name = "YtextBox";
             this.YtextBox.ReadOnly = true;
             this.YtextBox.Size = new System.Drawing.Size(104, 23);
@@ -102,7 +103,7 @@ namespace Programming.View.Controls
             // Ylabel
             // 
             this.Ylabel.AutoSize = true;
-            this.Ylabel.Location = new System.Drawing.Point(224, 188);
+            this.Ylabel.Location = new System.Drawing.Point(226, 188);
             this.Ylabel.Name = "Ylabel";
             this.Ylabel.Size = new System.Drawing.Size(17, 15);
             this.Ylabel.TabIndex = 10;
@@ -111,7 +112,7 @@ namespace Programming.View.Controls
             // XtextBox
             // 
             this.XtextBox.Enabled = false;
-            this.XtextBox.Location = new System.Drawing.Point(225, 163);
+            this.XtextBox.Location = new System.Drawing.Point(227, 163);
             this.XtextBox.Name = "XtextBox";
             this.XtextBox.ReadOnly = true;
             this.XtextBox.Size = new System.Drawing.Size(104, 23);
@@ -120,7 +121,7 @@ namespace Programming.View.Controls
             // Xlabel
             // 
             this.Xlabel.AutoSize = true;
-            this.Xlabel.Location = new System.Drawing.Point(224, 144);
+            this.Xlabel.Location = new System.Drawing.Point(226, 144);
             this.Xlabel.Name = "Xlabel";
             this.Xlabel.Size = new System.Drawing.Size(17, 15);
             this.Xlabel.TabIndex = 8;
@@ -129,7 +130,7 @@ namespace Programming.View.Controls
             // FindWidthButton
             // 
             this.FindWidthButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FindWidthButton.Location = new System.Drawing.Point(225, 374);
+            this.FindWidthButton.Location = new System.Drawing.Point(227, 448);
             this.FindWidthButton.Name = "FindWidthButton";
             this.FindWidthButton.Size = new System.Drawing.Size(104, 23);
             this.FindWidthButton.TabIndex = 1;
@@ -140,7 +141,7 @@ namespace Programming.View.Controls
             // ColorLabel
             // 
             this.ColorLabel.AutoSize = true;
-            this.ColorLabel.Location = new System.Drawing.Point(224, 102);
+            this.ColorLabel.Location = new System.Drawing.Point(226, 102);
             this.ColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ColorLabel.Name = "ColorLabel";
             this.ColorLabel.Size = new System.Drawing.Size(39, 15);
@@ -150,7 +151,7 @@ namespace Programming.View.Controls
             // WidthLabel
             // 
             this.WidthLabel.AutoSize = true;
-            this.WidthLabel.Location = new System.Drawing.Point(224, 59);
+            this.WidthLabel.Location = new System.Drawing.Point(226, 59);
             this.WidthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.WidthLabel.Name = "WidthLabel";
             this.WidthLabel.Size = new System.Drawing.Size(42, 15);
@@ -160,7 +161,7 @@ namespace Programming.View.Controls
             // LengthLabel
             // 
             this.LengthLabel.AutoSize = true;
-            this.LengthLabel.Location = new System.Drawing.Point(224, 17);
+            this.LengthLabel.Location = new System.Drawing.Point(226, 17);
             this.LengthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LengthLabel.Name = "LengthLabel";
             this.LengthLabel.Size = new System.Drawing.Size(47, 15);
@@ -169,7 +170,7 @@ namespace Programming.View.Controls
             // 
             // ColorTextBox
             // 
-            this.ColorTextBox.Location = new System.Drawing.Point(225, 120);
+            this.ColorTextBox.Location = new System.Drawing.Point(227, 120);
             this.ColorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ColorTextBox.Name = "ColorTextBox";
             this.ColorTextBox.Size = new System.Drawing.Size(104, 23);
@@ -187,7 +188,7 @@ namespace Programming.View.Controls
             // 
             // LengthTextBox
             // 
-            this.LengthTextBox.Location = new System.Drawing.Point(225, 35);
+            this.LengthTextBox.Location = new System.Drawing.Point(227, 35);
             this.LengthTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.LengthTextBox.Name = "LengthTextBox";
             this.LengthTextBox.Size = new System.Drawing.Size(104, 23);
@@ -200,10 +201,10 @@ namespace Programming.View.Controls
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RectanglesListBox.FormattingEnabled = true;
             this.RectanglesListBox.ItemHeight = 15;
-            this.RectanglesListBox.Location = new System.Drawing.Point(5, 17);
+            this.RectanglesListBox.Location = new System.Drawing.Point(7, 17);
             this.RectanglesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.RectanglesListBox.Name = "RectanglesListBox";
-            this.RectanglesListBox.Size = new System.Drawing.Size(211, 379);
+            this.RectanglesListBox.Size = new System.Drawing.Size(211, 454);
             this.RectanglesListBox.TabIndex = 0;
             this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 

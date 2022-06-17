@@ -39,11 +39,11 @@ namespace Programming.View.Controls
             _rectanglePanels = new List<Panel>();
         }
 
-        private void RectanglesListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (RectanglesListBox2.SelectedIndex != -1)
+            if (RectanglesListBox.SelectedIndex != -1)
             {
-                int indexSelectedRectangle = RectanglesListBox2.SelectedIndex;
+                int indexSelectedRectangle = RectanglesListBox.SelectedIndex;
                 _currentRectangle = _rectangles[indexSelectedRectangle];
                 LengthTextBox2.Text = _currentRectangle.Length.ToString();
                 WidthTextBox2.Text = _currentRectangle.Width.ToString();
@@ -72,16 +72,16 @@ namespace Programming.View.Controls
         /// </summary>
         private void ClearRectangleInfo()
         {
-            RectanglesListBox2.Items.Clear();
+            RectanglesListBox.Items.Clear();
             IdTextBox2.Clear();
             XtextBox2.Clear();
             YtextBox2.Clear();
             WidthTextBox2.Clear();
             LengthTextBox2.Clear();
-            XtextBox2.BackColor = AppColors._correctColor;
-            YtextBox2.BackColor = AppColors._correctColor;
-            WidthTextBox2.BackColor = AppColors._correctColor;
-            LengthTextBox2.BackColor = AppColors._correctColor;
+            XtextBox2.BackColor = AppColors.CorrectColor;
+            YtextBox2.BackColor = AppColors.CorrectColor;
+            WidthTextBox2.BackColor = AppColors.CorrectColor;
+            LengthTextBox2.BackColor = AppColors.CorrectColor;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Programming.View.Controls
         {
             for (int k = 0; k < _rectangles.Count; k++)
             {
-                CanvasPanel.Controls[k].BackColor = AppColors.unIntersects;
+                CanvasPanel.Controls[k].BackColor = AppColors.IsNotCollisionColor;
             }
 
             for (int i = 0; i < _rectangles.Count - 1; i++)
@@ -100,8 +100,8 @@ namespace Programming.View.Controls
                 {
                     if (CollisionManager.IsCollision(_rectangles[i], _rectangles[j]))
                     {
-                        CanvasPanel.Controls[i].BackColor = AppColors.Intersects;
-                        CanvasPanel.Controls[j].BackColor = AppColors.Intersects;
+                        CanvasPanel.Controls[i].BackColor = AppColors.IsCollisionColor;
+                        CanvasPanel.Controls[j].BackColor = AppColors.IsCollisionColor;
                     }
                 }
             }
@@ -115,10 +115,10 @@ namespace Programming.View.Controls
         {
             if (rectangle != null)
             {
-                CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-                CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-                CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Width = rectangle.Width;
-                CanvasPanel.Controls[RectanglesListBox2.SelectedIndex].Height = rectangle.Length;
+                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
+                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
+                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Width = rectangle.Width;
+                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Height = rectangle.Length;
                 FindCollisions();
             }
         }
@@ -126,14 +126,14 @@ namespace Programming.View.Controls
         private void AddRectangleButton_Click(object sender, EventArgs e)
         {
             var rectangle = RectangleFactory.Randomize(CanvasPanel.Width, CanvasPanel.Height);
-            RectanglesListBox2.Items.Add(RectangleInfo(rectangle));
+            RectanglesListBox.Items.Add(RectangleInfo(rectangle));
             _rectangles.Add(rectangle);
 
             Panel rectanglePanel = new Panel();
             rectanglePanel.Width = Convert.ToInt32(rectangle.Width);
             rectanglePanel.Height = Convert.ToInt32(rectangle.Length);
             rectanglePanel.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-            rectanglePanel.BackColor = AppColors.unIntersects;
+            rectanglePanel.BackColor = AppColors.IsNotCollisionColor;
             _rectanglePanels.Add(rectanglePanel);
             CanvasPanel.Controls.Add(rectanglePanel);
             FindCollisions();
@@ -143,8 +143,8 @@ namespace Programming.View.Controls
         {
             if (_rectangles.Count > 0)
             {
-                if (RectanglesListBox2.SelectedIndex == -1) return;
-                int selectedIndexRectangle = RectanglesListBox2.SelectedIndex;
+                if (RectanglesListBox.SelectedIndex == -1) return;
+                int selectedIndexRectangle = RectanglesListBox.SelectedIndex;
                 _rectangles.RemoveAt(selectedIndexRectangle);
                 CanvasPanel.Controls.RemoveAt(selectedIndexRectangle);
                 _rectanglePanels.RemoveAt(selectedIndexRectangle);
@@ -152,8 +152,8 @@ namespace Programming.View.Controls
 
                 for (int i = 0; i < _rectangles.Count; i++)
                 {
-                    RectanglesListBox2.Items.Add(RectangleInfo(_rectangles[i]));
-                    RectanglesListBox2.SelectedIndex = 0;
+                    RectanglesListBox.Items.Add(RectangleInfo(_rectangles[i]));
+                    RectanglesListBox.SelectedIndex = 0;
                 }
                 FindCollisions();
             }
@@ -161,7 +161,7 @@ namespace Programming.View.Controls
 
         private void XtextBox2_TextChanged(object sender, EventArgs e)
         {
-            if (RectanglesListBox2.SelectedIndex == -1) return;
+            if (RectanglesListBox.SelectedIndex == -1) return;
 
             try
             {
@@ -169,21 +169,21 @@ namespace Programming.View.Controls
                 int rectangleX = int.Parse(xRectangleAsString);
                 _currentRectangle.Center.X = rectangleX;
                 UpdateRectangleInfo(_currentRectangle);
-                int index = RectanglesListBox2.FindString(_currentRectangle.Id.ToString());
-                RectanglesListBox2.Items[index] = RectangleInfo(_currentRectangle);
+                int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
+                RectanglesListBox.Items[index] = RectangleInfo(_currentRectangle);
             }
 
             catch
             {
-                XtextBox2.BackColor = AppColors._errorColor;
+                XtextBox2.BackColor = AppColors.ErrorColor;
                 return;
             }
-            XtextBox2.BackColor = AppColors._correctColor;
+            XtextBox2.BackColor = AppColors.CorrectColor;
         }
 
         private void YtextBox2_TextChanged(object sender, EventArgs e)
         {
-            if (RectanglesListBox2.SelectedIndex == -1) return;
+            if (RectanglesListBox.SelectedIndex == -1) return;
 
             try
             {
@@ -191,15 +191,15 @@ namespace Programming.View.Controls
                 int rectangleY = int.Parse(yRectangleAsString);
                 _currentRectangle.Center.Y = rectangleY;
                 UpdateRectangleInfo(_currentRectangle);
-                int index = RectanglesListBox2.FindString(_currentRectangle.Id.ToString());
-                RectanglesListBox2.Items[index] = RectangleInfo(_currentRectangle);
+                int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
+                RectanglesListBox.Items[index] = RectangleInfo(_currentRectangle);
             }
             catch
             {
-                YtextBox2.BackColor = AppColors._errorColor;
+                YtextBox2.BackColor = AppColors.ErrorColor;
                 return;
             }
-            YtextBox2.BackColor = AppColors._correctColor;
+            YtextBox2.BackColor = AppColors.CorrectColor;
         }
 
         private void WidthTextBox2_TextChanged(object sender, EventArgs e)
@@ -209,15 +209,15 @@ namespace Programming.View.Controls
                 int rectangleWidth = int.Parse(WidthTextBox2.Text);
                 _currentRectangle.Width = rectangleWidth;
                 UpdateRectangleInfo(_currentRectangle);
-                int index = RectanglesListBox2.FindString(_currentRectangle.Id.ToString());
-                RectanglesListBox2.Items[index] = RectangleInfo(_currentRectangle);
+                int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
+                RectanglesListBox.Items[index] = RectangleInfo(_currentRectangle);
             }
             catch
             {
-                WidthTextBox2.BackColor = AppColors._errorColor;
+                WidthTextBox2.BackColor = AppColors.ErrorColor;
                 return;
             }
-            WidthTextBox2.BackColor = AppColors._correctColor;
+            WidthTextBox2.BackColor = AppColors.CorrectColor;
         }
 
         private void LengthTextBox2_TextChanged(object sender, EventArgs e)
@@ -227,16 +227,16 @@ namespace Programming.View.Controls
                 string rectangleLength = LengthTextBox2.Text;
                 _currentRectangle.Length = int.Parse(rectangleLength);
                 UpdateRectangleInfo(_currentRectangle);
-                int index = RectanglesListBox2.FindString(_currentRectangle.Id.ToString());
-                RectanglesListBox2.Items[index] = RectangleInfo(_currentRectangle);
+                int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
+                RectanglesListBox.Items[index] = RectangleInfo(_currentRectangle);
 
             }
             catch
             {
-                LengthTextBox2.BackColor = AppColors._errorColor;
+                LengthTextBox2.BackColor = AppColors.ErrorColor;
                 return;
             }
-            LengthTextBox2.BackColor = AppColors._correctColor;
+            LengthTextBox2.BackColor = AppColors.CorrectColor;
         }
 
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)

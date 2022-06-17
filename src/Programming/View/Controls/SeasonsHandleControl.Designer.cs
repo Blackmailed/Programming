@@ -38,13 +38,13 @@ namespace Programming.View.Controls
             // 
             // SeasonGroupBox
             // 
-            this.SeasonGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SeasonGroupBox.Controls.Add(this.SeasonComboBox);
             this.SeasonGroupBox.Controls.Add(this.SeasonGoButton);
             this.SeasonGroupBox.Controls.Add(this.SeasonLabel);
-            this.SeasonGroupBox.Location = new System.Drawing.Point(401, 274);
+            this.SeasonGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SeasonGroupBox.Location = new System.Drawing.Point(0, 0);
             this.SeasonGroupBox.Name = "SeasonGroupBox";
-            this.SeasonGroupBox.Size = new System.Drawing.Size(385, 140);
+            this.SeasonGroupBox.Size = new System.Drawing.Size(816, 489);
             this.SeasonGroupBox.TabIndex = 2;
             this.SeasonGroupBox.TabStop = false;
             this.SeasonGroupBox.Text = "Season Handle";

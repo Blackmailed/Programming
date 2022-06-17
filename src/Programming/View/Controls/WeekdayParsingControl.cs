@@ -7,12 +7,12 @@ namespace Programming.View.Controls
     /// <summary>
     /// Реализация парсинга дней недели из перечисления.
     /// </summary>
-    public partial class WeekdayParsinControl : UserControl
+    public partial class WeekdayParsingControl : UserControl
     {
         /// <summary>
-        /// Создаёт экземпляр класса <see cref="WeekdayParsinControl"/>.
+        /// Создаёт экземпляр класса <see cref="WeekdayParsingControl"/>.
         /// </summary>
-        public WeekdayParsinControl()
+        public WeekdayParsingControl()
         {
             InitializeComponent();
         }

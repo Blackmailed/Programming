@@ -29,18 +29,18 @@ namespace Programming.View.Controls
             switch (season)
             {
                 case Seasons.Winter:
-                    BackColor = AppColors.Winter;
+                    BackColor = AppColors.WinterColor;
                     MessageBox.Show("«Бррр! Холодно!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Spring:
-                    BackColor = AppColors.Spring;
+                    BackColor = AppColors.SpringColor;
                     break;
                 case Seasons.Summer:
-                    BackColor = AppColors.Summer;
+                    BackColor = AppColors.SummerColor;
                     MessageBox.Show("«Ура! Солнце!!»", "AlErT", MessageBoxButtons.OKCancel);
                     break;
                 case Seasons.Autumn:
-                    BackColor = AppColors.Autumn;
+                    BackColor = AppColors.AutumnColor;
                     break;
             }
         }
