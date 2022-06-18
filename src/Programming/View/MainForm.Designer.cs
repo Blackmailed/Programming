@@ -111,17 +111,20 @@
             // 
             // movieControl1
             // 
-            this.movieControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.movieControl1.Location = new System.Drawing.Point(413, 0);
+            this.movieControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieControl1.Location = new System.Drawing.Point(407, 6);
             this.movieControl1.Name = "movieControl1";
-            this.movieControl1.Size = new System.Drawing.Size(379, 422);
+            this.movieControl1.Size = new System.Drawing.Size(379, 408);
             this.movieControl1.TabIndex = 3;
             // 
             // rectanglesControl1
             // 
+            this.rectanglesControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rectanglesControl1.Location = new System.Drawing.Point(6, 6);
             this.rectanglesControl1.Name = "rectanglesControl1";
-            this.rectanglesControl1.Size = new System.Drawing.Size(393, 419);
+            this.rectanglesControl1.Size = new System.Drawing.Size(395, 408);
             this.rectanglesControl1.TabIndex = 2;
             // 
             // RectanglesTabPage
@@ -149,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ProgrammingTabControl);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Programming Demo";

@@ -113,12 +113,14 @@ namespace Programming.View.Controls
         /// <param name="rectangle">Прямоугольник.</param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
+            var updatedRectangle = CanvasPanel.Controls[RectanglesListBox.SelectedIndex];
+
             if (rectangle != null)
             {
-                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Location = new Point(rectangle.Center.X, rectangle.Center.Y);
-                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Width = rectangle.Width;
-                CanvasPanel.Controls[RectanglesListBox.SelectedIndex].Height = rectangle.Length;
+                updatedRectangle.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
+                updatedRectangle.Location = new Point(rectangle.Center.X, rectangle.Center.Y);
+                updatedRectangle.Width = rectangle.Width;
+                updatedRectangle.Height = rectangle.Length;
                 FindCollisions();
             }
         }

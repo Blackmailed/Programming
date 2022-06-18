@@ -39,10 +39,10 @@ namespace Programming.Model
         /// </summary>
         private static Random _random = new Random();
 
-        /// <summary>
-        /// Создаёт прямоугольник со случайными значениями высоты, ширины и координат.
-        /// </summary>
-        /// <returns>Возвращает объект Rectangle.</returns>
+        ///// <summary>
+        ///// Создаёт прямоугольник со случайными значениями высоты, ширины и координат.
+        ///// </summary>
+        ///// <returns>Возвращает объект Rectangle.</returns>
         public static Rectangle Randomize()
         {
             var colors = Enum.GetValues(typeof(Color));
