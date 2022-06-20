@@ -30,17 +30,17 @@ namespace Programming.View.Controls
         private void InitializeComponent()
         {
             this.CanvasPanel = new System.Windows.Forms.Panel();
-            this.LenghtLabel2 = new System.Windows.Forms.Label();
-            this.WidthLabel2 = new System.Windows.Forms.Label();
-            this.Ylable2 = new System.Windows.Forms.Label();
-            this.Xlable2 = new System.Windows.Forms.Label();
-            this.IdLabel2 = new System.Windows.Forms.Label();
+            this.LenghtLabel = new System.Windows.Forms.Label();
+            this.WidthLabel = new System.Windows.Forms.Label();
+            this.Ylable = new System.Windows.Forms.Label();
+            this.Xlable = new System.Windows.Forms.Label();
+            this.IdLabel = new System.Windows.Forms.Label();
             this.SelectedRectanglesLabel = new System.Windows.Forms.Label();
-            this.LengthTextBox2 = new System.Windows.Forms.TextBox();
-            this.WidthTextBox2 = new System.Windows.Forms.TextBox();
-            this.YtextBox2 = new System.Windows.Forms.TextBox();
-            this.XtextBox2 = new System.Windows.Forms.TextBox();
-            this.IdTextBox2 = new System.Windows.Forms.TextBox();
+            this.LengthTextBox = new System.Windows.Forms.TextBox();
+            this.WidthTextBox = new System.Windows.Forms.TextBox();
+            this.YtextBox = new System.Windows.Forms.TextBox();
+            this.XtextBox = new System.Windows.Forms.TextBox();
+            this.IdTextBox = new System.Windows.Forms.TextBox();
             this.RemoveRectangleButton = new System.Windows.Forms.Button();
             this.AddRectangleButton = new System.Windows.Forms.Button();
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
@@ -57,55 +57,55 @@ namespace Programming.View.Controls
             this.CanvasPanel.Size = new System.Drawing.Size(511, 445);
             this.CanvasPanel.TabIndex = 31;
             // 
-            // LenghtLabel2
+            // LenghtLabel
             // 
-            this.LenghtLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LenghtLabel2.AutoSize = true;
-            this.LenghtLabel2.Location = new System.Drawing.Point(10, 445);
-            this.LenghtLabel2.Name = "LenghtLabel2";
-            this.LenghtLabel2.Size = new System.Drawing.Size(47, 15);
-            this.LenghtLabel2.TabIndex = 30;
-            this.LenghtLabel2.Text = "Length:";
+            this.LenghtLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LenghtLabel.AutoSize = true;
+            this.LenghtLabel.Location = new System.Drawing.Point(10, 445);
+            this.LenghtLabel.Name = "LenghtLabel";
+            this.LenghtLabel.Size = new System.Drawing.Size(47, 15);
+            this.LenghtLabel.TabIndex = 30;
+            this.LenghtLabel.Text = "Length:";
             // 
-            // WidthLabel2
+            // WidthLabel
             // 
-            this.WidthLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WidthLabel2.AutoSize = true;
-            this.WidthLabel2.Location = new System.Drawing.Point(10, 416);
-            this.WidthLabel2.Name = "WidthLabel2";
-            this.WidthLabel2.Size = new System.Drawing.Size(42, 15);
-            this.WidthLabel2.TabIndex = 29;
-            this.WidthLabel2.Text = "Width:";
+            this.WidthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.WidthLabel.AutoSize = true;
+            this.WidthLabel.Location = new System.Drawing.Point(10, 416);
+            this.WidthLabel.Name = "WidthLabel";
+            this.WidthLabel.Size = new System.Drawing.Size(42, 15);
+            this.WidthLabel.TabIndex = 29;
+            this.WidthLabel.Text = "Width:";
             // 
-            // Ylable2
+            // Ylable
             // 
-            this.Ylable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Ylable2.AutoSize = true;
-            this.Ylable2.Location = new System.Drawing.Point(10, 387);
-            this.Ylable2.Name = "Ylable2";
-            this.Ylable2.Size = new System.Drawing.Size(17, 15);
-            this.Ylable2.TabIndex = 28;
-            this.Ylable2.Text = "Y:";
+            this.Ylable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Ylable.AutoSize = true;
+            this.Ylable.Location = new System.Drawing.Point(10, 387);
+            this.Ylable.Name = "Ylable";
+            this.Ylable.Size = new System.Drawing.Size(17, 15);
+            this.Ylable.TabIndex = 28;
+            this.Ylable.Text = "Y:";
             // 
-            // Xlable2
+            // Xlable
             // 
-            this.Xlable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Xlable2.AutoSize = true;
-            this.Xlable2.Location = new System.Drawing.Point(13, 358);
-            this.Xlable2.Name = "Xlable2";
-            this.Xlable2.Size = new System.Drawing.Size(17, 15);
-            this.Xlable2.TabIndex = 27;
-            this.Xlable2.Text = "X:";
+            this.Xlable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Xlable.AutoSize = true;
+            this.Xlable.Location = new System.Drawing.Point(13, 358);
+            this.Xlable.Name = "Xlable";
+            this.Xlable.Size = new System.Drawing.Size(17, 15);
+            this.Xlable.TabIndex = 27;
+            this.Xlable.Text = "X:";
             // 
-            // IdLabel2
+            // IdLabel
             // 
-            this.IdLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.IdLabel2.AutoSize = true;
-            this.IdLabel2.Location = new System.Drawing.Point(10, 329);
-            this.IdLabel2.Name = "IdLabel2";
-            this.IdLabel2.Size = new System.Drawing.Size(20, 15);
-            this.IdLabel2.TabIndex = 26;
-            this.IdLabel2.Text = "Id:";
+            this.IdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.IdLabel.AutoSize = true;
+            this.IdLabel.Location = new System.Drawing.Point(10, 329);
+            this.IdLabel.Name = "IdLabel";
+            this.IdLabel.Size = new System.Drawing.Size(20, 15);
+            this.IdLabel.TabIndex = 26;
+            this.IdLabel.Text = "Id:";
             // 
             // SelectedRectanglesLabel
             // 
@@ -117,51 +117,51 @@ namespace Programming.View.Controls
             this.SelectedRectanglesLabel.TabIndex = 25;
             this.SelectedRectanglesLabel.Text = "Selected Rectangle:";
             // 
-            // LengthTextBox2
+            // LengthTextBox
             // 
-            this.LengthTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LengthTextBox2.Location = new System.Drawing.Point(57, 442);
-            this.LengthTextBox2.Name = "LengthTextBox2";
-            this.LengthTextBox2.Size = new System.Drawing.Size(100, 23);
-            this.LengthTextBox2.TabIndex = 24;
-            this.LengthTextBox2.TextChanged += new System.EventHandler(this.LengthTextBox2_TextChanged);
+            this.LengthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LengthTextBox.Location = new System.Drawing.Point(57, 442);
+            this.LengthTextBox.Name = "LengthTextBox";
+            this.LengthTextBox.Size = new System.Drawing.Size(100, 23);
+            this.LengthTextBox.TabIndex = 24;
+            this.LengthTextBox.TextChanged += new System.EventHandler(this.LengthTextBox_TextChanged);
             // 
-            // WidthTextBox2
+            // WidthTextBox
             // 
-            this.WidthTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WidthTextBox2.Location = new System.Drawing.Point(57, 413);
-            this.WidthTextBox2.Name = "WidthTextBox2";
-            this.WidthTextBox2.Size = new System.Drawing.Size(100, 23);
-            this.WidthTextBox2.TabIndex = 23;
-            this.WidthTextBox2.TextChanged += new System.EventHandler(this.WidthTextBox2_TextChanged);
+            this.WidthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.WidthTextBox.Location = new System.Drawing.Point(57, 413);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.Size = new System.Drawing.Size(100, 23);
+            this.WidthTextBox.TabIndex = 23;
+            this.WidthTextBox.TextChanged += new System.EventHandler(this.WidthTextBox_TextChanged);
             // 
-            // YtextBox2
+            // YtextBox
             // 
-            this.YtextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.YtextBox2.Location = new System.Drawing.Point(57, 384);
-            this.YtextBox2.Name = "YtextBox2";
-            this.YtextBox2.Size = new System.Drawing.Size(100, 23);
-            this.YtextBox2.TabIndex = 22;
-            this.YtextBox2.TextChanged += new System.EventHandler(this.YtextBox2_TextChanged);
+            this.YtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.YtextBox.Location = new System.Drawing.Point(57, 384);
+            this.YtextBox.Name = "YtextBox";
+            this.YtextBox.Size = new System.Drawing.Size(100, 23);
+            this.YtextBox.TabIndex = 22;
+            this.YtextBox.TextChanged += new System.EventHandler(this.YtextBox_TextChanged);
             // 
-            // XtextBox2
+            // XtextBox
             // 
-            this.XtextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.XtextBox2.Location = new System.Drawing.Point(57, 355);
-            this.XtextBox2.Name = "XtextBox2";
-            this.XtextBox2.Size = new System.Drawing.Size(100, 23);
-            this.XtextBox2.TabIndex = 21;
-            this.XtextBox2.TextChanged += new System.EventHandler(this.XtextBox2_TextChanged);
+            this.XtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.XtextBox.Location = new System.Drawing.Point(57, 355);
+            this.XtextBox.Name = "XtextBox";
+            this.XtextBox.Size = new System.Drawing.Size(100, 23);
+            this.XtextBox.TabIndex = 21;
+            this.XtextBox.TextChanged += new System.EventHandler(this.XtextBox_TextChanged);
             // 
-            // IdTextBox2
+            // IdTextBox
             // 
-            this.IdTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.IdTextBox2.Enabled = false;
-            this.IdTextBox2.Location = new System.Drawing.Point(57, 326);
-            this.IdTextBox2.Name = "IdTextBox2";
-            this.IdTextBox2.ReadOnly = true;
-            this.IdTextBox2.Size = new System.Drawing.Size(100, 23);
-            this.IdTextBox2.TabIndex = 20;
+            this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.IdTextBox.Enabled = false;
+            this.IdTextBox.Location = new System.Drawing.Point(57, 326);
+            this.IdTextBox.Name = "IdTextBox";
+            this.IdTextBox.ReadOnly = true;
+            this.IdTextBox.Size = new System.Drawing.Size(100, 23);
+            this.IdTextBox.TabIndex = 20;
             // 
             // RemoveRectangleButton
             // 
@@ -212,17 +212,17 @@ namespace Programming.View.Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.CanvasPanel);
-            this.Controls.Add(this.LenghtLabel2);
-            this.Controls.Add(this.WidthLabel2);
-            this.Controls.Add(this.Ylable2);
-            this.Controls.Add(this.Xlable2);
-            this.Controls.Add(this.IdLabel2);
+            this.Controls.Add(this.LenghtLabel);
+            this.Controls.Add(this.WidthLabel);
+            this.Controls.Add(this.Ylable);
+            this.Controls.Add(this.Xlable);
+            this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.SelectedRectanglesLabel);
-            this.Controls.Add(this.LengthTextBox2);
-            this.Controls.Add(this.WidthTextBox2);
-            this.Controls.Add(this.YtextBox2);
-            this.Controls.Add(this.XtextBox2);
-            this.Controls.Add(this.IdTextBox2);
+            this.Controls.Add(this.LengthTextBox);
+            this.Controls.Add(this.WidthTextBox);
+            this.Controls.Add(this.YtextBox);
+            this.Controls.Add(this.XtextBox);
+            this.Controls.Add(this.IdTextBox);
             this.Controls.Add(this.RemoveRectangleButton);
             this.Controls.Add(this.AddRectangleButton);
             this.Controls.Add(this.RectanglesListBox);
@@ -250,5 +250,15 @@ namespace Programming.View.Controls
         private System.Windows.Forms.Button RemoveRectangleButton;
         private System.Windows.Forms.Button AddRectangleButton;
         private System.Windows.Forms.ListBox RectanglesListBox;
+        private System.Windows.Forms.Label LenghtLabel;
+        private System.Windows.Forms.Label WidthLabel;
+        private System.Windows.Forms.Label Ylable;
+        private System.Windows.Forms.Label Xlable;
+        private System.Windows.Forms.Label IdLabel;
+        private System.Windows.Forms.TextBox LengthTextBox;
+        private System.Windows.Forms.TextBox WidthTextBox;
+        private System.Windows.Forms.TextBox YtextBox;
+        private System.Windows.Forms.TextBox XtextBox;
+        private System.Windows.Forms.TextBox IdTextBox;
     }
 }

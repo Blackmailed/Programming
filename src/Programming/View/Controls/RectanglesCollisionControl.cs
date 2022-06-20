@@ -60,15 +60,15 @@ namespace Programming.View.Controls
         private void ClearRectangleInfo()
         {
             RectanglesListBox.Items.Clear();
-            IdTextBox2.Clear();
-            XtextBox2.Clear();
-            YtextBox2.Clear();
-            WidthTextBox2.Clear();
-            LengthTextBox2.Clear();
+            IdTextBox.Clear();
+            XtextBox.Clear();
+            YtextBox.Clear();
+            WidthTextBox.Clear();
+            LengthTextBox.Clear();
             XtextBox2.BackColor = AppColors.CorrectColor;
             YtextBox2.BackColor = AppColors.CorrectColor;
-            WidthTextBox2.BackColor = AppColors.CorrectColor;
-            LengthTextBox2.BackColor = AppColors.CorrectColor;
+            WidthTextBox.BackColor = AppColors.CorrectColor;
+            LengthTextBox.BackColor = AppColors.CorrectColor;
         }
 
         /// <summary>
@@ -118,11 +118,11 @@ namespace Programming.View.Controls
             {
                 int indexSelectedRectangle = RectanglesListBox.SelectedIndex;
                 _currentRectangle = _rectangles[indexSelectedRectangle];
-                LengthTextBox2.Text = _currentRectangle.Length.ToString();
-                WidthTextBox2.Text = _currentRectangle.Width.ToString();
-                XtextBox2.Text = _currentRectangle.Center.X.ToString();
-                YtextBox2.Text = _currentRectangle.Center.Y.ToString();
-                IdTextBox2.Text = _currentRectangle.Id.ToString();
+                LengthTextBox.Text = _currentRectangle.Length.ToString();
+                WidthTextBox.Text = _currentRectangle.Width.ToString();
+                XtextBox.Text = _currentRectangle.Center.X.ToString();
+                YtextBox.Text = _currentRectangle.Center.Y.ToString();
+                IdTextBox.Text = _currentRectangle.Id.ToString();
             }
         }
 
@@ -162,7 +162,7 @@ namespace Programming.View.Controls
             }
         }
 
-        private void XtextBox2_TextChanged(object sender, EventArgs e)
+        private void XtextBox_TextChanged(object sender, EventArgs e)
         {
             if (RectanglesListBox.SelectedIndex == -1) return;
 
@@ -184,13 +184,13 @@ namespace Programming.View.Controls
             XtextBox2.BackColor = AppColors.CorrectColor;
         }
 
-        private void YtextBox2_TextChanged(object sender, EventArgs e)
+        private void YtextBox_TextChanged(object sender, EventArgs e)
         {
             if (RectanglesListBox.SelectedIndex == -1) return;
 
             try
             {
-                string yRectangleAsString = YtextBox2.Text;
+                string yRectangleAsString = YtextBox.Text;
                 int rectangleY = int.Parse(yRectangleAsString);
                 _currentRectangle.Center.Y = rectangleY;
                 UpdateRectangleInfo(_currentRectangle);
@@ -199,17 +199,17 @@ namespace Programming.View.Controls
             }
             catch
             {
-                YtextBox2.BackColor = AppColors.ErrorColor;
+                YtextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
             YtextBox2.BackColor = AppColors.CorrectColor;
         }
 
-        private void WidthTextBox2_TextChanged(object sender, EventArgs e)
+        private void WidthTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                int rectangleWidth = int.Parse(WidthTextBox2.Text);
+                int rectangleWidth = int.Parse(WidthTextBox.Text);
                 _currentRectangle.Width = rectangleWidth;
                 UpdateRectangleInfo(_currentRectangle);
                 int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
@@ -217,17 +217,17 @@ namespace Programming.View.Controls
             }
             catch
             {
-                WidthTextBox2.BackColor = AppColors.ErrorColor;
+                WidthTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            WidthTextBox2.BackColor = AppColors.CorrectColor;
+            WidthTextBox.BackColor = AppColors.CorrectColor;
         }
 
-        private void LengthTextBox2_TextChanged(object sender, EventArgs e)
+        private void LengthTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string rectangleLength = LengthTextBox2.Text;
+                string rectangleLength = LengthTextBox.Text;
                 _currentRectangle.Length = int.Parse(rectangleLength);
                 UpdateRectangleInfo(_currentRectangle);
                 int index = RectanglesListBox.FindString(_currentRectangle.Id.ToString());
@@ -236,10 +236,10 @@ namespace Programming.View.Controls
             }
             catch
             {
-                LengthTextBox2.BackColor = AppColors.ErrorColor;
+                LengthTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            LengthTextBox2.BackColor = AppColors.CorrectColor;
+            LengthTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)
