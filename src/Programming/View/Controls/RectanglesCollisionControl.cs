@@ -39,20 +39,6 @@ namespace Programming.View.Controls
             _rectanglePanels = new List<Panel>();
         }
 
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (RectanglesListBox.SelectedIndex != -1)
-            {
-                int indexSelectedRectangle = RectanglesListBox.SelectedIndex;
-                _currentRectangle = _rectangles[indexSelectedRectangle];
-                LengthTextBox2.Text = _currentRectangle.Length.ToString();
-                WidthTextBox2.Text = _currentRectangle.Width.ToString();
-                XtextBox2.Text = _currentRectangle.Center.X.ToString();
-                YtextBox2.Text = _currentRectangle.Center.Y.ToString();
-                IdTextBox2.Text = _currentRectangle.Id.ToString();
-            }
-        }
-
         /// <summary>
         /// Из данных прямоугольника задаются параметры.
         /// </summary>
@@ -122,6 +108,20 @@ namespace Programming.View.Controls
                 updatedRectangle.Width = rectangle.Width;
                 updatedRectangle.Height = rectangle.Length;
                 FindCollisions();
+            }
+        }
+
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RectanglesListBox.SelectedIndex != -1)
+            {
+                int indexSelectedRectangle = RectanglesListBox.SelectedIndex;
+                _currentRectangle = _rectangles[indexSelectedRectangle];
+                LengthTextBox2.Text = _currentRectangle.Length.ToString();
+                WidthTextBox2.Text = _currentRectangle.Width.ToString();
+                XtextBox2.Text = _currentRectangle.Center.X.ToString();
+                YtextBox2.Text = _currentRectangle.Center.Y.ToString();
+                IdTextBox2.Text = _currentRectangle.Id.ToString();
             }
         }
 
@@ -244,25 +244,21 @@ namespace Programming.View.Controls
         private void AddRectangleButton_MouseEnter(object sender, EventArgs e)
         {
             AddRectangleButton.Image = Properties.Resources.rectangle_add_24x24;
-
         }
 
         private void AddRectangleButton_MouseLeave(object sender, EventArgs e)
         {
             AddRectangleButton.Image = Properties.Resources.rectangle_add_24x24_uncolor;
-
         }
 
         private void RemoveRectangleButton_MouseEnter(object sender, EventArgs e)
         {
             RemoveRectangleButton.Image = Properties.Resources.rectangle_remove_24x24;
-
         }
 
         private void RemoveRectangleButton_MouseLeave(object sender, EventArgs e)
         {
             RemoveRectangleButton.Image = Properties.Resources.rectangle_remove_24x24_uncolor;
-
         }
     }
 }

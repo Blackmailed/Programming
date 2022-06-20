@@ -1,12 +1,11 @@
 ﻿using System.Drawing;
 
-
 namespace Programming.Model
 {
     /// <summary>
     /// Хранит данные об используемых цветах.
     /// </summary>
-    class AppColors
+    public class AppColors
     {
         /// <summary>
         /// Цвет пересекающихся фигур.
@@ -47,6 +46,5 @@ namespace Programming.Model
         /// Цвет для обозначения Summer.
         /// </summary>
         public static Color SummerColor = Color.FromArgb(85, 156, 69);
-
     }
 }
