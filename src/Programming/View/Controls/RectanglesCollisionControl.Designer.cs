@@ -91,7 +91,7 @@ namespace Programming.View.Controls
             // 
             this.Xlable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Xlable.AutoSize = true;
-            this.Xlable.Location = new System.Drawing.Point(13, 358);
+            this.Xlable.Location = new System.Drawing.Point(10, 358);
             this.Xlable.Name = "Xlable";
             this.Xlable.Size = new System.Drawing.Size(17, 15);
             this.Xlable.TabIndex = 27;
