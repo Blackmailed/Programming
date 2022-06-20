@@ -61,7 +61,7 @@ namespace Programming.View.Controls
             // 
             this.LenghtLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LenghtLabel2.AutoSize = true;
-            this.LenghtLabel2.Location = new System.Drawing.Point(10, 450);
+            this.LenghtLabel2.Location = new System.Drawing.Point(10, 445);
             this.LenghtLabel2.Name = "LenghtLabel2";
             this.LenghtLabel2.Size = new System.Drawing.Size(47, 15);
             this.LenghtLabel2.TabIndex = 30;
@@ -71,7 +71,7 @@ namespace Programming.View.Controls
             // 
             this.WidthLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.WidthLabel2.AutoSize = true;
-            this.WidthLabel2.Location = new System.Drawing.Point(10, 421);
+            this.WidthLabel2.Location = new System.Drawing.Point(10, 416);
             this.WidthLabel2.Name = "WidthLabel2";
             this.WidthLabel2.Size = new System.Drawing.Size(42, 15);
             this.WidthLabel2.TabIndex = 29;
@@ -81,7 +81,7 @@ namespace Programming.View.Controls
             // 
             this.Ylable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Ylable2.AutoSize = true;
-            this.Ylable2.Location = new System.Drawing.Point(10, 392);
+            this.Ylable2.Location = new System.Drawing.Point(10, 387);
             this.Ylable2.Name = "Ylable2";
             this.Ylable2.Size = new System.Drawing.Size(17, 15);
             this.Ylable2.TabIndex = 28;
@@ -91,7 +91,7 @@ namespace Programming.View.Controls
             // 
             this.Xlable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Xlable2.AutoSize = true;
-            this.Xlable2.Location = new System.Drawing.Point(10, 363);
+            this.Xlable2.Location = new System.Drawing.Point(13, 358);
             this.Xlable2.Name = "Xlable2";
             this.Xlable2.Size = new System.Drawing.Size(17, 15);
             this.Xlable2.TabIndex = 27;
@@ -101,7 +101,7 @@ namespace Programming.View.Controls
             // 
             this.IdLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.IdLabel2.AutoSize = true;
-            this.IdLabel2.Location = new System.Drawing.Point(10, 334);
+            this.IdLabel2.Location = new System.Drawing.Point(10, 329);
             this.IdLabel2.Name = "IdLabel2";
             this.IdLabel2.Size = new System.Drawing.Size(20, 15);
             this.IdLabel2.TabIndex = 26;
