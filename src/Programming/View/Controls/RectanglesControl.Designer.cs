@@ -200,6 +200,7 @@ namespace Programming.View.Controls
             this.RectanglesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RectanglesListBox.FormattingEnabled = true;
+            this.RectanglesListBox.IntegralHeight = false;
             this.RectanglesListBox.ItemHeight = 15;
             this.RectanglesListBox.Location = new System.Drawing.Point(7, 17);
             this.RectanglesListBox.Margin = new System.Windows.Forms.Padding(2);

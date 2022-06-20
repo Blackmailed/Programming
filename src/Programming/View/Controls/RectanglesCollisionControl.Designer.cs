@@ -101,7 +101,7 @@ namespace Programming.View.Controls
             // 
             this.IdLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.IdLabel2.AutoSize = true;
-            this.IdLabel2.Location = new System.Drawing.Point(32, 309);
+            this.IdLabel2.Location = new System.Drawing.Point(32, 304);
             this.IdLabel2.Name = "IdLabel2";
             this.IdLabel2.Size = new System.Drawing.Size(20, 15);
             this.IdLabel2.TabIndex = 26;
@@ -113,9 +113,9 @@ namespace Programming.View.Controls
             this.SelectedRectanglesLabel.AutoSize = true;
             this.SelectedRectanglesLabel.Location = new System.Drawing.Point(10, 283);
             this.SelectedRectanglesLabel.Name = "SelectedRectanglesLabel";
-            this.SelectedRectanglesLabel.Size = new System.Drawing.Size(111, 15);
+            this.SelectedRectanglesLabel.Size = new System.Drawing.Size(106, 15);
             this.SelectedRectanglesLabel.TabIndex = 25;
-            this.SelectedRectanglesLabel.Text = "Selected Rectangles";
+            this.SelectedRectanglesLabel.Text = "Selected Rectangle";
             // 
             // LengthTextBox2
             // 

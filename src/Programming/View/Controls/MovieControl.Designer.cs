@@ -168,6 +168,7 @@ namespace Programming.View.Controls
             this.MovieListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MovieListBox.FormattingEnabled = true;
+            this.MovieListBox.IntegralHeight = false;
             this.MovieListBox.ItemHeight = 15;
             this.MovieListBox.Location = new System.Drawing.Point(7, 17);
             this.MovieListBox.Name = "MovieListBox";
