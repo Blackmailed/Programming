@@ -168,7 +168,7 @@ namespace Programming.View.Controls
 
             try
             {
-                string xRectangleAsString = XtextBox2.Text;
+                string xRectangleAsString = XtextBox.Text;
                 int rectangleX = int.Parse(xRectangleAsString);
                 _currentRectangle.Center.X = rectangleX;
                 UpdateRectangleInfo(_currentRectangle);
@@ -178,10 +178,10 @@ namespace Programming.View.Controls
 
             catch
             {
-                XtextBox2.BackColor = AppColors.ErrorColor;
+                XtextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            XtextBox2.BackColor = AppColors.CorrectColor;
+            XtextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void YtextBox_TextChanged(object sender, EventArgs e)
@@ -202,7 +202,7 @@ namespace Programming.View.Controls
                 YtextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-            YtextBox2.BackColor = AppColors.CorrectColor;
+            YtextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void WidthTextBox_TextChanged(object sender, EventArgs e)
