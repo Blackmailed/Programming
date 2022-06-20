@@ -54,7 +54,7 @@
             }
             set
             {
-                _surname = Validator.AssertStringContainsOnlyLetters("Surname", value);
+                _surname = Validator.AssertStringContainsOnlyLetters(nameof(Surname), value);
             }
         }
 
@@ -70,7 +70,7 @@
             }
             set
             {
-                _firstname = Validator.AssertStringContainsOnlyLetters("Firstname", value);
+                _firstname = Validator.AssertStringContainsOnlyLetters(nameof(Firstname), value);
             }
         }
 

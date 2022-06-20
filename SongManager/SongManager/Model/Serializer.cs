@@ -8,6 +8,10 @@ namespace SongManager.Model
     public static class Serializer
     {
         /// <summary>
+        /// Путь до AppData
+        /// </summary>
+
+        /// <summary>
         /// Проводит сериализацию данных.
         /// </summary>
         public static void Serialize(string path, List<Song> songs)

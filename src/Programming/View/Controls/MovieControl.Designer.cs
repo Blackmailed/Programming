@@ -72,7 +72,7 @@ namespace Programming.View.Controls
             this.FindRatingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FindRatingButton.Location = new System.Drawing.Point(224, 448);
             this.FindRatingButton.Name = "FindRatingButton";
-            this.FindRatingButton.Size = new System.Drawing.Size(101, 23);
+            this.FindRatingButton.Size = new System.Drawing.Size(100, 23);
             this.FindRatingButton.TabIndex = 11;
             this.FindRatingButton.Text = "Find";
             this.FindRatingButton.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@ namespace Programming.View.Controls
             // 
             // DurationTextBox
             // 
-            this.DurationTextBox.Location = new System.Drawing.Point(226, 213);
+            this.DurationTextBox.Location = new System.Drawing.Point(224, 213);
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.Size = new System.Drawing.Size(100, 23);
             this.DurationTextBox.TabIndex = 10;
@@ -89,7 +89,7 @@ namespace Programming.View.Controls
             // DurationLable
             // 
             this.DurationLable.AutoSize = true;
-            this.DurationLable.Location = new System.Drawing.Point(226, 195);
+            this.DurationLable.Location = new System.Drawing.Point(224, 195);
             this.DurationLable.Name = "DurationLable";
             this.DurationLable.Size = new System.Drawing.Size(56, 15);
             this.DurationLable.TabIndex = 9;
@@ -97,7 +97,7 @@ namespace Programming.View.Controls
             // 
             // RatingTextBox
             // 
-            this.RatingTextBox.Location = new System.Drawing.Point(226, 169);
+            this.RatingTextBox.Location = new System.Drawing.Point(224, 169);
             this.RatingTextBox.Name = "RatingTextBox";
             this.RatingTextBox.Size = new System.Drawing.Size(100, 23);
             this.RatingTextBox.TabIndex = 8;
@@ -106,7 +106,7 @@ namespace Programming.View.Controls
             // RatingLabel
             // 
             this.RatingLabel.AutoSize = true;
-            this.RatingLabel.Location = new System.Drawing.Point(226, 151);
+            this.RatingLabel.Location = new System.Drawing.Point(224, 151);
             this.RatingLabel.Name = "RatingLabel";
             this.RatingLabel.Size = new System.Drawing.Size(44, 15);
             this.RatingLabel.TabIndex = 7;
@@ -114,7 +114,7 @@ namespace Programming.View.Controls
             // 
             // GenreTextBox
             // 
-            this.GenreTextBox.Location = new System.Drawing.Point(226, 125);
+            this.GenreTextBox.Location = new System.Drawing.Point(224, 125);
             this.GenreTextBox.Name = "GenreTextBox";
             this.GenreTextBox.Size = new System.Drawing.Size(100, 23);
             this.GenreTextBox.TabIndex = 6;
@@ -123,7 +123,7 @@ namespace Programming.View.Controls
             // GenreLabel
             // 
             this.GenreLabel.AutoSize = true;
-            this.GenreLabel.Location = new System.Drawing.Point(226, 107);
+            this.GenreLabel.Location = new System.Drawing.Point(224, 107);
             this.GenreLabel.Name = "GenreLabel";
             this.GenreLabel.Size = new System.Drawing.Size(41, 15);
             this.GenreLabel.TabIndex = 5;
@@ -131,7 +131,7 @@ namespace Programming.View.Controls
             // 
             // YearTextBox
             // 
-            this.YearTextBox.Location = new System.Drawing.Point(226, 81);
+            this.YearTextBox.Location = new System.Drawing.Point(224, 81);
             this.YearTextBox.Name = "YearTextBox";
             this.YearTextBox.Size = new System.Drawing.Size(100, 23);
             this.YearTextBox.TabIndex = 4;
@@ -140,7 +140,7 @@ namespace Programming.View.Controls
             // ReleaseYearLabel
             // 
             this.ReleaseYearLabel.AutoSize = true;
-            this.ReleaseYearLabel.Location = new System.Drawing.Point(226, 63);
+            this.ReleaseYearLabel.Location = new System.Drawing.Point(224, 63);
             this.ReleaseYearLabel.Name = "ReleaseYearLabel";
             this.ReleaseYearLabel.Size = new System.Drawing.Size(74, 15);
             this.ReleaseYearLabel.TabIndex = 3;
@@ -148,16 +148,16 @@ namespace Programming.View.Controls
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(226, 37);
+            this.NameTextBox.Location = new System.Drawing.Point(224, 37);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(101, 23);
+            this.NameTextBox.Size = new System.Drawing.Size(100, 23);
             this.NameTextBox.TabIndex = 2;
             this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(226, 19);
+            this.NameLabel.Location = new System.Drawing.Point(224, 19);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(42, 15);
             this.NameLabel.TabIndex = 1;

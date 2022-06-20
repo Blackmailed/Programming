@@ -14,11 +14,6 @@ namespace SongManager.View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Путь до AppData
-        /// </summary>
-        private string AppdataPath = Application.UserAppDataPath;
-
-        /// <summary>
         /// Дочернее окно добавления песни.
         /// </summary>
         private AddSongForm _addSongForm;
@@ -37,6 +32,8 @@ namespace SongManager.View
         /// Коллекция песен.
         /// </summary>
         private List<Song> _songs;
+
+        private string AppdataPath = Application.UserAppDataPath;
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="MainForm"/>.
@@ -57,8 +54,8 @@ namespace SongManager.View
         {
             // создаем новый список для отсортированных песен
             var orderedListSongs = from song in _songs // передаем каждый элемент из _songs в переменную song
-                                    orderby song.ArtistName, song.SongName // упорядочиваем по возрастанию
-                                    select song; // выбираем объект в создаваемую коллекцию
+                                   orderby song.ArtistName, song.SongName // упорядочиваем по возрастанию
+                                   select song; // выбираем объект в создаваемую коллекцию
             _songs = orderedListSongs.ToList();
             int currentSongId = _currentSong.Id;
             int index = -1;

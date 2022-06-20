@@ -1,4 +1,4 @@
-﻿namespace Programming.Model
+﻿namespace Programming.Model.Geometry
 {
     /// <summary>
     /// Хранит данные о координатах центра фигуры.

@@ -52,9 +52,9 @@ namespace Programming.View.Controls
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CanvasPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CanvasPanel.Location = new System.Drawing.Point(296, 20);
+            this.CanvasPanel.Location = new System.Drawing.Point(291, 20);
             this.CanvasPanel.Name = "CanvasPanel";
-            this.CanvasPanel.Size = new System.Drawing.Size(508, 419);
+            this.CanvasPanel.Size = new System.Drawing.Size(513, 451);
             this.CanvasPanel.TabIndex = 31;
             // 
             // LenghtLabel2
@@ -81,7 +81,7 @@ namespace Programming.View.Controls
             // 
             this.Ylable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Ylable2.AutoSize = true;
-            this.Ylable2.Location = new System.Drawing.Point(35, 367);
+            this.Ylable2.Location = new System.Drawing.Point(10, 367);
             this.Ylable2.Name = "Ylable2";
             this.Ylable2.Size = new System.Drawing.Size(17, 15);
             this.Ylable2.TabIndex = 28;
@@ -91,7 +91,7 @@ namespace Programming.View.Controls
             // 
             this.Xlable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Xlable2.AutoSize = true;
-            this.Xlable2.Location = new System.Drawing.Point(35, 338);
+            this.Xlable2.Location = new System.Drawing.Point(10, 338);
             this.Xlable2.Name = "Xlable2";
             this.Xlable2.Size = new System.Drawing.Size(17, 15);
             this.Xlable2.TabIndex = 27;
@@ -101,7 +101,7 @@ namespace Programming.View.Controls
             // 
             this.IdLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.IdLabel2.AutoSize = true;
-            this.IdLabel2.Location = new System.Drawing.Point(32, 304);
+            this.IdLabel2.Location = new System.Drawing.Point(10, 309);
             this.IdLabel2.Name = "IdLabel2";
             this.IdLabel2.Size = new System.Drawing.Size(20, 15);
             this.IdLabel2.TabIndex = 26;
@@ -113,9 +113,9 @@ namespace Programming.View.Controls
             this.SelectedRectanglesLabel.AutoSize = true;
             this.SelectedRectanglesLabel.Location = new System.Drawing.Point(10, 283);
             this.SelectedRectanglesLabel.Name = "SelectedRectanglesLabel";
-            this.SelectedRectanglesLabel.Size = new System.Drawing.Size(106, 15);
+            this.SelectedRectanglesLabel.Size = new System.Drawing.Size(109, 15);
             this.SelectedRectanglesLabel.TabIndex = 25;
-            this.SelectedRectanglesLabel.Text = "Selected Rectangle";
+            this.SelectedRectanglesLabel.Text = "Selected Rectangle:";
             // 
             // LengthTextBox2
             // 

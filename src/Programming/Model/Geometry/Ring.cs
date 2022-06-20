@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Programming.Model
+namespace Programming.Model.Geometry
 {
     /// <summary>
     /// Хранит данные о кольце.

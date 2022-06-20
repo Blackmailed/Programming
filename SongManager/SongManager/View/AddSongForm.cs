@@ -90,9 +90,7 @@ namespace SongManager.View
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            if (IsCorrection(SongNameTextBox,
-                    ArtistNameTextBox,
-                    DurationSecondsTextBox))
+            if (IsCorrection())
             {
                 SongData.Song = _song;
                 DialogResult = DialogResult.OK;
@@ -109,13 +107,11 @@ namespace SongManager.View
             Close();
         }
 
-        public static bool IsCorrection(TextBox textBox1,
-                                        TextBox textBox2,
-                                        TextBox textBox3)
+        public bool IsCorrection()
         {
-            return (textBox1.BackColor == AppColors.CorrectColor) &&
-                   (textBox2.BackColor == AppColors.CorrectColor) &&
-                   (textBox3.BackColor == AppColors.CorrectColor);
+            return (SongNameTextBox.BackColor == AppColors.CorrectColor) &&
+                   (ArtistNameTextBox.BackColor == AppColors.CorrectColor) &&
+                   (DurationSecondsTextBox.BackColor == AppColors.CorrectColor);
         }
     }
 }

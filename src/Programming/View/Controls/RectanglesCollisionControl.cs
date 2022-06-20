@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Rectangle = Programming.Model.Rectangle;
+using Rectangle = Programming.Model.Geometry.Rectangle;
 using Programming.Model;
+using Programming.Model.Geometry;
 
 namespace Programming.View.Controls
 {

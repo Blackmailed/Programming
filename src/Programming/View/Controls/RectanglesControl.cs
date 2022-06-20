@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
-using Programming.Model;
+using Programming.Model.Geometry;
 using System.Collections.Generic;
+using Programming.Model;
 
 namespace Programming.View.Controls
 {
@@ -38,7 +39,7 @@ namespace Programming.View.Controls
             Rectangle[] rectangles = new Rectangle[5];
             for (int i = 0; i < 5; i++)
             {
-                _currentRectangle = RectangleFactory.Randomize();
+                _currentRectangle = RectangleFactory.Randomize(300, 300);
                 rectangles[i] = _currentRectangle;
                 RectanglesListBox.Items.Add($"Rectangle {_currentRectangle.Id}");
             } 
