@@ -7,6 +7,9 @@ namespace SongManager.Model
 {
     public static class Serializer
     {
+
+        private const string path1 = @"\Serialize.json";
+
         /// <summary>
         /// Путь до AppData
         /// </summary>
@@ -16,7 +19,7 @@ namespace SongManager.Model
         /// </summary>
         public static void Serialize(string path, List<Song> songs)
         {
-            using (StreamWriter writer = new StreamWriter(path + @"\Serialize.json"))
+            using (StreamWriter writer = new StreamWriter(path + path1))
             {
                 writer.Write(JsonConvert.SerializeObject(songs));
             }
@@ -32,12 +35,15 @@ namespace SongManager.Model
 
             try
             {
-                using (StreamReader reader = new StreamReader(path + @"\Serialize.json"))
+                using (StreamReader reader = new StreamReader(path + path1))
                 {
                     songs = JsonConvert.DeserializeObject<List<Song>>(reader.ReadToEnd());
                 }
 
-                if (songs == null) songs = new List<Song>();
+                if (songs == null)
+                {
+                    songs = new List<Song>();
+                }
             }
             catch
             {

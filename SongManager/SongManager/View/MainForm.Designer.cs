@@ -29,6 +29,7 @@ namespace SongManager.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SongListBox = new System.Windows.Forms.ListBox();
             this.AddSongButton = new System.Windows.Forms.Button();
             this.EditSongButton = new System.Windows.Forms.Button();
@@ -198,6 +199,7 @@ namespace SongManager.View
             this.Controls.Add(this.EditSongButton);
             this.Controls.Add(this.AddSongButton);
             this.Controls.Add(this.SongListBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 439);
             this.Name = "MainForm";
             this.Text = "Song Manager";

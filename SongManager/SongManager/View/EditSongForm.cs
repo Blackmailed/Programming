@@ -14,6 +14,24 @@ namespace SongManager.View
         /// </summary>
         private Song _song;
 
+        private Song _song1;
+
+        /// <summary>
+        /// Возвращает и задаёт песню.
+        /// </summary>
+        public Song Song
+        {
+            get => _song1;
+            set 
+            {
+                _song1 = value;
+                SongNameTextBox.Text = _song1.SongName;
+                ArtistNameTextBox.Text = _song1.ArtistName;
+                DurationSecondsTextBox.Text = _song1.DurationSeconds.ToString();
+                GenreComboBox.SelectedItem = _song1.Genre;
+            }
+        }
+
         public EditSongForm()
         {
             InitializeComponent();
@@ -23,18 +41,28 @@ namespace SongManager.View
             foreach (var value in genre)
                 GenreComboBox.Items.Add(value);
 
-            _song = SongData.Song;
+            //_song = SongData.Song;
 
-            InsertInformationTextboxes(_song);
+            //_song = Song;
+
+            //InsertInformationTextboxes(_song);
         }
 
-        private void InsertInformationTextboxes(Song song)
+        private void ClearFields()
         {
-            SongNameTextBox.Text = song.SongName;
-            ArtistNameTextBox.Text = song.ArtistName;
-            DurationSecondsTextBox.Text = song.DurationSeconds.ToString();
-            GenreComboBox.SelectedItem = song.Genre;
+            SongNameTextBox.Clear();
+            ArtistNameTextBox.Clear();
+            DurationSecondsTextBox.Clear();
+            GenreComboBox.Items.Clear();
         }
+
+        //private void InsertInformationTextboxes(Song song)
+        //{
+        //    SongNameTextBox.Text = song.SongName;
+        //    ArtistNameTextBox.Text = song.ArtistName;
+        //    DurationSecondsTextBox.Text = song.DurationSeconds.ToString();
+        //    GenreComboBox.SelectedItem = song.Genre;
+        //}
 
         public bool IsCorrection()
         {
@@ -48,7 +76,7 @@ namespace SongManager.View
             try
             {
                 string songNameText = SongNameTextBox.Text;
-                _song.SongName = songNameText;
+                _song1.SongName = songNameText;
             }
             catch
             {
@@ -63,7 +91,7 @@ namespace SongManager.View
             try
             {
                 string artistNameText = ArtistNameTextBox.Text;
-                _song.ArtistName = artistNameText;
+                _song1.ArtistName = artistNameText;
             }
             catch
             {
@@ -80,7 +108,7 @@ namespace SongManager.View
             {
                 string durationSecondsText = DurationSecondsTextBox.Text;
                 int durationSecondsValue = int.Parse(durationSecondsText);
-                _song.DurationSeconds = durationSecondsValue;
+                _song1.DurationSeconds = durationSecondsValue;
             }
             catch
             {
@@ -93,14 +121,14 @@ namespace SongManager.View
 
         private void GenreComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _song.Genre = (Genre)GenreComboBox.SelectedItem;
+            _song1.Genre = (Genre)GenreComboBox.SelectedItem;
         }
 
         private void OKButton_Click(object sender, EventArgs e)
         {
             if (IsCorrection())
             {
-                SongData.Song = _song;
+                SongData.Song = _song1;
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -112,6 +140,7 @@ namespace SongManager.View
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            ClearFields();
             Close();
         }
     }

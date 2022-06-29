@@ -52,11 +52,7 @@ namespace SongManager.View
         /// <returns>Возвращает индекс найденного элемента.</returns>
         private int FindIndexItemById()
         {
-            // создаем новый список для отсортированных песен
-            var orderedListSongs = from song in _songs // передаем каждый элемент из _songs в переменную song
-                                   orderby song.ArtistName, song.SongName // упорядочиваем по возрастанию
-                                   select song; // выбираем объект в создаваемую коллекцию
-            _songs = orderedListSongs.ToList();
+            SortList();
             int currentSongId = _currentSong.Id;
             int index = -1;
 
@@ -78,11 +74,7 @@ namespace SongManager.View
         private void UpdateListBox(int selectedIndex)
         {
             SongListBox.Items.Clear();
-            // создаем новый список для отсортированных песен
-            var orderedListSongs = from song in _songs  // передаем каждый элемент из _songs в переменную song
-                                    orderby song.ArtistName, song.SongName   // упорядочиваем по возрастанию
-                                    select song; // выбираем объект в создаваемую коллекцию
-            _songs = orderedListSongs.ToList();
+            SortList();
 
             foreach (Song song in _songs)
             {
@@ -101,6 +93,15 @@ namespace SongManager.View
             ArtistNameTextBox.Clear();
             DurationSecondsTextBox.Clear();
             GenreTextBox.Clear();
+        }
+
+        private void SortList()
+        {
+            // создаем новый список для отсортированных песен
+            var orderedListSongs = from song in _songs  // передаем каждый элемент из _songs в переменную song
+                                   orderby song.ArtistName, song.SongName   // упорядочиваем по возрастанию
+                                   select song; // выбираем объект в создаваемую коллекцию
+            _songs = orderedListSongs.ToList();
         }
 
         private void AddSongButton_Click(object sender, EventArgs e)
@@ -131,13 +132,15 @@ namespace SongManager.View
         {
             if (SongListBox.SelectedIndex == -1) return;
 
-            SongData.Song = _currentSong;
+            _songForm.Song = _currentSong;
 
             _songForm = new EditSongForm();
 
+            _songForm.Song = _currentSong;
+
             if (_songForm.ShowDialog() != DialogResult.OK) return;
 
-            _currentSong = SongData.Song;
+            _currentSong = _songForm.Song;
 
             int index = FindIndexItemById();
             UpdateListBox(index);
