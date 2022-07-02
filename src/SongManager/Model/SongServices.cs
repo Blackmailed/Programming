@@ -6,7 +6,7 @@ namespace SongManager.Model
     /// <summary>
     /// Предоставляет методы для работы с данными песен.
     /// </summary>
-    public static class SongFactory
+    public static class SongServices
     {
         /// <summary>
         /// Создание дефолтных значений для песни.
