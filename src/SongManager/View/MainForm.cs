@@ -163,8 +163,8 @@ namespace SongManager.View
 
             try
             {
-                string DurationSecondsAsString = DurationSecondsTextBox.Text;
-                double currentSongDurationSeconds = double.Parse(DurationSecondsAsString);
+                string durationSecondsAsString = DurationSecondsTextBox.Text;
+                double currentSongDurationSeconds = double.Parse(durationSecondsAsString);
                 _currentSong.DurationSeconds = (int)currentSongDurationSeconds;
                 Serializer.Serialize(_songs);
             }
