@@ -9,7 +9,7 @@ namespace SongManager.Model
     public static class SongFactory
     {
         /// <summary>
-        /// Создание дефолтный значений для песни.
+        /// Создание дефолтных значений для песни.
         /// </summary>
         /// <returns>Дефолтные значения о песне.</returns>
         public static Song DefaultInfo()
@@ -23,7 +23,7 @@ namespace SongManager.Model
         }
 
         /// <summary>
-        /// Проводит сортировку коллекции песен по имя исполнителя и названию песни.
+        /// Проводит сортировку коллекции песен по имени исполнителя и названию песни.
         /// </summary>
         /// <param name="Songs">Коллекция класса <see cref="Song"/>.</param>
         /// <returns>Возвращает отсортированную коллекцию песен.</returns>
