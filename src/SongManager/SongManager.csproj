@@ -53,7 +53,7 @@
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Serializer.cs" />
     <Compile Include="Model\Song.cs" />
-    <Compile Include="Model\SongFactory.cs" />
+    <Compile Include="Model\SongServices.cs" />
     <Compile Include="Model\Validator.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>

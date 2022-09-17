@@ -54,7 +54,7 @@ namespace SongManager.View
         {
             SongsListBox.Items.Clear();
 
-            _songs = SongFactory.SortSongs(_songs);
+            _songs = SongServices.SortSongs(_songs);
             foreach (var value in _songs)
             {
                 SongsListBox.Items.Add(SongInfo(value));
@@ -75,11 +75,11 @@ namespace SongManager.View
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
-            _currentSong = SongFactory.DefaultInfo();
+            _currentSong = SongServices.DefaultInfo();
 
             _songs.Add(_currentSong);
             SongsListBox.Items.Add(SongInfo(_currentSong));
-            SongFactory.SortSongs(_songs);
+            SongServices.SortSongs(_songs);
             UpdateSongInfo();
 
             SongsListBox.SelectedIndex = _songs.Count - 1;
@@ -163,8 +163,8 @@ namespace SongManager.View
 
             try
             {
-                string DurationSecondsAsString = DurationSecondsTextBox.Text;
-                double currentSongDurationSeconds = double.Parse(DurationSecondsAsString);
+                string durationSecondsAsString = DurationSecondsTextBox.Text;
+                double currentSongDurationSeconds = double.Parse(durationSecondsAsString);
                 _currentSong.DurationSeconds = (int)currentSongDurationSeconds;
                 Serializer.Serialize(_songs);
             }
