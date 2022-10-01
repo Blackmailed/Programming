@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -32,11 +33,103 @@ namespace ObjectOrientedPractics.View.Tabs
         public CustomersTabControl()
         {
             InitializeComponent();
+            _customers = new List<Customer>();
+        }
+
+        private void ClearItemsInfo()
+        {
+            IdTextBox.Clear();
+            FullNameTextBox.Clear();
+            AddressTextBox.Clear();
+        }
+
+        private string FormattedText(Customer customer)
+        {
+            return $"{customer.FullName}";
+        }
+
+        private void UpdateItemInfo(int selectedIndex)
+        {
+            CustomersListBox.Items.Clear();
+
+            foreach (Customer customer in _customers)
+            {
+                CustomersListBox.Items.Add($"{customer.FullName};");
+            }
+
+            if (selectedIndex == -1) return;
+
+            CustomersListBox.SelectedIndex = selectedIndex;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            Customer customer = CustomerFactory.Default();
+            _currentCustomer = customer;
+            CustomersListBox.Items.Add(FormattedText(_currentCustomer));
+            _customers.Add(customer);
+        }
 
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            int index = CustomersListBox.SelectedIndex;
+
+            if (index == -1) return;
+
+            _customers.RemoveAt(index);
+            CustomersListBox.Items.RemoveAt(index);
+
+            ClearItemsInfo();
+        }
+
+        private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedItem != null)
+            {
+                int indexSelectedCustomer = CustomersListBox.SelectedIndex;
+                _currentCustomer = _customers[indexSelectedCustomer];
+                IdTextBox.Text = _currentCustomer.Id.ToString();
+                FullNameTextBox.Text = _currentCustomer.FullName;
+                AddressTextBox.Text = _currentCustomer.Address;
+            }
+        }
+
+        private void FullNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedIndex == -1)
+                return;
+            try
+            {
+                string customerCurrentFullName = FullNameTextBox.Text;
+                _currentCustomer.FullName = customerCurrentFullName;
+                int index = _customers.IndexOf(_currentCustomer);
+                UpdateItemInfo(index);
+            }
+            catch
+            {
+                FullNameTextBox.BackColor = AppColors.ErrorColor;
+                return;
+            }
+            FullNameTextBox.BackColor = AppColors.CorrectColor;
+        }
+
+        private void AddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedIndex == -1)
+                return;
+            try
+            {
+                string customerCurrentAddress = AddressTextBox.Text;
+                _currentCustomer.Address = customerCurrentAddress;
+                int index = _customers.IndexOf(_currentCustomer);
+                UpdateItemInfo(index);
+            }
+            catch
+            {
+                AddressTextBox.BackColor = AppColors.ErrorColor;
+                return;
+            }
+            AddressTextBox.BackColor = AppColors.CorrectColor;
         }
     }
 }

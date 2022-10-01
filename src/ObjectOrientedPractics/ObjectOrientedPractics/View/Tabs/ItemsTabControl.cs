@@ -33,6 +33,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public ItemsTabControl()
         {
             InitializeComponent();
+            _items = new List<Item>();
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Item item = ItemFactory.Randomize();
+            Item item = ItemFactory.Default();
             _currentItem = item;
             _items.Add(item);
             UpdateListBox(0);
@@ -150,11 +151,11 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                CostTextBox.BackColor = AppColor.ErrorColor;
+                CostTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
 
-            CostTextBox.BackColor = AppColor.CorrectColor;
+            CostTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
@@ -173,11 +174,11 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                NameTextBox.BackColor = AppColor.ErrorColor;
+                NameTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
 
-            NameTextBox.BackColor = AppColor.CorrectColor;
+            NameTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
@@ -193,11 +194,11 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                DescriptionTextBox.BackColor = AppColor.ErrorColor;
+                DescriptionTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
 
-            DescriptionTextBox.BackColor = AppColor.CorrectColor;
+            DescriptionTextBox.BackColor = AppColors.CorrectColor;
         }
     }
 }

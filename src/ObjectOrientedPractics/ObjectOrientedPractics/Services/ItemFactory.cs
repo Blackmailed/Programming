@@ -13,7 +13,7 @@ namespace ObjectOrientedPractics.Services
         /// Создает товар.
         /// </summary>
         /// <returns>Возвращает объект Item</returns>
-        public static Item Randomize()
+        public static Item Default()
         {
             Item item = new Item();
             item.Name = "Name";

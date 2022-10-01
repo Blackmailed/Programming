@@ -5,7 +5,7 @@ namespace ObjectOrientedPractics.Services
     /// <summary>
     /// Хранит данные об используемых цветах.
     /// </summary>
-    public static class AppColor
+    public static class AppColors
     {
         /// <summary>
         /// Цвет некорректного значения.

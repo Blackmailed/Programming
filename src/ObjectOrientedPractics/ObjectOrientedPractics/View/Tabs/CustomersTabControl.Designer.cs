@@ -75,6 +75,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(435, 61);
             this.AddressTextBox.TabIndex = 19;
+            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // FullNameTextBox
             // 
@@ -82,11 +83,14 @@ namespace ObjectOrientedPractics.View.Tabs
             this.FullNameTextBox.Name = "FullNameTextBox";
             this.FullNameTextBox.Size = new System.Drawing.Size(130, 20);
             this.FullNameTextBox.TabIndex = 18;
+            this.FullNameTextBox.TextChanged += new System.EventHandler(this.FullNameTextBox_TextChanged);
             // 
             // IdTextBox
             // 
+            this.IdTextBox.Enabled = false;
             this.IdTextBox.Location = new System.Drawing.Point(422, 42);
             this.IdTextBox.Name = "IdTextBox";
+            this.IdTextBox.ReadOnly = true;
             this.IdTextBox.Size = new System.Drawing.Size(130, 20);
             this.IdTextBox.TabIndex = 17;
             // 
@@ -98,6 +102,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.RemoveButton.TabIndex = 16;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // AddButton
             // 
@@ -126,6 +131,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.CustomersListBox.Name = "CustomersListBox";
             this.CustomersListBox.Size = new System.Drawing.Size(345, 446);
             this.CustomersListBox.TabIndex = 13;
+            this.CustomersListBox.SelectedIndexChanged += new System.EventHandler(this.CustomersListBox_SelectedIndexChanged);
             // 
             // CustomersTabControl
             // 

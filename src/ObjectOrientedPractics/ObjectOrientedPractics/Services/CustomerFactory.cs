@@ -13,13 +13,13 @@ namespace ObjectOrientedPractics.Services
         /// Создает покупателя.
         /// </summary>
         /// <returns>Возвращает объект Customer</returns>
-        //public static Customer Randomize()
-        //{
-        //    Customer customer = new Customer();
-        //    customer.FullName = "Name";
-        //    customer.Address = "Address";
+        public static Customer Default()
+        {
+            Customer customer = new Customer();
+            customer.FullName = "Name";
+            customer.Address = "Address";
 
-        //    return customer;
-        //}
+            return customer;
+        }
     }
 }
