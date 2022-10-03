@@ -36,6 +36,9 @@ namespace ObjectOrientedPractics.View.Tabs
             _customers = new List<Customer>();
         }
 
+        /// <summary>
+        /// Очищает поля вывода информации.
+        /// </summary>
         private void ClearItemsInfo()
         {
             IdTextBox.Clear();
@@ -43,18 +46,27 @@ namespace ObjectOrientedPractics.View.Tabs
             AddressTextBox.Clear();
         }
 
+        /// <summary>
+        /// Генерирует форматированный текст для отображения.
+        /// </summary>
+        /// <param name="customer">Товар.</param>
+        /// <returns>Возвращает форматированный текст.</returns>
         private string FormattedText(Customer customer)
         {
             return $"{customer.FullName}";
         }
 
-        private void UpdateItemInfo(int selectedIndex)
+        /// <summary>
+        /// Обновляет данные в ListBox.
+        /// </summary>
+        /// <param name="selectedIndex">Выбранный элемент.</param>
+        private void UpdateCustomerInfo(int selectedIndex)
         {
             CustomersListBox.Items.Clear();
 
             foreach (Customer customer in _customers)
             {
-                CustomersListBox.Items.Add($"{customer.FullName};");
+                CustomersListBox.Items.Add($"{customer.FullName}");
             }
 
             if (selectedIndex == -1) return;
@@ -103,7 +115,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 string customerCurrentFullName = FullNameTextBox.Text;
                 _currentCustomer.FullName = customerCurrentFullName;
                 int index = _customers.IndexOf(_currentCustomer);
-                UpdateItemInfo(index);
+                UpdateCustomerInfo(index);
             }
             catch
             {
@@ -122,7 +134,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 string customerCurrentAddress = AddressTextBox.Text;
                 _currentCustomer.Address = customerCurrentAddress;
                 int index = _customers.IndexOf(_currentCustomer);
-                UpdateItemInfo(index);
+                UpdateCustomerInfo(index);
             }
             catch
             {

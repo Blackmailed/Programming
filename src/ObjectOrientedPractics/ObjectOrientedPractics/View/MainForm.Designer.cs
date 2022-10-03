@@ -31,9 +31,9 @@ namespace ObjectOrientedPractics
         {
             this.ItemsTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ItemsTab = new ObjectOrientedPractics.View.Tabs.ItemsTabControl();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ItemsTab = new ObjectOrientedPractics.View.Tabs.ItemsTabControl();
             this.customersTabControl1 = new ObjectOrientedPractics.View.Tabs.CustomersTabControl();
             this.ItemsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -63,13 +63,6 @@ namespace ObjectOrientedPractics
             this.tabPage1.Text = "Items Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ItemsTab
-            // 
-            this.ItemsTab.Location = new System.Drawing.Point(0, 0);
-            this.ItemsTab.Name = "ItemsTab";
-            this.ItemsTab.Size = new System.Drawing.Size(864, 546);
-            this.ItemsTab.TabIndex = 0;
-            // 
             // CustomersTabPage
             // 
             this.CustomersTabPage.Controls.Add(this.panel1);
@@ -89,11 +82,20 @@ namespace ObjectOrientedPractics
             this.panel1.Size = new System.Drawing.Size(493, 324);
             this.panel1.TabIndex = 1;
             // 
+            // ItemsTab
+            // 
+            this.ItemsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ItemsTab.Location = new System.Drawing.Point(3, 3);
+            this.ItemsTab.Name = "ItemsTab";
+            this.ItemsTab.Size = new System.Drawing.Size(855, 540);
+            this.ItemsTab.TabIndex = 0;
+            // 
             // customersTabControl1
             // 
-            this.customersTabControl1.Location = new System.Drawing.Point(-2, 5);
+            this.customersTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersTabControl1.Location = new System.Drawing.Point(3, 3);
             this.customersTabControl1.Name = "customersTabControl1";
-            this.customersTabControl1.Size = new System.Drawing.Size(864, 546);
+            this.customersTabControl1.Size = new System.Drawing.Size(855, 540);
             this.customersTabControl1.TabIndex = 0;
             // 
             // MainForm

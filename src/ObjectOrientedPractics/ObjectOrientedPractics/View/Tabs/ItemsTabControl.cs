@@ -48,52 +48,6 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
-        /// Обновляет данные в ListBox.
-        /// </summary>
-        /// <param name="selectedIndex">Выбранный элемент.</param>
-        private void UpdateListBox(int selectedIndex)
-        {
-            ItemsListBox.Items.Clear();
-            var orderedListItems = from item in _items
-                                   orderby item.Name
-                                   select item;
-
-            _items = orderedListItems.ToList();
-
-            foreach (Item item in _items)
-            {
-                ItemsListBox.Items.Add(FormattedText(item));
-            }
-
-            ItemsListBox.SelectedIndex = selectedIndex;
-        }
-
-        /// <summary>
-        /// Ищет индекс элемента по уникальному идентификатору.
-        /// </summary>
-        /// <returns>Возвращает индекс найденного элемента.</returns>
-        private int FindIndexItemById()
-        {
-            var orderedListItems = from item in _items
-                                   orderby item.Name
-                                   select item;
-
-            _items = orderedListItems.ToList();
-            int currentItemId = _currentItem.Id;
-            int index = -1;
-
-            for (int i = 0; i < _items.Count; i++)
-            {
-                if (_items[i].Id != currentItemId) continue;
-
-                index = i;
-                break;
-            }
-
-            return index;
-        }
-
-        /// <summary>
         /// Генерирует форматированный текст для отображения.
         /// </summary>
         /// <param name="item">Товар.</param>
@@ -103,13 +57,31 @@ namespace ObjectOrientedPractics.View.Tabs
             return $"{item.Name}";
         }
 
+        /// <summary>
+        /// Обновляет данные в ListBox.
+        /// </summary>
+        /// <param name="selectedIndex">Выбранный элемент.</param>
+        private void UpdateItemInfo(int selectedIndex)
+        {
+            ItemsListBox.Items.Clear();
+
+            foreach (Item item in _items)
+            {
+                ItemsListBox.Items.Add($"{item.Name}");
+            }
+
+            if (selectedIndex == -1) return;
+
+            ItemsListBox.SelectedIndex = selectedIndex;
+        }
+
 
         private void AddButton_Click(object sender, EventArgs e)
         {
             Item item = ItemFactory.Default();
             _currentItem = item;
+            ItemsListBox.Items.Add(FormattedText(_currentItem));
             _items.Add(item);
-            UpdateListBox(0);
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -119,7 +91,7 @@ namespace ObjectOrientedPractics.View.Tabs
             if (index == -1) return;
 
             _items.RemoveAt(index);
-            UpdateListBox(-1);
+            ItemsListBox.Items.RemoveAt(index);
 
             ClearItemsInfo();
         }
@@ -140,64 +112,59 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
-            int index = ItemsListBox.SelectedIndex;
-
-            if (index == -1) return;
-
+            if (ItemsListBox.SelectedIndex == -1)
+                return;
             try
             {
-                int cost = Convert.ToInt32(CostTextBox.Text);
-                _currentItem.Cost = cost;
+                string itemCurrentCost = CostTextBox.Text;
+                int itemCost = int.Parse(itemCurrentCost);
+                _currentItem.Cost = itemCost;
+                int index = _items.IndexOf(_currentItem);
+                UpdateItemInfo(index);
             }
             catch
             {
                 CostTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-
             CostTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            int index = ItemsListBox.SelectedIndex;
-
-            if (index == -1) return;
-
+            if (ItemsListBox.SelectedIndex == -1)
+                return;
             try
             {
-                string name = NameTextBox.Text;
-                _currentItem.Name = name;
-
-                int indexItem = FindIndexItemById();
-                UpdateListBox(indexItem);
+                string itemCurrentName = NameTextBox.Text;
+                _currentItem.Name = itemCurrentName;
+                int index = _items.IndexOf(_currentItem);
+                UpdateItemInfo(index);
             }
             catch
             {
                 NameTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-
             NameTextBox.BackColor = AppColors.CorrectColor;
         }
 
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            int index = ItemsListBox.SelectedIndex;
-
-            if (index == -1) return;
-
+            if (ItemsListBox.SelectedIndex == -1)
+                return;
             try
             {
-                string info = DescriptionTextBox.Text;
-                _currentItem.Info = info;
+                string itemCurrentDescription = DescriptionTextBox.Text;
+                _currentItem.Info = itemCurrentDescription;
+                int index = _items.IndexOf(_currentItem);
+                UpdateItemInfo(index);
             }
             catch
             {
                 DescriptionTextBox.BackColor = AppColors.ErrorColor;
                 return;
             }
-
             DescriptionTextBox.BackColor = AppColors.CorrectColor;
         }
     }

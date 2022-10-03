@@ -4,7 +4,7 @@ namespace ObjectOrientedPractics.Model
     /// <summary>
     /// Хранит данные о покупателе.
     /// </summary>
-    class Customer
+    public class Customer
     {
         /// <summary>
         /// Уникальный идентификатор для всех объектов данного класса.

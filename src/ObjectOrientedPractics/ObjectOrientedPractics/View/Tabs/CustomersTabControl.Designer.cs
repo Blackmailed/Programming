@@ -70,6 +70,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AddressTextBox
             // 
+            this.AddressTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AddressTextBox.Location = new System.Drawing.Point(422, 136);
             this.AddressTextBox.Multiline = true;
             this.AddressTextBox.Name = "AddressTextBox";
@@ -79,6 +80,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // FullNameTextBox
             // 
+            this.FullNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.FullNameTextBox.Location = new System.Drawing.Point(422, 72);
             this.FullNameTextBox.Name = "FullNameTextBox";
             this.FullNameTextBox.Size = new System.Drawing.Size(130, 20);
@@ -87,6 +89,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // IdTextBox
             // 
+            this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.IdTextBox.Enabled = false;
             this.IdTextBox.Location = new System.Drawing.Point(422, 42);
             this.IdTextBox.Name = "IdTextBox";
@@ -96,6 +99,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // RemoveButton
             // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveButton.Location = new System.Drawing.Point(125, 481);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(111, 57);
@@ -106,6 +110,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AddButton
             // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.Location = new System.Drawing.Point(8, 481);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(111, 57);
@@ -126,6 +131,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // CustomersListBox
             // 
+            this.CustomersListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.CustomersListBox.FormattingEnabled = true;
             this.CustomersListBox.Location = new System.Drawing.Point(8, 24);
             this.CustomersListBox.Name = "CustomersListBox";

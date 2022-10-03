@@ -45,6 +45,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // ItemsListBox
             // 
+            this.ItemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ItemsListBox.FormattingEnabled = true;
             this.ItemsListBox.Location = new System.Drawing.Point(6, 29);
             this.ItemsListBox.Name = "ItemsListBox";
@@ -64,6 +66,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AddButton
             // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.Location = new System.Drawing.Point(6, 486);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(111, 57);
@@ -74,6 +77,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // RemoveButton
             // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveButton.Location = new System.Drawing.Point(123, 486);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(111, 57);
@@ -84,6 +88,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // IdTextBox
             // 
+            this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.IdTextBox.Enabled = false;
             this.IdTextBox.Location = new System.Drawing.Point(420, 47);
             this.IdTextBox.Name = "IdTextBox";
@@ -93,6 +99,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // CostTextBox
             // 
+            this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CostTextBox.Location = new System.Drawing.Point(420, 77);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.Size = new System.Drawing.Size(130, 20);
@@ -101,19 +109,23 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(357, 141);
             this.NameTextBox.Multiline = true;
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(501, 61);
+            this.NameTextBox.Size = new System.Drawing.Size(489, 61);
             this.NameTextBox.TabIndex = 7;
             this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // DescriptionTextBox
             // 
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionTextBox.Location = new System.Drawing.Point(357, 262);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(501, 130);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(489, 130);
             this.DescriptionTextBox.TabIndex = 8;
             this.DescriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged);
             // 
