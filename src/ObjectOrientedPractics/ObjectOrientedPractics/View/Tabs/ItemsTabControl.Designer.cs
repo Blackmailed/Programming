@@ -48,7 +48,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.ItemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ItemsListBox.FormattingEnabled = true;
-            this.ItemsListBox.Location = new System.Drawing.Point(6, 29);
+            this.ItemsListBox.Location = new System.Drawing.Point(6, 16);
             this.ItemsListBox.Name = "ItemsListBox";
             this.ItemsListBox.Size = new System.Drawing.Size(345, 446);
             this.ItemsListBox.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.ItemsLabel.AutoSize = true;
             this.ItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ItemsLabel.Location = new System.Drawing.Point(3, 13);
+            this.ItemsLabel.Location = new System.Drawing.Point(3, 0);
             this.ItemsLabel.Name = "ItemsLabel";
             this.ItemsLabel.Size = new System.Drawing.Size(37, 13);
             this.ItemsLabel.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddButton.Location = new System.Drawing.Point(6, 486);
+            this.AddButton.Location = new System.Drawing.Point(6, 473);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(111, 57);
             this.AddButton.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // RemoveButton
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveButton.Location = new System.Drawing.Point(123, 486);
+            this.RemoveButton.Location = new System.Drawing.Point(123, 473);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(111, 57);
             this.RemoveButton.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.IdTextBox.Enabled = false;
-            this.IdTextBox.Location = new System.Drawing.Point(420, 47);
+            this.IdTextBox.Location = new System.Drawing.Point(420, 34);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.ReadOnly = true;
             this.IdTextBox.Size = new System.Drawing.Size(130, 20);
@@ -101,7 +101,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.CostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CostTextBox.Location = new System.Drawing.Point(420, 77);
+            this.CostTextBox.Location = new System.Drawing.Point(420, 64);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.Size = new System.Drawing.Size(130, 20);
             this.CostTextBox.TabIndex = 6;
@@ -111,7 +111,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(357, 141);
+            this.NameTextBox.Location = new System.Drawing.Point(357, 128);
             this.NameTextBox.Multiline = true;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(489, 61);
@@ -122,7 +122,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DescriptionTextBox.Location = new System.Drawing.Point(357, 262);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(357, 249);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(489, 130);
@@ -132,7 +132,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // IdLabel
             // 
             this.IdLabel.AutoSize = true;
-            this.IdLabel.Location = new System.Drawing.Point(357, 50);
+            this.IdLabel.Location = new System.Drawing.Point(357, 37);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(21, 13);
             this.IdLabel.TabIndex = 9;
@@ -141,7 +141,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
-            this.CostLabel.Location = new System.Drawing.Point(357, 80);
+            this.CostLabel.Location = new System.Drawing.Point(357, 67);
             this.CostLabel.Name = "CostLabel";
             this.CostLabel.Size = new System.Drawing.Size(31, 13);
             this.CostLabel.TabIndex = 10;
@@ -150,7 +150,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(357, 125);
+            this.NameLabel.Location = new System.Drawing.Point(357, 112);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 11;
@@ -159,7 +159,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(357, 246);
+            this.DescriptionLabel.Location = new System.Drawing.Point(357, 233);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(63, 13);
             this.DescriptionLabel.TabIndex = 12;
@@ -181,6 +181,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ItemsLabel);
             this.Controls.Add(this.ItemsListBox);
+            this.MinimumSize = new System.Drawing.Size(864, 546);
             this.Name = "ItemsTabControl";
             this.Size = new System.Drawing.Size(864, 546);
             this.ResumeLayout(false);

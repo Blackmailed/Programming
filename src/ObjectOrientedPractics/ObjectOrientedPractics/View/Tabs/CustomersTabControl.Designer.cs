@@ -44,7 +44,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // AddressLabel
             // 
             this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(359, 139);
+            this.AddressLabel.Location = new System.Drawing.Point(357, 131);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(48, 13);
             this.AddressLabel.TabIndex = 23;
@@ -53,7 +53,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // FullNameLabel
             // 
             this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Location = new System.Drawing.Point(359, 75);
+            this.FullNameLabel.Location = new System.Drawing.Point(357, 67);
             this.FullNameLabel.Name = "FullNameLabel";
             this.FullNameLabel.Size = new System.Drawing.Size(57, 13);
             this.FullNameLabel.TabIndex = 22;
@@ -62,7 +62,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // IdLabel
             // 
             this.IdLabel.AutoSize = true;
-            this.IdLabel.Location = new System.Drawing.Point(359, 45);
+            this.IdLabel.Location = new System.Drawing.Point(357, 37);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(21, 13);
             this.IdLabel.TabIndex = 21;
@@ -70,18 +70,20 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.AddressTextBox.Location = new System.Drawing.Point(422, 136);
+            this.AddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddressTextBox.Location = new System.Drawing.Point(420, 128);
             this.AddressTextBox.Multiline = true;
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(435, 61);
+            this.AddressTextBox.Size = new System.Drawing.Size(425, 61);
             this.AddressTextBox.TabIndex = 19;
             this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // FullNameTextBox
             // 
-            this.FullNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.FullNameTextBox.Location = new System.Drawing.Point(422, 72);
+            this.FullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FullNameTextBox.Location = new System.Drawing.Point(420, 64);
             this.FullNameTextBox.Name = "FullNameTextBox";
             this.FullNameTextBox.Size = new System.Drawing.Size(130, 20);
             this.FullNameTextBox.TabIndex = 18;
@@ -89,9 +91,10 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.IdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.IdTextBox.Enabled = false;
-            this.IdTextBox.Location = new System.Drawing.Point(422, 42);
+            this.IdTextBox.Location = new System.Drawing.Point(420, 34);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.ReadOnly = true;
             this.IdTextBox.Size = new System.Drawing.Size(130, 20);
@@ -100,7 +103,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // RemoveButton
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveButton.Location = new System.Drawing.Point(125, 481);
+            this.RemoveButton.Location = new System.Drawing.Point(123, 473);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(111, 57);
             this.RemoveButton.TabIndex = 16;
@@ -111,7 +114,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddButton.Location = new System.Drawing.Point(8, 481);
+            this.AddButton.Location = new System.Drawing.Point(6, 473);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(111, 57);
             this.AddButton.TabIndex = 15;
@@ -123,7 +126,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.CustomersLabel.AutoSize = true;
             this.CustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CustomersLabel.Location = new System.Drawing.Point(5, 8);
+            this.CustomersLabel.Location = new System.Drawing.Point(3, 0);
             this.CustomersLabel.Name = "CustomersLabel";
             this.CustomersLabel.Size = new System.Drawing.Size(65, 13);
             this.CustomersLabel.TabIndex = 14;
@@ -134,7 +137,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.CustomersListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CustomersListBox.FormattingEnabled = true;
-            this.CustomersListBox.Location = new System.Drawing.Point(8, 24);
+            this.CustomersListBox.Location = new System.Drawing.Point(6, 16);
             this.CustomersListBox.Name = "CustomersListBox";
             this.CustomersListBox.Size = new System.Drawing.Size(345, 446);
             this.CustomersListBox.TabIndex = 13;
