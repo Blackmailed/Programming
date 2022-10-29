@@ -104,11 +104,18 @@ namespace ObjectOrientedPractics.Model
         /// <param name="name">Название товара</param>
         /// <param name="info">Информация о товаре</param>
         /// <param name="cost">Цена товара</param>
-        public Item(string name, string info, double cost)
+        /// <param name="category">Категория товара</param>
+        public Item(string name, string info, double cost, Category category)
         {
             Name = name;
             Info = info;
             Cost = cost;
+            Category = category;
         }
+
+        /// <summary>
+        /// Возвращает и задает категорию товара.
+        /// </summary>
+        public Category Category { get; set; }
     }
 }

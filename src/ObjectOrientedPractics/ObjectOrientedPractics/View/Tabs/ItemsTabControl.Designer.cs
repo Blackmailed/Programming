@@ -41,6 +41,8 @@ namespace ObjectOrientedPractics.View.Tabs
             this.CostLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // ItemsListBox
@@ -111,7 +113,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(357, 128);
+            this.NameTextBox.Location = new System.Drawing.Point(357, 150);
             this.NameTextBox.Multiline = true;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(489, 61);
@@ -122,7 +124,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DescriptionTextBox.Location = new System.Drawing.Point(357, 249);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(357, 271);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(489, 130);
@@ -150,7 +152,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(357, 112);
+            this.NameLabel.Location = new System.Drawing.Point(357, 134);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 11;
@@ -159,16 +161,36 @@ namespace ObjectOrientedPractics.View.Tabs
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(357, 233);
+            this.DescriptionLabel.Location = new System.Drawing.Point(357, 255);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(63, 13);
             this.DescriptionLabel.TabIndex = 12;
             this.DescriptionLabel.Text = "Description:";
             // 
+            // CategoryLabel
+            // 
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Location = new System.Drawing.Point(360, 97);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(49, 13);
+            this.CategoryLabel.TabIndex = 13;
+            this.CategoryLabel.Text = "Category";
+            // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Location = new System.Drawing.Point(420, 94);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(130, 21);
+            this.CategoryComboBox.TabIndex = 14;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
+            // 
             // ItemsTabControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CategoryComboBox);
+            this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.CostLabel);
@@ -203,5 +225,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private System.Windows.Forms.Label CostLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.Label CategoryLabel;
+        private System.Windows.Forms.ComboBox CategoryComboBox;
     }
 }

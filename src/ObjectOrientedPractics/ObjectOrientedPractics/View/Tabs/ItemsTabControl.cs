@@ -34,6 +34,11 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
             _items = new List<Item>();
+
+            var category = Enum.GetValues(typeof(Category));
+
+            foreach (var value in category)
+                CategoryComboBox.Items.Add(value);
         }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace ObjectOrientedPractics.View.Tabs
             CostTextBox.Text = _currentItem.Cost.ToString();
             NameTextBox.Text = _currentItem.Name;
             DescriptionTextBox.Text = _currentItem.Info;
+            CategoryComboBox.SelectedItem = _currentItem.Category;
         }
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
@@ -166,6 +172,16 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
             DescriptionTextBox.BackColor = AppColors.CorrectColor;
+        }
+
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ItemsListBox.SelectedItem == null) return;
+
+            _currentItem.Category = (Category)CategoryComboBox.SelectedItem;
+            int index = _items.IndexOf(_currentItem);
+            UpdateItemInfo(index);
+
         }
     }
 }
