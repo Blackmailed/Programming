@@ -1,4 +1,6 @@
 ﻿using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.Model;
+
 namespace ObjectOrientedPractics.Model
 {
     /// <summary>
@@ -19,7 +21,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Адрес.
         /// </summary>
-        private string _address;
+        private Address _address;
 
         /// <summary>
         /// Количество покупателей.
@@ -65,7 +67,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Возвращает и задаёт адрес. Должно быть не более 500 символов.
         /// </summary>
-        public string Address
+        public Address Address
         {
             get
             {
@@ -73,7 +75,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(Address), 1, 500, value);
+
                 _address = value;
             }
         }
@@ -83,7 +85,7 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         /// <param name="fullname"></param>
         /// <param name="address"></param>
-        public Customer(string fullname, string address)
+        public Customer(string fullname, Address address)
         {
             FullName = fullname;
             Address = address;

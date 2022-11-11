@@ -33,7 +33,6 @@ namespace ObjectOrientedPractics
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ItemsTab = new ObjectOrientedPractics.View.Tabs.ItemsTabControl();
             this.CustomersTabPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.customersTabControl1 = new ObjectOrientedPractics.View.Tabs.CustomersTabControl();
             this.ItemsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -74,7 +73,6 @@ namespace ObjectOrientedPractics
             // 
             // CustomersTabPage
             // 
-            this.CustomersTabPage.Controls.Add(this.panel1);
             this.CustomersTabPage.Controls.Add(this.customersTabControl1);
             this.CustomersTabPage.Location = new System.Drawing.Point(4, 22);
             this.CustomersTabPage.Name = "CustomersTabPage";
@@ -83,13 +81,6 @@ namespace ObjectOrientedPractics
             this.CustomersTabPage.TabIndex = 1;
             this.CustomersTabPage.Text = "Customers Tab";
             this.CustomersTabPage.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(360, 214);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 324);
-            this.panel1.TabIndex = 1;
             // 
             // customersTabControl1
             // 
@@ -122,7 +113,6 @@ namespace ObjectOrientedPractics
         private System.Windows.Forms.TabPage CustomersTabPage;
         private View.Tabs.ItemsTabControl ItemsTab;
         private View.Tabs.CustomersTabControl customersTabControl1;
-        private System.Windows.Forms.Panel panel1;
     }
 }
 

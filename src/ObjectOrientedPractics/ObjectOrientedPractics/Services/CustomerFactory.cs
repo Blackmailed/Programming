@@ -16,8 +16,14 @@ namespace ObjectOrientedPractics.Services
         public static Customer Default()
         {
             Customer customer = new Customer();
-            customer.FullName = "Full Name";
-            customer.Address = "Address";
+            customer.FullName = "Full name";
+            customer.Address = new Address();
+            customer.Address.Apartment = "Apartment";
+            customer.Address.City = "City";
+            customer.Address.Building = "Building";
+            customer.Address.Street = "Street";
+            customer.Address.Country = "Country";
+            customer.Address.Index = 100000;
 
             return customer;
         }

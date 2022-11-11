@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.View.Controls;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -36,14 +31,46 @@ namespace ObjectOrientedPractics.View.Tabs
             _customers = new List<Customer>();
         }
 
+        // <summary>
+        /// Возвращает и задает коллекцию покупателей.
+        /// </summary>
+        public List<Customer> Customers
+        {
+            get => _customers;
+            set
+            {
+                _customers = value;
+
+                if (_customers != null)
+                {
+                    UpdateListBox(-1);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Обновляет данные в ListBox.
+        /// </summary>
+        /// <param name="selectedIndex">Выбранный элемент.</param>
+        private void UpdateListBox(int selectedIndex)
+        {
+            CustomersListBox.Items.Clear();
+            foreach (Customer customer in _customers)
+            {
+                CustomersListBox.Items.Add(FormattedText(customer));
+            }
+
+            CustomersListBox.SelectedIndex = selectedIndex;
+        }
+
         /// <summary>
         /// Очищает поля вывода информации.
         /// </summary>
-        private void ClearItemsInfo()
+        private void ClearCustomersInfo()
         {
             IdTextBox.Clear();
             FullNameTextBox.Clear();
-            AddressTextBox.Clear();
+            AddressControl.Clear();
         }
 
         /// <summary>
@@ -91,7 +118,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _customers.RemoveAt(index);
             CustomersListBox.Items.RemoveAt(index);
 
-            ClearItemsInfo();
+            ClearCustomersInfo();
         }
 
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,7 +129,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentCustomer = _customers[indexSelectedCustomer];
                 IdTextBox.Text = _currentCustomer.Id.ToString();
                 FullNameTextBox.Text = _currentCustomer.FullName;
-                AddressTextBox.Text = _currentCustomer.Address;
+                AddressControl.Address = _currentCustomer.Address;
             }
         }
 
@@ -123,25 +150,6 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
             FullNameTextBox.BackColor = AppColors.CorrectColor;
-        }
-
-        private void AddressTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (CustomersListBox.SelectedIndex == -1)
-                return;
-            try
-            {
-                string customerCurrentAddress = AddressTextBox.Text;
-                _currentCustomer.Address = customerCurrentAddress;
-                int index = _customers.IndexOf(_currentCustomer);
-                UpdateCustomerInfo(index);
-            }
-            catch
-            {
-                AddressTextBox.BackColor = AppColors.ErrorColor;
-                return;
-            }
-            AddressTextBox.BackColor = AppColors.CorrectColor;
         }
     }
 }

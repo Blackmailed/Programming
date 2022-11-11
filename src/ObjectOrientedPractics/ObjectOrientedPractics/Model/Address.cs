@@ -4,7 +4,7 @@ using ObjectOrientedPractics.View;
 
 namespace ObjectOrientedPractics.Model
 {
-    class Address
+    public class Address
     {
         /// <summary>
         /// Почтовый индекс.
@@ -36,35 +36,35 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private string _apartment;
 
-        /// <summary>
-        /// Количество цифр в поле <see cref="Index"/>.
-        /// </summary>
-        private readonly int _numberDigitsInIndex = 6;
+        ///// <summary>
+        ///// Количество цифр в поле <see cref="Index"/>.
+        ///// </summary>
+        //private readonly int _numberDigitsInIndex = 6;
 
-        /// <summary>
-        /// Максимальное количество символов в поле <see cref="Country"/>.
-        /// </summary>
-        private readonly int _maxCountSymbolsInCountry = 50;
+        ///// <summary>
+        ///// Максимальное количество символов в поле <see cref="Country"/>.
+        ///// </summary>
+        //private readonly int _maxCountSymbolsInCountry = 50;
 
-        /// <summary>
-        /// Максимальное количество символов в поле <see cref="City"/>.
-        /// </summary>
-        private readonly int _maxCountSymbolsInCity = 50;
+        ///// <summary>
+        ///// Максимальное количество символов в поле <see cref="City"/>.
+        ///// </summary>
+        //private readonly int _maxCountSymbolsInCity = 50;
 
-        /// <summary>
-        /// Максимальное количество символов в поле <see cref="Street"/>.
-        /// </summary>
-        private readonly int _maxCountSymbolsInStreet = 100;
+        ///// <summary>
+        ///// Максимальное количество символов в поле <see cref="Street"/>.
+        ///// </summary>
+        //private readonly int _maxCountSymbolsInStreet = 100;
 
-        /// <summary>
-        /// Максимальное количество символов в поле <see cref="Building"/>.
-        /// </summary>
-        private readonly int _maxCountSymbolsInBuilding = 10;
+        ///// <summary>
+        ///// Максимальное количество символов в поле <see cref="Building"/>.
+        ///// </summary>
+        //private readonly int _maxCountSymbolsInBuilding = 10;
 
-        /// <summary>
-        /// Максимальное количество символов в поле <see cref="Apartment"/>.
-        /// </summary>
-        private readonly int _maxCountSymbolsInApartment = 10;
+        ///// <summary>
+        ///// Максимальное количество символов в поле <see cref="Apartment"/>.
+        ///// </summary>
+        //private readonly int _maxCountSymbolsInApartment = 10;
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Address"/>.

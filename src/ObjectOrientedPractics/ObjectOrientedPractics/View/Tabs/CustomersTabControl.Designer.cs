@@ -29,26 +29,17 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddressLabel = new System.Windows.Forms.Label();
+            ObjectOrientedPractics.Model.Address address1 = new ObjectOrientedPractics.Model.Address();
             this.FullNameLabel = new System.Windows.Forms.Label();
             this.IdLabel = new System.Windows.Forms.Label();
-            this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.FullNameTextBox = new System.Windows.Forms.TextBox();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.CustomersLabel = new System.Windows.Forms.Label();
             this.CustomersListBox = new System.Windows.Forms.ListBox();
+            this.AddressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             this.SuspendLayout();
-            // 
-            // AddressLabel
-            // 
-            this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(357, 131);
-            this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(48, 13);
-            this.AddressLabel.TabIndex = 23;
-            this.AddressLabel.Text = "Address:";
             // 
             // FullNameLabel
             // 
@@ -67,17 +58,6 @@ namespace ObjectOrientedPractics.View.Tabs
             this.IdLabel.Size = new System.Drawing.Size(21, 13);
             this.IdLabel.TabIndex = 21;
             this.IdLabel.Text = "ID:";
-            // 
-            // AddressTextBox
-            // 
-            this.AddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddressTextBox.Location = new System.Drawing.Point(420, 128);
-            this.AddressTextBox.Multiline = true;
-            this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(425, 61);
-            this.AddressTextBox.TabIndex = 19;
-            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // FullNameTextBox
             // 
@@ -143,14 +123,22 @@ namespace ObjectOrientedPractics.View.Tabs
             this.CustomersListBox.TabIndex = 13;
             this.CustomersListBox.SelectedIndexChanged += new System.EventHandler(this.CustomersListBox_SelectedIndexChanged);
             // 
+            // AddressControl
+            // 
+           
+            this.AddressControl.Address = address1;
+            this.AddressControl.Location = new System.Drawing.Point(360, 137);
+            this.AddressControl.Name = "AddressControl";
+            this.AddressControl.Size = new System.Drawing.Size(453, 155);
+            this.AddressControl.TabIndex = 23;
+            // 
             // CustomersTabControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.AddressControl);
             this.Controls.Add(this.FullNameLabel);
             this.Controls.Add(this.IdLabel);
-            this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.FullNameTextBox);
             this.Controls.Add(this.IdTextBox);
             this.Controls.Add(this.RemoveButton);
@@ -165,16 +153,14 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         #endregion
-
-        private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.Label FullNameLabel;
         private System.Windows.Forms.Label IdLabel;
-        private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.TextBox FullNameTextBox;
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label CustomersLabel;
         private System.Windows.Forms.ListBox CustomersListBox;
+        private Controls.AddressControl AddressControl;
     }
 }
