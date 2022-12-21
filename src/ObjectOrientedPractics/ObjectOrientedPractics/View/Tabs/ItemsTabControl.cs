@@ -41,6 +41,26 @@ namespace ObjectOrientedPractics.View.Tabs
                 CategoryComboBox.Items.Add(value);
         }
 
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Item> Items
+        {
+            get
+            {
+                return _items;
+            }
+            set
+            {
+                _items = value;
+
+                if (_items != null)
+                {
+                    UpdateItemInfo(-1);
+                }
+            }
+        }
+
         /// <summary>
         /// Очищает поля вывода информации.
         /// </summary>
@@ -86,7 +106,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Item item = ItemFactory.Default();
             _currentItem = item;
             ItemsListBox.Items.Add(FormattedText(_currentItem));
-            _items.Add(item);
+            _items.Add(item);  
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)

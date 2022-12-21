@@ -2,6 +2,7 @@
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace ObjectOrientedPractics.View.Controls
 {
@@ -15,6 +16,9 @@ namespace ObjectOrientedPractics.View.Controls
             InitializeComponent();
         }
 
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Address Address
         {
             get
@@ -139,6 +143,11 @@ namespace ObjectOrientedPractics.View.Controls
             ApartmentTextBox.Clear();
 
             PostIndexTextBox.BackColor = AppColors.CorrectColor;
+            CountryTextBox.BackColor = AppColors.CorrectColor;
+            CityTextBox.BackColor = AppColors.CorrectColor;
+            StreetTextBox.BackColor = AppColors.CorrectColor;
+            BuildingTextBox.BackColor = AppColors.CorrectColor;
+            ApartmentTextBox.BackColor = AppColors.CorrectColor;
         }
     }
 }

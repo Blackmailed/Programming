@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+
 namespace ObjectOrientedPractics.Model
 {
     /// <summary>

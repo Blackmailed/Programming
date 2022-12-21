@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
@@ -29,15 +30,23 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
             _customers = new List<Customer>();
+            
         }
 
         // <summary>
         /// Возвращает и задает коллекцию покупателей.
         /// </summary>
+
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Customer> Customers
         {
-            get => _customers;
-            set
+            get
+            {
+                return _customers;
+            }
+                set
             {
                 _customers = value;
 

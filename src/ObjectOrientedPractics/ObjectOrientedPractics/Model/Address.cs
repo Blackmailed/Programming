@@ -1,6 +1,4 @@
 ﻿using ObjectOrientedPractics.Services;
-using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.View;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -36,35 +34,35 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         private string _apartment;
 
-        ///// <summary>
-        ///// Количество цифр в поле <see cref="Index"/>.
-        ///// </summary>
-        //private readonly int _numberDigitsInIndex = 6;
+        /// <summary>
+        /// Количество цифр в поле <see cref="Index"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInIndex = 999999;
 
-        ///// <summary>
-        ///// Максимальное количество символов в поле <see cref="Country"/>.
-        ///// </summary>
-        //private readonly int _maxCountSymbolsInCountry = 50;
+        /// <summary>
+        /// Максимальное количество символов в поле <see cref="Country"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInCountry = 50;
 
-        ///// <summary>
-        ///// Максимальное количество символов в поле <see cref="City"/>.
-        ///// </summary>
-        //private readonly int _maxCountSymbolsInCity = 50;
+        /// <summary>
+        /// Максимальное количество символов в поле <see cref="City"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInCity = 50;
 
-        ///// <summary>
-        ///// Максимальное количество символов в поле <see cref="Street"/>.
-        ///// </summary>
-        //private readonly int _maxCountSymbolsInStreet = 100;
+        /// <summary>
+        /// Максимальное количество символов в поле <see cref="Street"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInStreet = 100;
 
-        ///// <summary>
-        ///// Максимальное количество символов в поле <see cref="Building"/>.
-        ///// </summary>
-        //private readonly int _maxCountSymbolsInBuilding = 10;
+        /// <summary>
+        /// Максимальное количество символов в поле <see cref="Building"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInBuilding = 10;
 
-        ///// <summary>
-        ///// Максимальное количество символов в поле <see cref="Apartment"/>.
-        ///// </summary>
-        //private readonly int _maxCountSymbolsInApartment = 10;
+        /// <summary>
+        /// Максимальное количество символов в поле <see cref="Apartment"/>.
+        /// </summary>
+        private readonly int _maxCountSymbolsInApartment = 10;
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Address"/>.
@@ -106,7 +104,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertValueInRange(nameof(Index), 1, 999999, value);
+                Validator.AssertValueInRange(nameof(Index), 1, _maxCountSymbolsInIndex, value);
                 _index = value;
             }
         }
@@ -123,7 +121,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(Country), 1, 50, value);
+                Validator.AssertCountSymbolsInRange(nameof(Country), 1, _maxCountSymbolsInCountry, value);
                 _country = value;
             }
         }
@@ -140,7 +138,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(City), 1, 50, value);
+                Validator.AssertCountSymbolsInRange(nameof(City), 1, _maxCountSymbolsInCity, value);
                 _city = value;
             }
         }
@@ -157,7 +155,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(Street), 1, 100, value);
+                Validator.AssertCountSymbolsInRange(nameof(Street), 1, _maxCountSymbolsInStreet, value);
                 _street = value;
             }
         }
@@ -174,7 +172,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(Building), 1, 10, value);
+                Validator.AssertCountSymbolsInRange(nameof(Building), 1, _maxCountSymbolsInBuilding, value);
                 _building = value;
             }
         }
@@ -191,7 +189,7 @@ namespace ObjectOrientedPractics.Model
             }
             set
             {
-                Validator.AssertCountSymbolsInRange(nameof(Apartment), 1, 10, value);
+                Validator.AssertCountSymbolsInRange(nameof(Apartment), 1, _maxCountSymbolsInApartment, value);
                 _apartment = value;
             }
         }

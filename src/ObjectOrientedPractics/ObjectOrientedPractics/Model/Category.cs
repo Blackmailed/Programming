@@ -4,7 +4,7 @@
     {
         Meat = 1,   //Мясной продукт  
         Seafood,   //Морепродукт
-        DairyProguct,    //Молочный продукт
+        DairyProduct,    //Молочный продукт
         BakeryProduct,    //Выпечка
         Cereal,    //Каша
         Drink,    //Напиток
