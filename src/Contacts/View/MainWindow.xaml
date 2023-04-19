@@ -5,9 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Icon="contacts_96x96.ico"
-        Title="Contacts" Height="450" Width="800">
-    <Grid>
-
+        Icon="Resources/contacts_96x96.ico"
+        Title="Contacts" Height="450" Width="650" MinHeight="450px" MinWidth="650px">
+    <Grid Margin="15px">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="15px"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="Edit Contact">
+            <StackPanel>
+                <TextBlock Text="Name:" Margin="3px"/>
+                <TextBox Margin="3px" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Phone Number:" Margin="3px"/>
+                <TextBox Margin="3px" Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Email:" Margin="3px"/>
+                <TextBox Margin="3px" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </GroupBox>
+        <GridSplitter Grid.Row="0" Grid.Column="1"/>
+        <GroupBox Grid.Row="0" Grid.Column="2" Header="Read Contact">
+            <StackPanel>
+                <TextBlock Text="Name:" Margin="3px"/>
+                <TextBlock Margin="3px" FontWeight="Bold" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Phone Number:" Margin="3px"/>
+                <TextBlock Margin="3px" FontWeight="Bold" Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Email:" Margin="3px"/>
+                <TextBlock Margin="3px" FontWeight="Bold" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Save" Margin="3px" Width="75px" Height="25px" Command="{Binding SaveCommand}"/>
+            <Button Content="Load" Margin="3px" Width="75px" Height="25px" Command="{Binding LoadCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>
