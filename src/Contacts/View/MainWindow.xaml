@@ -14,7 +14,6 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="15px"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <GroupBox Grid.Row="0" Grid.Column="0" Header="Edit Contact">
@@ -27,8 +26,7 @@
                 <TextBox Margin="3px" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
         </GroupBox>
-        <GridSplitter Grid.Row="0" Grid.Column="1"/>
-        <GroupBox Grid.Row="0" Grid.Column="2" Header="Read Contact">
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Read Contact">
             <StackPanel>
                 <TextBlock Text="Name:" Margin="3px"/>
                 <TextBlock Margin="3px" FontWeight="Bold" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
