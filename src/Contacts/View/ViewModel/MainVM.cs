@@ -1,110 +1,174 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 using View.Model;
 using View.Model.Services;
 
 namespace View.ViewModel
 {
-    public class MainVM : INotifyPropertyChanged
+    /// <summary>
+    ///  ViewModel для окна MainWindow.
+    /// </summary>
+    public class MainVM : ObservableObject
     {
         /// <summary>
-        /// Контакт.
+        ///  Хранит булевое значение доступности кнопки редактирования.
         /// </summary>
-        public Contact Contact { get; private set; } = new Contact();
+        private bool _isEnabled;
 
         /// <summary>
-        /// Возвращает и задаёт путь сериализации. По умолчанию - папка "Мои документы".
+        ///  Хранит булевое значение доступности редактирования текстовых полей.
+        /// </summary>
+        private bool _isReadOnly;
+
+        /// <summary>
+        ///  Текущий контакт.
+        /// </summary>
+        private ContactVM _selectedContact;
+
+        /// <summary>
+        ///  Возвращает и задаёт путь сериализации. По умолчанию - папка "Мои документы".
         /// </summary>
         public string Path { get; set; } =
             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             + @"\Contacts\contacts.json";
 
         /// <summary>
-        /// Возвращает и задает имя контакта.
+        ///  Возвращает и задаёт коллекцию контактов.
         /// </summary>
-        public string Name
+        public ObservableCollection<ContactVM> Contacts { get; set; }
+
+        /// <summary>
+        ///  Возвращает и задает исходную версию редактируемого контакта.
+        /// </summary>
+        public ContactVM ContactClone { get; set; }
+
+        /// <summary>
+        ///  Создаёт экземпляр класса <see cref="MainVM"/>.
+        /// </summary>
+        public MainVM()
         {
-            get
-            { 
-                return Contact.Name;
-            }
-            set
-            {
-                Contact.Name = value;
-                OnPropertyChanged(nameof(Name));
-            }
+            Contacts = ContactSerializer.Deserialize(Path);
+            EditCommand = new RelayCommand(EditContact);
+            AddCommand = new RelayCommand(AddContact);
+            RemoveCommand = new RelayCommand(RemoveContact);
+            ApplyCommand = new RelayCommand(ApplyChangesContact);
+            IsReadOnly = true;
+            IsEnabled = false;
         }
 
         /// <summary>
-        /// Возвращает и задает номер телефона контакта.
+        ///  Возвращает и задает текущий контакт.
         /// </summary>
-        public string PhoneNumber
+        public ContactVM SelectedContact
         {
-            get
-            {
-                return Contact.PhoneNumber;
-            }
+            get => _selectedContact;
             set
             {
-                Contact.PhoneNumber = value;
-                OnPropertyChanged(nameof(PhoneNumber));
-            }
-        }
-
-        /// <summary>
-        /// Возвращает и задает адрес электронной почты контакта.
-        /// </summary>
-        public string Email
-        {
-            get
-            {
-                return Contact.Email;
-            }
-            set
-            {
-                Contact.Email = value;
-                OnPropertyChanged(nameof(Email));
-            }
-        }
-
-        /// <summary>
-        /// Команда сериализации контакта.
-        /// </summary>
-        public ICommand SaveCommand
-        {
-            get
-            {
-                return new RelayCommand((obj) =>
+                if (ContactClone != null && Contacts.IndexOf(SelectedContact) != -1)
                 {
-                    ContactSerializer.Serialize(Contact, Path);
-                });
+                    Contacts[Contacts.IndexOf(SelectedContact)] = ContactClone;
+                    ContactClone = null;
+                }
+
+                _selectedContact = value;
+                if (SelectedContact == null)
+                    IsReadOnly = true;
+                else
+                    IsEnabled = true;
+                OnPropertyChanged();
             }
         }
 
         /// <summary>
-        /// Команда десериализации контакта.
+        ///  Возвращает команду добавления контакта.
         /// </summary>
-        public ICommand LoadCommand
-        {
-            get => new RelayCommand((obj) =>
-            {
-                var contact = ContactSerializer.Deserialize(Path);
-                Name = contact.Name;
-                Email = contact.Email;
-                PhoneNumber = contact.PhoneNumber;
-            });
-        }
+        public ICommand AddCommand { get; }
 
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        /// <summary>
+        ///  Возвращает команду редактирования контакта.
+        /// </summary>
+        public ICommand EditCommand { get; }
+
+        /// <summary>
+        ///  Возвращает команду удаления контакта.
+        /// </summary>
+        public ICommand RemoveCommand { get; }
+
+        /// <summary>
+        ///  Возвращает команду принятия изменений.
+        /// </summary>
+        public ICommand ApplyCommand { get; }
+
+        /// <summary>
+        ///  Возвращает и задаёт значение доступности редактирования текстовых полей.
+        /// </summary>
+        public bool IsReadOnly
         {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(prop));
+            get => _isReadOnly;
+            set => SetProperty(ref _isReadOnly, value);
         }
 
         /// <summary>
-        /// Событие изменения свойства.
+        ///  Возвращает и задаёт значение доступности кнопки редактирования.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public bool IsEnabled
+        {
+            get => _isEnabled;
+            set => SetProperty(ref _isEnabled, value);
+        }
+
+        /// <summary>
+        ///  Вызывает редактирование нового экземпляра класса <see cref="ContactVM"/>.
+        /// </summary>
+        private void AddContact()
+        {
+            SelectedContact = null;
+            SelectedContact = new ContactVM(new Contact());
+            IsReadOnly = false;
+            IsEnabled = false;
+
+        }
+
+        /// <summary>
+        ///  Вызывает редактирования текущего контакта.
+        /// </summary>
+        private void EditContact()
+        {
+            ContactClone = (ContactVM)SelectedContact.Clone();
+            IsReadOnly = false;
+            IsEnabled = false;
+        }
+
+        /// <summary>
+        ///  Удаляет текущий контакт.
+        /// </summary>
+        private void RemoveContact()
+        {
+            if (SelectedContact == null) return;
+            var index = Contacts.IndexOf(SelectedContact);
+            Contacts.RemoveAt(index);
+            if (Contacts.Count == 0)
+                SelectedContact = null;
+            else if (index == Contacts.Count)
+                SelectedContact = Contacts[index - 1];
+            else
+                SelectedContact = Contacts[index];
+            ContactSerializer.Serialize(Contacts, Path);
+        }
+
+        /// <summary>
+        ///  Принимает изменения редактирования контакта.
+        /// </summary>
+        private void ApplyChangesContact()
+        {
+            if (!Contacts.Contains(SelectedContact)) Contacts.Add(SelectedContact);
+            IsReadOnly = true;
+            ContactClone = null;
+            IsEnabled = true;
+            ContactSerializer.Serialize(Contacts, Path);
+        }
     }
 }
