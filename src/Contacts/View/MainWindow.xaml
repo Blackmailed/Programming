@@ -3,14 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:services="clr-namespace:View.Converters"
+        xmlns:services="clr-namespace:View.Converters" xmlns:controls="clr-namespace:View.Controls"
         mc:Ignorable="d"
         Icon="/Resources/contacts_96x96.ico"
         Title="Contacts" Height="450" Width="650" MinHeight="450px" MinWidth="650px">
+    
     <Window.Resources>
         <ResourceDictionary>
-                <services:VisibilityConverter x:Key="VisibilityConverter"/>
-            </ResourceDictionary>
+          
+            <DataTemplate x:Key="ContactTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Rectangle
+                        Grid.Column="0"
+                        Width="40"
+                        Height="40"
+                        RadiusX="30"
+                        RadiusY="30"
+                        Margin="3">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="Resources/contacts_96x96.ico"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    
+                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                        <TextBlock
+                            Margin="3"
+                            FontSize="12"
+                            FontWeight="SemiBold"
+                            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                            Validation.ErrorTemplate="{x:Null}" />
+                        <TextBlock
+                            Margin="3"
+                            FontSize="10"
+                            Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+                            Validation.ErrorTemplate="{x:Null}" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+            <services:VisibilityConverter x:Key="VisibilityConverter"/>
+            <services:InverseConverter x:Key="InverseConverter"/>
+        </ResourceDictionary>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -62,10 +98,11 @@
                     </Grid>
                     <ListBox
                         Margin="3"
-                        DisplayMemberPath="Name"
                         DockPanel.Dock="Top"
-                        ItemsSource="{Binding Path=Contacts}"
-                        SelectedItem="{Binding Path=SelectedContact, UpdateSourceTrigger=PropertyChanged}"/>
+                        ItemTemplate="{StaticResource ContactTemplate}"
+                        ItemsSource="{Binding Contacts}"
+                        SelectedItem="{Binding SelectedContact, UpdateSourceTrigger=PropertyChanged}"
+                        Validation.ErrorTemplate="{x:Null}" />
                 </DockPanel>
             </DockPanel>
         </Grid>
@@ -73,51 +110,25 @@
                 Grid.Column="1" 
                 Width="3" 
                 HorizontalAlignment="Center" 
-                ShowsPreview="False"/>  
+                ShowsPreview="False"/>
         <Grid 
             Grid.Column="2" 
-            Margin="8" 
+            Margin="8"
             Background="#ffff">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image 
-                Grid.Row="1" 
-                Grid.Column="0"
-                Width="100" Height="100"
-                Margin="3"
-                VerticalAlignment="Top"
-                Source="Resources\contacts_96x96.ico"/>
-            <TextBlock 
-                Grid.Column="1" 
-                Margin="3" 
-                Text="Name:"/>
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <TextBox
-                    Margin="3"
-                    IsReadOnly="{Binding IsReadOnly}"
-                    Text="{Binding Path=SelectedContact.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Margin="3" Text="Phone Number:"/>
-                <TextBox
-                    Margin="3"
-                    IsReadOnly="{Binding IsReadOnly}"
-                    Text="{Binding Path=SelectedContact.PhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Margin="3" Text="Email:"/>
-                <TextBox
-                    Margin="3"
-                    IsReadOnly="{Binding IsReadOnly}"
-                    Text="{Binding Path=SelectedContact.Email, UpdateSourceTrigger=PropertyChanged}"/>
+                <controls:ContactControl SelectedContact="{Binding SelectedContact}" Validation.ErrorTemplate="{x:Null}" />
                 <Button
                     Width="75"
                     Height="25"
                     Margin="3 50 3 3"
                     HorizontalAlignment="Left"
                     Content="Apply"
+                    IsEnabled="{Binding SelectedContact.HasErrors, Converter={StaticResource InverseConverter}}"
                     Visibility="{Binding IsReadOnly, Converter={StaticResource VisibilityConverter}}"
                     Command="{Binding ApplyCommand}"/>
             </StackPanel>

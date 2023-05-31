@@ -1,5 +1,6 @@
-﻿using System;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
+using System.ComponentModel.DataAnnotations;
 using View.Model;
 
 namespace View.ViewModel
@@ -7,7 +8,7 @@ namespace View.ViewModel
     /// <summary>
     /// ViewModel, агрегирующий в себе класс <see cref="Model.Contact"/>
     /// </summary>
-    public class ContactVM : ObservableObject, ICloneable
+    public class ContactVM : ObservableValidator, ICloneable
     {
         /// <summary>
         /// Возвращает и получает объект класса <see cref="Model.Contact"/>
@@ -26,6 +27,7 @@ namespace View.ViewModel
         /// <summary>
         ///  Возвращает и задаёт имя контакта.
         /// </summary>
+        [CustomValidation(typeof(Model.Services.Validator), nameof(Model.Services.Validator.ValidateName))]
         public string Name
         {
             get => Contact.Name;
@@ -33,12 +35,13 @@ namespace View.ViewModel
                 Contact.Name,
                 value,
                 Contact,
-                (contact, name) => Contact.Name = name);
+                (contact, name) => Contact.Name = name, true);
         }
 
         /// <summary>
         ///  Возвращает и задаёт электронную почту контакта.
         /// </summary>
+        [CustomValidation(typeof(Model.Services.Validator), nameof(Model.Services.Validator.ValidateEmail))]
         public string Email
         {
             get => Contact.Email;
@@ -46,12 +49,13 @@ namespace View.ViewModel
                 Contact.Email,
                 value,
                 Contact,
-                (contact, email) => Contact.Email = email);
+                (contact, email) => Contact.Email = email, true);
         }
 
         /// <summary>
         ///  Возвращает и задаёт номер телефона контакта.
         /// </summary>
+        [CustomValidation(typeof(Model.Services.Validator), nameof(Model.Services.Validator.ValidatePhone))]
         public string PhoneNumber
         {
             get => Contact.PhoneNumber;
@@ -59,7 +63,7 @@ namespace View.ViewModel
                 Contact.PhoneNumber,
                 value,
                 Contact,
-                (contact, phoneNumber) => Contact.PhoneNumber = phoneNumber);
+                (contact, phoneNumber) => Contact.PhoneNumber = phoneNumber, true);
         }
 
         /// <summary>
