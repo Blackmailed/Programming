@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Windows.Input;
-using System.Collections.ObjectModel;
-using View.Model;
-using View.Model.Services;
+using Model;
+using Model.Services;
 
-namespace View.ViewModel
+namespace ViewModel
 {
     /// <summary>
     ///  ViewModel для окна MainWindow.
@@ -29,13 +30,6 @@ namespace View.ViewModel
         private ContactVM _selectedContact;
 
         /// <summary>
-        ///  Возвращает и задаёт путь сериализации. По умолчанию - папка "Мои документы".
-        /// </summary>
-        public string Path { get; set; } =
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            + @"\Contacts\contacts.json";
-
-        /// <summary>
         ///  Возвращает и задаёт коллекцию контактов.
         /// </summary>
         public ObservableCollection<ContactVM> Contacts { get; set; }
@@ -50,7 +44,7 @@ namespace View.ViewModel
         /// </summary>
         public MainVM()
         {
-            Contacts = ContactSerializer.Deserialize(Path);
+            Contacts = new ObservableCollection<ContactVM>(ContactSerializer.Deserialize().Select(c => new ContactVM(c)));
             EditCommand = new RelayCommand(EditContact);
             AddCommand = new RelayCommand(AddContact);
             RemoveCommand = new RelayCommand(RemoveContact);
@@ -75,9 +69,13 @@ namespace View.ViewModel
 
                 _selectedContact = value;
                 if (SelectedContact == null)
+                {
                     IsReadOnly = true;
+                }
                 else
+                {
                     IsEnabled = true;
+                }
                 OnPropertyChanged();
             }
         }
@@ -147,16 +145,31 @@ namespace View.ViewModel
         /// </summary>
         private void RemoveContact()
         {
-            if (SelectedContact == null) return;
-            var index = Contacts.IndexOf(SelectedContact);
+            if (SelectedContact == null)
+            {
+                return;
+            }
+            int index = Contacts.IndexOf(SelectedContact);
             Contacts.RemoveAt(index);
             if (Contacts.Count == 0)
+            {
                 SelectedContact = null;
+            }
             else if (index == Contacts.Count)
+            {
                 SelectedContact = Contacts[index - 1];
+            }
             else
+            {
                 SelectedContact = Contacts[index];
-            ContactSerializer.Serialize(Contacts, Path);
+            }
+            ContactSerializer.Serialize(new ObservableCollection<Contact>(
+                Contacts.Select(c => new Contact
+                {
+                    Name = c.Name,
+                    PhoneNumber = c.PhoneNumber,
+                    Email = c.Email
+                })));
         }
 
         /// <summary>
@@ -168,7 +181,13 @@ namespace View.ViewModel
             IsReadOnly = true;
             ContactClone = null;
             IsEnabled = true;
-            ContactSerializer.Serialize(Contacts, Path);
+            ContactSerializer.Serialize(new ObservableCollection<Contact>(
+                Contacts.Select(c => new Contact
+                {
+                    Name = c.Name,
+                    PhoneNumber = c.PhoneNumber,
+                    Email = c.Email
+                })));
         }
     }
 }

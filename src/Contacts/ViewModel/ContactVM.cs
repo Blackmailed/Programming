@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.ComponentModel.DataAnnotations;
-using View.Model;
+using Model;
 
-namespace View.ViewModel
+namespace ViewModel
 {
     /// <summary>
     /// ViewModel, агрегирующий в себе класс <see cref="Model.Contact"/>
@@ -13,7 +13,7 @@ namespace View.ViewModel
         /// <summary>
         /// Возвращает и получает объект класса <see cref="Model.Contact"/>
         /// </summary>
-        public Contact Contact { get; }
+        public Contact Contact { get; set; }
 
         /// <summary>
         /// Создает экземпляр класса <see cref="ContactVM"/>.

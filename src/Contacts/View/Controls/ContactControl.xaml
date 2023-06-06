@@ -31,20 +31,21 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="197*"/>
         </Grid.RowDefinitions>
         <Image 
                 Grid.Row="1" 
                 Grid.Column="0"
                 Width="100" Height="100"
-                Margin="3"
+                Margin="3,3,15,0"
                 VerticalAlignment="Top"
                 Source="\Resources\contacts_96x96.ico"/>
         <TextBlock 
                 Grid.Column="1" 
-                Margin="3" 
+                Margin="3,3,3,3" 
                 Text="Name:"/>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
             <TextBox
                     Margin="3"
                     IsReadOnly="{Binding IsReadOnly}"

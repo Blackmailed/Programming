@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
 
-namespace View.Model.Services
+namespace Model.Services
 {
     /// <summary>
     /// Хранит реализацию методов, предназначенных для валидации.
